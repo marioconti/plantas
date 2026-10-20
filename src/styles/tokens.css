@@ -1,0 +1,71 @@
+/*
+ * Regué design tokens. The single source of every brand value: nothing else writes a colour,
+ * font, size or curve by hand. Decided in docs/plantas/direccion-de-arte.md (2026-10-19).
+ * Contrast ratios (WCAG 2) are noted next to each fill.
+ */
+:root {
+  /* ---- neutrals: green-grey paper, white cells, green-black ink ---- */
+  --paper: #EEF0EB;        /* page. Ink on it 14.6:1 */
+  --surface: #FFFFFF;      /* cells, cards, fields. Ink on it 16.8:1 */
+  --ink: #15201A;          /* text, 2 px rules, the vase outline */
+  --ink-2: #56605A;        /* secondary text and labels. 5.7:1 on paper, 6.5:1 on white */
+  --line: #C9CEC6;         /* 1 px dividers only, never text */
+  --cell: #DDE1DA;         /* empty cells, "sin registro". Ink on it 12.7:1 */
+
+  /* ---- structure ---- */
+  --green: #1F4D35;        /* header, primary button, icon. White on it 9.7:1 */
+  --leaf: #3F8F55;         /* pruning, living accents. Glyphs only (4.2:1) */
+  --ok: #CFE3C8;           /* "al día". Ink on it 12.3:1 */
+
+  /* ---- care ---- */
+  --water: #1F5C99;        /* the vase fill and every watering. White on it 6.9:1. One blue, everywhere */
+  --mist: #A9C8DA;         /* the mist vial and every misting. Ink on it 9.5:1 */
+  --late: #B23A1E;         /* overdue. White on it 6.0:1, as text on paper 5.2:1 */
+  --today: #F2C230;        /* today. Ink on it 10.0:1. Never text on paper */
+  --feed: #B7791F;         /* fertiliser. Ink on it 4.6:1 */
+  --repot: #6B4A33;        /* repotting. White on it 7.9:1 */
+  --treat: #7A3E8F;        /* pest treatment. White on it 7.6:1 */
+  --photo: var(--ink);     /* photos */
+
+  /* ---- type ---- */
+  --font: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --fs-display: clamp(132px, 43vw, 280px);  /* the big number on a plant page */
+  --fs-display-2: clamp(104px, 33vw, 200px); /* the big number on the garden page */
+  --fs-h1: clamp(40px, 11vw, 72px);          /* plant name */
+  --fs-h2: clamp(24px, 6.2vw, 32px);
+  --fs-row: 22px;                            /* plant name in a list */
+  --fs-latin: clamp(20px, 6vw, 32px);
+  --fs-value: 19px;                          /* the value inside a labelled cell */
+  --fs-body: 16px;                           /* fields stay 16px so iPhone does not zoom */
+  --fs-data: 14px;                           /* mono data */
+  --fs-label: 11px;                          /* mono uppercase labels: 500, +0.08em */
+  --fs-btn: 24px;
+
+  /* ---- grid, space, shape ---- */
+  --margin: 20px;
+  --gutter: 12px;
+  --max: 1184px;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --r-pill: 999px;         /* the only rounded thing besides the vase: a herbarium has square corners */
+  --hair: 1px;
+  --rule: 2px;
+  --vase-line: 3px;
+
+  /* ---- motion: only movement that carries information ---- */
+  --ease-fill: cubic-bezier(0.23, 1, 0.32, 1);   /* the vase filling, 1200 ms */
+  --ease-stamp: cubic-bezier(0.32, 0.72, 0, 1);  /* the stamp landing, 700 ms */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fill: 1200ms;
+  --t-stamp: 700ms;
+  --t-undo: 6000ms;
+
+  /* ---- chrome ---- */
+  --header-h: 56px;
+  --actions-h: 72px;
+}
+
+@media (min-width: 900px) {
+  :root { --margin: 48px; --gutter: 24px; --fs-row: 26px; --fs-value: 22px; --fs-body: 17px; --fs-data: 15px; --fs-label: 12px; }
+}

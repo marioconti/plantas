@@ -1,0 +1,51 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--fs-body) / 1.5 var(--font);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+img { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { border: 0; background: none; cursor: pointer; touch-action: manipulation; padding: 0; text-align: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--today); outline-offset: 2px; }
+::selection { background: var(--today); color: var(--ink); }
+
+/* ---- type roles ---- */
+.label { font: 500 var(--fs-label) / 1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.mono { font-family: var(--mono); font-size: var(--fs-data); font-weight: 500; font-variant-numeric: tabular-nums; }
+.latin { font: italic 400 var(--fs-latin) / 1.1 var(--serif); }
+.h1 { font-size: var(--fs-h1); font-weight: 800; line-height: .95; letter-spacing: -.03em; font-variation-settings: 'opsz' 96; text-wrap: balance; }
+.h2 { font-size: var(--fs-h2); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; font-variation-settings: 'opsz' 48; }
+.display { font-weight: 800; font-stretch: 75%; font-variation-settings: 'opsz' 96, 'wdth' 75; letter-spacing: -.04em; line-height: .8; font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-2); }
+
+/* ---- layout ---- */
+.wrap { width: 100%; max-width: calc(var(--max) + 2 * var(--margin)); margin-left: auto; margin-right: auto; padding-left: var(--margin); padding-right: var(--margin); }
+.bleed { margin-left: calc(-1 * var(--margin)); margin-right: calc(-1 * var(--margin)); padding-left: var(--margin); padding-right: var(--margin); }
+.stack > * + * { margin-top: var(--s4); }
+.section { padding-top: var(--s6); }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s3); padding-bottom: var(--s2); border-bottom: var(--rule) solid var(--ink); margin-bottom: var(--s3); }
+.page { min-height: 100svh; padding-bottom: calc(var(--actions-h) + 48px + env(safe-area-inset-bottom)); }
+.page.no-actions { padding-bottom: var(--s8); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (min-width: 900px) {
+  .grid-12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; transition-duration: 1ms !important; transition-delay: 0ms !important; }
+}
+
+/* A page title right under the header gets air; forms set their own. */
+main > .wrap:first-child > .h1:first-child, main.wrap > .h1:first-child { margin-top: var(--s6); }
+::placeholder { color: #98A19B; opacity: 1; }

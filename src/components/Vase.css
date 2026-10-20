@@ -1,0 +1,29 @@
+.vase { display: flex; flex-direction: column; align-items: center; }
+.vase-glass { position: relative; overflow: hidden; background: var(--surface); border: var(--vase-line) solid var(--ink); border-radius: 0 0 14px 14px; border-top-width: 0; }
+.vase-glass::before { content: ""; position: absolute; left: -3px; right: -3px; top: 0; height: var(--vase-line); background: var(--ink); z-index: 2; }
+.vase-fill { position: absolute; inset: 0; background: var(--water); transform-origin: bottom; transition: transform var(--t-fill) var(--ease-fill); }
+.vase-mist .vase-fill { background: var(--mist); }
+.vase-ticks { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.vase-ticks i { position: absolute; left: 0; width: 34%; height: 2px; background: var(--ink); opacity: .9; transform: translateY(1px); }
+.vase-ticks i:nth-child(odd) { width: 20%; }
+.vase-fill + .vase-ticks i { mix-blend-mode: normal; }
+
+.vase-lg .vase-glass { width: 88px; height: 280px; }
+.vase-lg.vase-mist .vase-glass { width: 32px; }
+.vase-sm .vase-glass { width: 44px; height: 120px; border-width: 0 2px 2px; }
+.vase-xs .vase-glass { width: 14px; height: 44px; border-width: 0 2px 2px; border-radius: 0 0 5px 5px; }
+.vase-xs .vase-glass::before, .vase-sm .vase-glass::before { height: 2px; left: -2px; right: -2px; }
+.vase-xs .vase-fill { transition: none; }
+.vase.is-never .vase-glass { background: var(--cell); }
+
+/* One block per day late, hanging under the base: negative water. */
+.vase-debt { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; width: 88px; }
+.vase-debt i { height: 10px; background: var(--ink); animation: debt-in 300ms var(--ease-out) both; }
+.vase-debt i:nth-child(2) { animation-delay: 40ms; } .vase-debt i:nth-child(3) { animation-delay: 80ms; } .vase-debt i:nth-child(4) { animation-delay: 120ms; }
+@keyframes debt-in { from { transform: scaleY(0); } }
+
+@media (min-width: 900px) {
+  .vase-lg .vase-glass { width: 120px; height: 380px; }
+  .vase-lg.vase-mist .vase-glass { width: 44px; }
+  .vase-debt { width: 120px; }
+}

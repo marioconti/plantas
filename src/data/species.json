@@ -1,0 +1,3807 @@
+[
+ {
+  "id": "nephrolepis-exaltata",
+  "latin": "Nephrolepis exaltata",
+  "common": [
+   "Helecho de Boston",
+   "Helecho serrucho",
+   "Helecho común"
+  ],
+  "family": "Nephrolepidaceae",
+  "wiki": "Nephrolepis exaltata",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante pero indirecta. Tolera sombra, pero crece más lento y menos tupido."
+  },
+  "water": {
+   "warmDays": 3,
+   "coldDays": 6,
+   "estimate": true,
+   "check": "Tocá la tierra. Si el primer centímetro está seco, regá. Nunca dejes que se seque del todo.",
+   "text": "La tierra tiene que estar siempre húmeda. En invierno regá menos porque el exceso pudre raíces. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Necesita humedad alta. NC State sugiere una bandeja con piedras y agua o ubicarla en cocina o baño."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Con aire seco aparecen cochinillas y arañuela. Cocina y baño le sientan bien."
+  },
+  "temperature": {
+   "minC": 16,
+   "maxC": 21,
+   "text": "Rango ideal según NC State, entre 16 y 21 °C. Protegela del calor seco y del frío."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo cuando está creciendo, de septiembre a marzo, con abono diluido. En invierno no."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA la lista como no tóxica para perros y gatos. Comer mucho de cualquier planta puede dar vómitos.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/boston-fern"
+  },
+  "precautions": [
+   "Es segura para mascotas según la ASPCA, así que sirve para casas con gatos.",
+   "Ubicala lejos de estufas y aire acondicionado. El aire seco la seca rápido."
+  ],
+  "dont": [
+   "No dejes que la tierra se seque del todo. Las frondas se ponen marrones y se caen.",
+   "No la pongas al lado de la estufa. El aire seco atrae arañuela.",
+   "No riegues igual en invierno que en verano. El exceso de agua en frío pudre raíces."
+  ],
+  "problems": [
+   {
+    "symptom": "Frondas secas y hojitas que se caen",
+    "cause": "Tierra seca o aire muy seco.",
+    "fix": "Regá más seguido y subí la humedad con bandeja de piedras."
+   },
+   {
+    "symptom": "Telitas finas y puntitos en las hojas",
+    "cause": "Arañuela, favorecida por el aire seco.",
+    "fix": "Duchala, subí la humedad y revisá el envés de las hojas."
+   },
+   {
+    "symptom": "Bultitos marrones pegados a las frondas",
+    "cause": "Cochinilla escama.",
+    "fix": "Retiralas con un algodón con alcohol y cortá las frondas muy afectadas."
+   },
+   {
+    "symptom": "Base blanda y planta que decae en invierno",
+    "cause": "Pudrición de raíz por riego excesivo con frío.",
+    "fix": "Espaciá el riego en invierno y usá maceta con buen drenaje."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Boston Fern",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/boston-fern"
+   },
+   {
+    "title": "NC State Extension — Nephrolepis exaltata",
+    "url": "https://plants.ces.ncsu.edu/plants/nephrolepis-exaltata/"
+   },
+   {
+    "title": "Iowa State Extension — How often should I fertilize houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays",
+   "toxicity.people"
+  ]
+ },
+ {
+  "id": "epipremnum-aureum",
+  "latin": "Epipremnum aureum",
+  "common": [
+   "Potus",
+   "Poto"
+  ],
+  "family": "Araceae",
+  "wiki": "Epipremnum aureum",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Prefiere luz brillante indirecta. Aguanta mucho tiempo con poca luz, pero pierde el variegado."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Meté el dedo en la tierra. Regá cuando esté seca hasta la segunda falange.",
+   "text": "Dejá secar la tierra entre riegos. El exceso de agua pudre raíces y ennegrece los bordes. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "NC State sugiere humidificador o bandeja con piedras húmedas para subir la humedad."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Tolera la humedad normal de un departamento. Agradece un poco más de humedad."
+  },
+  "temperature": {
+   "minC": null,
+   "maxC": null,
+   "text": "La fuente no da temperaturas. Es tropical, así que protegela del frío de ventanas en invierno."
+  },
+  "fertilize": {
+   "everyDays": 60,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá cada dos meses mientras crece. En invierno, cuando está en reposo, no."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "media",
+   "text": "Tiene oxalatos de calcio insolubles. Causa ardor en boca, labios y lengua, babeo, vómitos y dificultad para tragar.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/golden-pothos"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. Colgala alto o fuera de su alcance.",
+   "La savia puede irritar la piel. Usá guantes al podar.",
+   "Si un chico o una mascota la muerde, enjuagá la boca y consultá."
+  ],
+  "dont": [
+   "No la riegues con la tierra todavía húmeda. Se pudren las raíces.",
+   "No la dejes en un rincón oscuro si es variegada. Pierde el dibujo de las hojas.",
+   "No la cuelgues donde el gato pueda alcanzar las guías. Es tóxica."
+  ],
+  "problems": [
+   {
+    "symptom": "Bordes de hojas negros y tallos blandos",
+    "cause": "Riego excesivo y pudrición de raíz.",
+    "fix": "Dejá secar bien la tierra y revisá que la maceta drene."
+   },
+   {
+    "symptom": "Hojas verdes lisas, sin manchas amarillas",
+    "cause": "Poca luz.",
+    "fix": "Acercala a una ventana luminosa sin sol directo."
+   },
+   {
+    "symptom": "Pelusa blanca en las axilas de las hojas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Limpiá con algodón con alcohol y repetí cada semana."
+   },
+   {
+    "symptom": "Bultitos duros en tallos y hojas",
+    "cause": "Cochinilla escama.",
+    "fix": "Raspalas con cuidado y limpiá con alcohol diluido."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Golden Pothos",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/golden-pothos"
+   },
+   {
+    "title": "NC State Extension — Epipremnum aureum",
+    "url": "https://plants.ces.ncsu.edu/plants/epipremnum-aureum/"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "temperature.minC",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "monstera-deliciosa",
+  "latin": "Monstera deliciosa",
+  "common": [
+   "Costilla de Adán",
+   "Monstera"
+  ],
+  "family": "Araceae",
+  "wiki": "Monstera deliciosa",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz moderada a brillante, sin sol directo. Las variegadas necesitan más luz que las verdes."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Regá cuando el tercio superior de la tierra esté seco al tacto.",
+   "text": "Regá a fondo y esperá que se seque entre un cuarto y un tercio de la tierra. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Le gusta la humedad alta. NC State sugiere humidificador o bandeja con piedras húmedas."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Prefiere humedad alta. En invierno, con calefacción, ayudala con un humidificador."
+  },
+  "temperature": {
+   "minC": 16,
+   "maxC": 29,
+   "text": "Prefiere entre 16 y 29 °C según NC State. Evitá el frío de balcón en invierno."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece, de septiembre a marzo, con abono diluido. En invierno no."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene oxalatos de calcio insolubles. Causa ardor en boca, babeo, vómitos y dificultad para tragar. La savia irrita la piel.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cutleaf-philodendron"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. Ubicala donde no muerdan las hojas.",
+   "La savia puede irritar la piel. Usá guantes al cortar hojas o esquejes.",
+   "Crece mucho. Dale un tutor de musgo y espacio."
+  ],
+  "dont": [
+   "No la pongas al sol directo. Quema las hojas.",
+   "No riegues con la tierra húmeda. Esperá que se seque el tercio de arriba.",
+   "No la dejes en un rincón oscuro. Las hojas nuevas salen chicas y sin cortes."
+  ],
+  "problems": [
+   {
+    "symptom": "Manchas marrones secas en las hojas",
+    "cause": "Sol directo.",
+    "fix": "Movela a luz brillante pero indirecta."
+   },
+   {
+    "symptom": "Hojas amarillas y tierra siempre mojada",
+    "cause": "Exceso de riego.",
+    "fix": "Espaciá el riego y revisá el drenaje de la maceta."
+   },
+   {
+    "symptom": "Hojas nuevas chicas y sin agujeros",
+    "cause": "Poca luz.",
+    "fix": "Acercala a una ventana luminosa."
+   },
+   {
+    "symptom": "Bultitos marrones en el envés",
+    "cause": "Cochinilla escama.",
+    "fix": "Retiralas con algodón con alcohol."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Cutleaf Philodendron (Monstera deliciosa)",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cutleaf-philodendron"
+   },
+   {
+    "title": "NC State Extension — Monstera deliciosa",
+    "url": "https://plants.ces.ncsu.edu/plants/monstera-deliciosa/"
+   },
+   {
+    "title": "Iowa State Extension — How often should I fertilize houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "dracaena-trifasciata",
+  "latin": "Dracaena trifasciata",
+  "common": [
+   "Sansevieria",
+   "Lengua de suegra"
+  ],
+  "family": "Asparagaceae",
+  "wiki": "Dracaena trifasciata",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Ideal con algo de sol directo de 2 a 6 horas. Tolera muy poca luz, pero crece poco."
+  },
+  "water": {
+   "warmDays": 14,
+   "coldDays": 45,
+   "estimate": true,
+   "check": "Regá sólo cuando la tierra esté seca del todo, hasta el fondo de la maceta.",
+   "text": "De primavera a otoño dejá secar entre riegos. En invierno NC State indica regar cada uno o dos meses. Lo de verano es estimado."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No hace falta pulverizarla. Tolera bien el aire seco."
+  },
+  "humidity": {
+   "level": "baja",
+   "text": "Tolera humedad baja. Es de las mejores para departamentos con calefacción."
+  },
+  "temperature": {
+   "minC": 10,
+   "maxC": null,
+   "text": "Tolera ambientes frescos de hasta unos 10 °C. Con frío, mantené la tierra seca."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá poco y sólo mientras crece, de septiembre a marzo. En invierno no."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene saponinas. Causa náuseas, vómitos y diarrea. La savia puede irritar la piel.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/snake-plant"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. Ubicala donde no la mordisqueen.",
+   "La savia puede irritar la piel. Lavate las manos después de dividirla."
+  ],
+  "dont": [
+   "No la riegues seguido. Es la causa número uno de muerte, porque se pudren las raíces.",
+   "No la riegues en invierno como en verano. Con frío alcanza con cada uno o dos meses.",
+   "No uses plato con agua acumulada. Las raíces no toleran estar encharcadas."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas blandas que se doblan en la base",
+    "cause": "Pudrición de raíz por exceso de riego.",
+    "fix": "Sacala, cortá lo podrido, dejá secar y replantá en tierra seca y drenante."
+   },
+   {
+    "symptom": "Pelusa blanca entre las hojas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Limpiá con algodón con alcohol."
+   },
+   {
+    "symptom": "Hojas con puntitos claros y aspecto sucio",
+    "cause": "Arañuela o trips.",
+    "fix": "Limpiá las hojas con paño húmedo y revisá cada semana."
+   },
+   {
+    "symptom": "Crecimiento casi nulo",
+    "cause": "Muy poca luz.",
+    "fix": "Dale más luz, con algo de sol suave."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Snake Plant",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/snake-plant"
+   },
+   {
+    "title": "NC State Extension — Dracaena trifasciata",
+    "url": "https://plants.ces.ncsu.edu/plants/dracaena-trifasciata/"
+   },
+   {
+    "title": "Iowa State Extension — How often should I fertilize houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "fertilize.everyDays",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "ficus-lyrata",
+  "latin": "Ficus lyrata",
+  "common": [
+   "Ficus pandurata",
+   "Ficus hoja de violín",
+   "Ficus lira"
+  ],
+  "family": "Moraceae",
+  "wiki": "Ficus lyrata",
+  "difficulty": "exigente",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante indirecta o sombra parcial. Protegela del sol de la tarde."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Regá cuando los primeros 3 a 5 centímetros de tierra estén secos.",
+   "text": "Le gusta la tierra húmeda y bien drenada, pero es sensible al exceso de agua. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Rinde mejor con humedad media. La fuente no habla de pulverizar."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Humedad media. Evitá el aire seco directo de calefacción o aire acondicionado."
+  },
+  "temperature": {
+   "minC": 13,
+   "maxC": null,
+   "text": "Mantenela arriba de 13 °C. Los cambios bruscos de temperatura causan manchas marrones."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece, de septiembre a marzo, con abono diluido. En invierno no."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "La ASPCA la califica como levemente tóxica. NC State cita oxalatos de calcio. Causa irritación de boca, babeo y vómitos.",
+   "source": "https://www.aspca.org/news/houseplant-safe-your-pets"
+  },
+  "precautions": [
+   "Es levemente tóxica para gatos y perros. Evitá que muerdan las hojas.",
+   "La savia lechosa puede irritar la piel. Usá guantes al podar.",
+   "Elegile un lugar fijo. No le gusta que la muevan ni los cambios de ambiente."
+  ],
+  "dont": [
+   "No la pongas al sol de la tarde. Se queman las hojas.",
+   "No la ubiques frente a la salida del aire o la estufa. Aparecen manchas marrones.",
+   "No la riegues por calendario. Tanto el exceso como la falta de agua hacen caer hojas."
+  ],
+  "problems": [
+   {
+    "symptom": "Se le caen hojas sanas",
+    "cause": "Exceso o falta de riego, o cambio de lugar.",
+    "fix": "Revisá la tierra con el dedo antes de regar y dejala quieta en un sitio."
+   },
+   {
+    "symptom": "Manchas marrones en las hojas",
+    "cause": "Cambios de temperatura por estufa o aire acondicionado.",
+    "fix": "Alejala de las rejillas de aire."
+   },
+   {
+    "symptom": "Hojas con zonas quemadas y secas",
+    "cause": "Demasiado sol directo.",
+    "fix": "Pasala a luz indirecta brillante."
+   },
+   {
+    "symptom": "Pelusa blanca o bultitos en el envés",
+    "cause": "Cochinillas.",
+    "fix": "Limpiá con algodón con alcohol y revisá seguido."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Is That Houseplant Safe for Your Pets?",
+    "url": "https://www.aspca.org/news/houseplant-safe-your-pets"
+   },
+   {
+    "title": "NC State Extension — Ficus lyrata",
+    "url": "https://plants.ces.ncsu.edu/plants/ficus-lyrata/"
+   },
+   {
+    "title": "Iowa State Extension — How often should I fertilize houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "ficus-elastica",
+  "latin": "Ficus elastica",
+  "common": [
+   "Gomero",
+   "Ficus elástica"
+  ],
+  "family": "Moraceae",
+  "wiki": "Ficus elastica",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante indirecta o sombra parcial. Protegelo del sol fuerte de la tarde."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 14,
+   "estimate": true,
+   "check": "Regá cuando los primeros 3 centímetros de tierra estén secos.",
+   "text": "Regá con regularidad sin excederte. De otoño a fines de invierno reducí mucho el riego. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Rinde con humedad media. La fuente no habla de pulverizar. Limpiá las hojas con un paño húmedo."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Humedad media. No necesita ambientes especiales."
+  },
+  "temperature": {
+   "minC": 13,
+   "maxC": null,
+   "text": "Mantenelo arriba de 13 °C. No tolera corrientes de aire ni frío."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece, de septiembre a marzo. En reposo invernal no."
+  },
+  "toxicity": {
+   "cats": "sin-datos",
+   "dogs": "sin-datos",
+   "people": "sin-datos",
+   "text": "La ASPCA no lista esta especie. NC State la marca como problema para perros y gatos. Tratalo como tóxico.",
+   "source": "https://plants.ces.ncsu.edu/plants/ficus-elastica/"
+  },
+  "precautions": [
+   "Por precaución tratalo como tóxico para mascotas. La ASPCA lista como tóxico a otro ficus, el benjamina.",
+   "La savia lechosa puede irritar la piel. Usá guantes al podar.",
+   "Protegelo de corrientes de aire frío en invierno."
+  ],
+  "dont": [
+   "No lo pongas al lado de una puerta o ventana con chiflete. Pierde hojas.",
+   "No lo riegues en invierno como en verano. Necesita mucho menos agua.",
+   "No te asustes si se caen algunas hojas de abajo. Es normal que amarilleen y caigan."
+  ],
+  "problems": [
+   {
+    "symptom": "Se caen muchas hojas de golpe",
+    "cause": "Exceso de riego, frío o corrientes de aire.",
+    "fix": "Alejalo del frío y dejá secar más la tierra entre riegos."
+   },
+   {
+    "symptom": "Algunas hojas de abajo amarillas",
+    "cause": "Envejecimiento normal.",
+    "fix": "Retiralas. No hace falta cambiar nada si el resto está sano."
+   },
+   {
+    "symptom": "Pelusa blanca en tallos y hojas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Limpiá con algodón con alcohol."
+   },
+   {
+    "symptom": "Hojas con puntitos y telitas finas",
+    "cause": "Arañuela.",
+    "fix": "Limpiá las hojas con paño húmedo y revisá cada semana."
+   }
+  ],
+  "sources": [
+   {
+    "title": "NC State Extension — Ficus elastica",
+    "url": "https://plants.ces.ncsu.edu/plants/ficus-elastica/"
+   },
+   {
+    "title": "ASPCA — Fig (Ficus benjamina)",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/fig"
+   },
+   {
+    "title": "ASPCA — Toxic and Non-Toxic Plant List for Dogs",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/dogs-plant-list"
+   }
+  ],
+  "unverified": [
+   "toxicity.cats",
+   "toxicity.dogs",
+   "toxicity.people",
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "goeppertia-orbifolia",
+  "latin": "Goeppertia orbifolia",
+  "common": [
+   "Calathea orbifolia",
+   "Calathea"
+  ],
+  "family": "Marantaceae",
+  "wiki": "Goeppertia orbifolia",
+  "difficulty": "exigente",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante indirecta o sombra parcial. Las demás calatheas del grupo piden lo mismo."
+  },
+  "water": {
+   "warmDays": 4,
+   "coldDays": 7,
+   "estimate": true,
+   "check": "Tocá la tierra. Tiene que estar apenas húmeda. Si el primer centímetro está seco, regá.",
+   "text": "Tierra siempre húmeda pero nunca encharcada. Usá agua de lluvia o filtrada. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "Mejor no mojar las hojas porque favorece manchas foliares. Subí la humedad con humidificador."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Necesita humedad de al menos 60 %. Con aire seco se queman los bordes."
+  },
+  "temperature": {
+   "minC": 18,
+   "maxC": 24,
+   "text": "Ideal entre 18 y 24 °C y estable. Evitá corrientes frías y cambios bruscos."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá una vez por mes durante la temporada de crecimiento."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA lista el grupo Calathea como no tóxico para perros y gatos. NC State coincide.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/calathea"
+  },
+  "precautions": [
+   "Es segura para mascotas según la ASPCA.",
+   "El cloro y el flúor del agua de la canilla queman las puntas. Usá agua de lluvia o filtrada."
+  ],
+  "dont": [
+   "No la riegues con agua de la canilla recién sacada. El flúor le quema las puntas.",
+   "No la pongas cerca de la estufa o el aire. Los bordes se secan enseguida.",
+   "No dejes que la tierra se encharque. Se pudren las raíces.",
+   "No mojes las hojas al regar. Aparecen manchas por hongos."
+  ],
+  "problems": [
+   {
+    "symptom": "Puntas y bordes marrones y secos",
+    "cause": "Aire seco o flúor del agua de la canilla.",
+    "fix": "Subí la humedad y regá con agua de lluvia o filtrada."
+   },
+   {
+    "symptom": "Manchas en las hojas",
+    "cause": "Hojas mojadas por mucho tiempo.",
+    "fix": "Regá directo a la tierra y no pulverices."
+   },
+   {
+    "symptom": "Hojas caídas y tallos blandos en la base",
+    "cause": "Pudrición de raíz por exceso de agua.",
+    "fix": "Dejá orear la tierra y revisá el drenaje."
+   },
+   {
+    "symptom": "Telitas y puntitos claros en el envés",
+    "cause": "Arañuela.",
+    "fix": "Limpiá el envés con paño húmedo y subí la humedad."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Calathea",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/calathea"
+   },
+   {
+    "title": "NC State Extension — Goeppertia orbifolia",
+    "url": "https://plants.ces.ncsu.edu/plants/goeppertia-orbifolia/"
+   }
+  ],
+  "unverified": [
+   "toxicity.people"
+  ]
+ },
+ {
+  "id": "maranta-leuconeura",
+  "latin": "Maranta leuconeura",
+  "common": [
+   "Maranta",
+   "Planta que reza"
+  ],
+  "family": "Marantaceae",
+  "wiki": "Maranta leuconeura",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante indirecta. Tolera luz baja a media, pero no el sol directo."
+  },
+  "water": {
+   "warmDays": 4,
+   "coldDays": 8,
+   "estimate": true,
+   "check": "En primavera y verano regá cuando el primer centímetro esté seco. En invierno dejala secar algo más.",
+   "text": "Tierra pareja y húmeda mientras crece. En invierno dejá que se seque un poco. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Necesita humedad alta. NC State sugiere un ambiente húmedo o bandeja con piedras y agua."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Requiere humedad alta. No tolera aire seco."
+  },
+  "temperature": {
+   "minC": null,
+   "maxC": null,
+   "text": "No tolera frío ni corrientes de aire frío. La fuente no da grados."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá poco y diluido mientras crece. El exceso de abono quema las hojas."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA lista la planta que reza o maranta como no tóxica para perros y gatos.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/red-veined-prayer"
+  },
+  "precautions": [
+   "Es segura para mascotas según la ASPCA.",
+   "Ubicala lejos de ventanas frías en invierno."
+  ],
+  "dont": [
+   "No la pongas al sol directo. Se queman y destiñen las hojas.",
+   "No la fertilices de más. Se queman las hojas.",
+   "No la uses en tierra que no drene. Se pudren las raíces."
+  ],
+  "problems": [
+   {
+    "symptom": "Bordes de hojas quemados",
+    "cause": "Exceso de fertilizante o aire seco.",
+    "fix": "Lavá la tierra con agua abundante y subí la humedad."
+   },
+   {
+    "symptom": "Telitas finas en el envés",
+    "cause": "Arañuela.",
+    "fix": "Limpiá las hojas y subí la humedad."
+   },
+   {
+    "symptom": "Pelusa blanca en las axilas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retirala con algodón con alcohol."
+   },
+   {
+    "symptom": "Planta caída con tierra mojada",
+    "cause": "Pudrición de raíz por mal drenaje.",
+    "fix": "Pasala a tierra drenante y regá menos."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Red Veined Prayer (Maranta, Prayer Plant)",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/red-veined-prayer"
+   },
+   {
+    "title": "NC State Extension — Maranta leuconeura",
+    "url": "https://plants.ces.ncsu.edu/plants/maranta-leuconeura/"
+   },
+   {
+    "title": "Iowa State Extension — How often should I fertilize houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "temperature.minC",
+   "temperature.maxC",
+   "fertilize.everyDays",
+   "toxicity.people"
+  ]
+ },
+ {
+  "id": "spathiphyllum-wallisii",
+  "latin": "Spathiphyllum wallisii",
+  "common": [
+   "Espatifilo",
+   "Cuna de Moisés"
+  ],
+  "family": "Araceae",
+  "wiki": "Spathiphyllum wallisii",
+  "difficulty": "facil",
+  "light": {
+   "level": "media",
+   "text": "Sombra parcial a profunda. Nunca al sol directo."
+  },
+  "water": {
+   "warmDays": 5,
+   "coldDays": 9,
+   "estimate": true,
+   "check": "Regá cuando el primer centímetro esté seco. Si las hojas se caen, te pasaste de días.",
+   "text": "Tierra húmeda pero no empapada, que se seque un poco entre riegos. Regar desde abajo funciona bien. Días estimados."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "La humedad baja causa puntas marrones. La fuente no habla de pulverizar."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Con aire muy seco aparecen puntas marrones."
+  },
+  "temperature": {
+   "minC": 16,
+   "maxC": 29,
+   "text": "Ideal entre 20 y 29 °C de día. Debajo de 16 °C crece poco y debajo de 4 °C se daña."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Usá un cuarto de la dosis del envase y lavá la tierra con agua entre aplicaciones."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "media",
+   "text": "Tiene oxalatos de calcio insolubles. Causa ardor en boca y labios, babeo, vómitos y dificultad para tragar.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/peace-lily"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. No la dejes en el piso si tenés mascotas.",
+   "Mantenela fuera del alcance de chicos chicos.",
+   "Limpiá las hojas con paño húmedo para sacar polvo y bichos."
+  ],
+  "dont": [
+   "No la pongas al sol directo. Se queman las hojas y las puntas.",
+   "No la fertilices a dosis completa. Las sales queman puntas y raíces.",
+   "No la dejes en un lugar con caídas de temperatura de más de 5 °C a la noche."
+  ],
+  "problems": [
+   {
+    "symptom": "Puntas marrones",
+    "cause": "Exceso de abono, sol directo, poca agua o aire seco.",
+    "fix": "Lavá la tierra, sacala del sol y revisá el riego."
+   },
+   {
+    "symptom": "Planta entera desmayada",
+    "cause": "Falta de agua.",
+    "fix": "Regá a fondo. Si se recupera en horas, regá un poco antes la próxima."
+   },
+   {
+    "symptom": "Pelusa blanca en la base de las hojas",
+    "cause": "Cochinilla algodonosa, la plaga más común.",
+    "fix": "Limpiá con algodón con alcohol y repasá las hojas."
+   },
+   {
+    "symptom": "Hojas manchadas tras una noche fría",
+    "cause": "Frío de menos de 4 °C.",
+    "fix": "Alejala de ventanas y balcones en invierno."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Peace Lily",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/peace-lily"
+   },
+   {
+    "title": "NC State Extension — Spathiphyllum",
+    "url": "https://plants.ces.ncsu.edu/plants/spathiphyllum/"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "zamioculcas-zamiifolia",
+  "latin": "Zamioculcas zamiifolia",
+  "common": [
+   "Zamioculca",
+   "Zamio"
+  ],
+  "family": "Araceae",
+  "wiki": "Zamioculcas",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante indirecta. El sol directo quema y amarronea las hojas."
+  },
+  "water": {
+   "warmDays": 15,
+   "coldDays": 30,
+   "estimate": false,
+   "check": "Regá sólo cuando la tierra esté seca del todo, hasta el fondo.",
+   "text": "NC State indica unas dos veces por mes en verano y una por mes en invierno, siempre con la tierra seca."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "La fuente no menciona humedad ni pulverización."
+  },
+  "humidity": {
+   "level": null,
+   "text": "La fuente no da datos de humedad."
+  },
+  "temperature": {
+   "minC": 16,
+   "maxC": null,
+   "text": "Si la sacás al balcón, entrala cuando baje de 16 °C."
+  },
+  "fertilize": {
+   "everyDays": 180,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Una o dos veces por año con fertilizante líquido balanceado para plantas de interior."
+  },
+  "toxicity": {
+   "cats": "sin-datos",
+   "dogs": "sin-datos",
+   "people": "media",
+   "text": "La ASPCA no la lista. NC State le da toxicidad media para perros y gatos por oxalato de calcio. Causa vómitos y diarrea.",
+   "source": "https://plants.ces.ncsu.edu/plants/zamioculcas-zamiifolia/"
+  },
+  "precautions": [
+   "Tratala como tóxica para mascotas. NC State le da toxicidad media para perros y gatos.",
+   "Lavate las manos después de cortar hojas o dividirla."
+  ],
+  "dont": [
+   "No la riegues con la tierra húmeda. No tolera el encharcamiento.",
+   "No la pongas al sol directo. Las hojas se queman y se ponen marrones.",
+   "No la fertilices seguido. Con una o dos veces por año alcanza."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas amarillas y tallos blandos",
+    "cause": "Exceso de riego.",
+    "fix": "Dejá secar la tierra por completo y regá menos seguido."
+   },
+   {
+    "symptom": "Hojas con zonas marrones quemadas",
+    "cause": "Sol directo.",
+    "fix": "Pasala a luz indirecta brillante."
+   },
+   {
+    "symptom": "Bultitos duros en tallos",
+    "cause": "Cochinilla escama.",
+    "fix": "Retiralos con algodón con alcohol."
+   }
+  ],
+  "sources": [
+   {
+    "title": "NC State Extension — Zamioculcas zamiifolia",
+    "url": "https://plants.ces.ncsu.edu/plants/zamioculcas-zamiifolia/"
+   },
+   {
+    "title": "ASPCA — Toxic and Non-Toxic Plant List for Dogs",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/dogs-plant-list"
+   }
+  ],
+  "unverified": [
+   "toxicity.cats",
+   "toxicity.dogs",
+   "mist.recommended",
+   "mist.everyDays",
+   "humidity.level",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "chlorophytum-comosum",
+  "latin": "Chlorophytum comosum",
+  "common": [
+   "Cinta",
+   "Lazo de amor",
+   "Mala madre",
+   "Malamadre"
+  ],
+  "family": "Asparagaceae",
+  "wiki": "Chlorophytum comosum",
+  "difficulty": "facil",
+  "light": {
+   "level": "media",
+   "text": "Prefiere luz media. Tolera bastante sombra, pero no el sol directo."
+  },
+  "water": {
+   "warmDays": 5,
+   "coldDays": 10,
+   "estimate": true,
+   "check": "Regá cuando el primer centímetro esté seco. Aguanta algún olvido.",
+   "text": "Crece mejor con tierra húmeda pareja y tolera la sequía. En invierno regá menos. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Humedad media. NC State sugiere humidificador o bandeja con piedras si el aire está seco."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Humedad media. Se adapta bien a un departamento."
+  },
+  "temperature": {
+   "minC": 7,
+   "maxC": null,
+   "text": "Mantenela arriba de 7 °C. Va bien en balcón protegido."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá poco y sólo mientras crece. El exceso de abono hace que dé menos hijitos."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA la lista como no tóxica para perros y gatos. Si la comen mucho puede dar malestar de estómago leve.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/spider-plant"
+  },
+  "precautions": [
+   "Es segura para mascotas según la ASPCA, aunque a los gatos les encanta mordisquearla.",
+   "Colgala alto si tu gato se come las hojas. Puede darle un vómito leve."
+  ],
+  "dont": [
+   "No la pongas al sol directo. Las hojas se queman.",
+   "No la riegues siempre con agua de la canilla. El cloro y el flúor queman las puntas.",
+   "No la fertilices de más. Produce menos hijitos."
+  ],
+  "problems": [
+   {
+    "symptom": "Puntas de las hojas marrones",
+    "cause": "Cloro y flúor del agua de la canilla.",
+    "fix": "Regá con agua filtrada o de lluvia y cortá las puntas secas."
+   },
+   {
+    "symptom": "Hojas descoloridas o quemadas",
+    "cause": "Sol directo.",
+    "fix": "Pasala a luz media o indirecta."
+   },
+   {
+    "symptom": "No da hijitos",
+    "cause": "Exceso de fertilizante.",
+    "fix": "Dejá de fertilizar por un tiempo."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Spider Plant",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/spider-plant"
+   },
+   {
+    "title": "ASPCA — Is That Houseplant Safe for Your Pets?",
+    "url": "https://www.aspca.org/news/houseplant-safe-your-pets"
+   },
+   {
+    "title": "NC State Extension — Chlorophytum comosum",
+    "url": "https://plants.ces.ncsu.edu/plants/chlorophytum-comosum/"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays",
+   "temperature.maxC",
+   "toxicity.people"
+  ]
+ },
+ {
+  "id": "philodendron-hederaceum",
+  "latin": "Philodendron hederaceum",
+  "common": [
+   "Filodendro trepador",
+   "Filodendro corazón"
+  ],
+  "family": "Araceae",
+  "wiki": "Philodendron hederaceum",
+  "difficulty": "facil",
+  "light": {
+   "level": "media",
+   "text": "Prefiere luz media y tolera luz baja. Evitá el sol directo."
+  },
+  "water": {
+   "warmDays": 6,
+   "coldDays": 10,
+   "estimate": true,
+   "check": "Regá cuando el primer centímetro de tierra esté seco.",
+   "text": "Tierra apenas húmeda y buen drenaje. En invierno regá menos. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": true,
+   "everyDays": null,
+   "text": "Agradece que le pulverices las hojas, según NC State. También tolera el aire seco."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Prefiere humedad media, pero tolera aire seco."
+  },
+  "temperature": {
+   "minC": null,
+   "maxC": null,
+   "text": "Le va bien la temperatura normal de una casa. La fuente no da grados."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece, de septiembre a marzo, con abono diluido."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene oxalatos de calcio insolubles. Causa dolor e hinchazón de boca, babeo, vómitos y dificultad para tragar.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/heartleaf-philodendron"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. Si cuelga, que las guías no lleguen al piso.",
+   "La savia puede irritar la piel. Usá guantes al podar."
+  ],
+  "dont": [
+   "No dejes la tierra empapada. Se pudren las raíces.",
+   "No la pongas al sol directo. Las hojas se queman.",
+   "No dejes las guías colgando al alcance del gato. Es tóxica."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas amarillas y tallos blandos",
+    "cause": "Pudrición de raíz por tierra muy mojada.",
+    "fix": "Regá menos y asegurá el drenaje."
+   },
+   {
+    "symptom": "Manchas en las hojas",
+    "cause": "Manchas foliares por hongos o bacterias.",
+    "fix": "Cortá las hojas afectadas y no dejes agua estancada en ellas."
+   },
+   {
+    "symptom": "Pelusa blanca o pulgones en brotes",
+    "cause": "Cochinilla o pulgón.",
+    "fix": "Limpiá con algodón con alcohol o agua jabonosa suave."
+   },
+   {
+    "symptom": "Telitas finas en el envés",
+    "cause": "Arañuela.",
+    "fix": "Pulverizá y limpiá las hojas cada semana."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Heartleaf Philodendron",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/heartleaf-philodendron"
+   },
+   {
+    "title": "NC State Extension — Philodendron hederaceum",
+    "url": "https://plants.ces.ncsu.edu/plants/philodendron-hederaceum/"
+   }
+  ],
+  "unverified": [
+   "mist.everyDays",
+   "temperature.minC",
+   "temperature.maxC",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "thaumatophyllum-bipinnatifidum",
+  "latin": "Thaumatophyllum bipinnatifidum",
+  "common": [
+   "Güembé",
+   "Filodendro",
+   "Philodendron selloum"
+  ],
+  "family": "Araceae",
+  "wiki": "Philodendron bipinnatifidum",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Prefiere mucha luz y tolera poca. El sol pleno puede quemar las hojas."
+  },
+  "water": {
+   "warmDays": 4,
+   "coldDays": 8,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 centímetros de tierra estén secos.",
+   "text": "Tierra húmeda, rica y bien drenada. No tolera la sequía ni el encharcamiento. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Prefiere humedad moderada. La fuente no habla de pulverizar."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Humedad moderada. Es nativa del este de Sudamérica, incluida la Argentina."
+  },
+  "temperature": {
+   "minC": 16,
+   "maxC": null,
+   "text": "NC State sugiere entrarla debajo de 16 °C. En maceta de balcón, protegela de las heladas."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece, de septiembre a marzo."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene oxalatos de calcio insolubles. Causa dolor e hinchazón de boca, babeo, vómitos y dificultad para tragar.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/lacy-tree-philodendron"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. Ojo en balcones con mascotas.",
+   "La savia irrita la piel. Usá guantes al cortar hojas.",
+   "Crece grande y ancha. Dejale lugar para que no se rompan las hojas."
+  ],
+  "dont": [
+   "No la dejes secar del todo. No tolera la sequía.",
+   "No la plantes en tierra que retenga agua. Se pudren las raíces.",
+   "No la pongas a pleno sol en verano. Las hojas se queman.",
+   "No acumules sales en la maceta. Lavá la tierra con agua abundante de vez en cuando."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas con zonas quemadas",
+    "cause": "Sol pleno.",
+    "fix": "Dale media sombra o luz filtrada."
+   },
+   {
+    "symptom": "Hojas amarillas y base blanda",
+    "cause": "Pudrición de raíz por tierra muy mojada.",
+    "fix": "Mejorá el drenaje y espaciá el riego."
+   },
+   {
+    "symptom": "Puntas secas en hojas sanas",
+    "cause": "Acumulación de sales en la tierra.",
+    "fix": "Lavá la maceta con agua abundante o usá agua destilada."
+   },
+   {
+    "symptom": "Pulgones, cochinillas o telitas",
+    "cause": "Plagas ocasionales.",
+    "fix": "Limpiá con algodón con alcohol o agua jabonosa suave."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Lacy Tree Philodendron",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/lacy-tree-philodendron"
+   },
+   {
+    "title": "NC State Extension — Thaumatophyllum bipinnatifidum",
+    "url": "https://plants.ces.ncsu.edu/plants/thaumatophyllum-bipinnatifidum/"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "dieffenbachia-seguine",
+  "latin": "Dieffenbachia seguine",
+  "common": [
+   "Difenbaquia",
+   "Dieffenbachia",
+   "Hoja de coche"
+  ],
+  "family": "Araceae",
+  "wiki": "Dieffenbachia seguine",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz indirecta. Protegela del sol directo."
+  },
+  "water": {
+   "warmDays": 6,
+   "coldDays": 10,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 a 3 centímetros de tierra estén secos.",
+   "text": "Regá a fondo y esperá que se seque la capa de arriba antes de volver a regar. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Prefiere humedad alta, pero tiene riesgo de manchas por hongos. La fuente no habla de pulverizar."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Prefiere humedad alta."
+  },
+  "temperature": {
+   "minC": null,
+   "maxC": null,
+   "text": "Prefiere temperaturas moderadas y sin corrientes frías. La fuente no da grados."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece, de septiembre a marzo."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "alta",
+   "text": "Oxalatos de calcio y enzimas. Quema e hincha boca y garganta, cuesta hablar y tragar. La savia daña los ojos.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/dieffenbachia"
+  },
+  "precautions": [
+   "Es la más peligrosa de esta lista. Fuera del alcance de chicos y mascotas.",
+   "La savia irrita la piel y puede dañar la córnea. Usá guantes y no te toques los ojos.",
+   "Lavate bien las manos después de podarla o trasplantarla."
+  ],
+  "dont": [
+   "No la tengas en el piso si hay chicos chicos o mascotas. Masticarla quema e hincha la boca.",
+   "No la podes sin guantes. La savia irrita la piel y los ojos.",
+   "No la pongas al sol directo. Las hojas se queman.",
+   "No la dejes en corrientes de aire frío. Sufre con el frío."
+  ],
+  "problems": [
+   {
+    "symptom": "Manchas en las hojas",
+    "cause": "Hongos, favorecidos por hojas mojadas.",
+    "fix": "Cortá las hojas afectadas y regá a la tierra, no a las hojas."
+   },
+   {
+    "symptom": "Tallo blando en la base",
+    "cause": "Pudrición por exceso de riego.",
+    "fix": "Dejá secar la capa de arriba antes de regar."
+   },
+   {
+    "symptom": "Mosquitas que vuelan sobre la tierra",
+    "cause": "Mosca del sustrato por tierra siempre mojada.",
+    "fix": "Dejá secar más la tierra entre riegos."
+   },
+   {
+    "symptom": "Telitas o moscas blancas en el envés",
+    "cause": "Arañuela o mosca blanca.",
+    "fix": "Limpiá el envés y revisá cada semana."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Dieffenbachia",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/dieffenbachia"
+   },
+   {
+    "title": "NC State Extension — Dieffenbachia seguine",
+    "url": "https://plants.ces.ncsu.edu/plants/dieffenbachia-seguine/"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "temperature.minC",
+   "temperature.maxC",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "dracaena-fragrans",
+  "latin": "Dracaena fragrans",
+  "common": [
+   "Palo de agua",
+   "Palo de Brasil",
+   "Tronco del Brasil"
+  ],
+  "family": "Asparagaceae",
+  "wiki": "Dracaena fragrans",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz filtrada brillante a moderada. El sol directo quema y con muy poca luz las hojas salen finas."
+  },
+  "water": {
+   "warmDays": 6,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 a 3 centímetros de tierra estén secos.",
+   "text": "Tierra húmeda mientras crece y bastante menos riego en invierno. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "Con aire seco se queman las puntas. NC State sugiere humidificador en invierno."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "La humedad baja causa puntas marrones, sobre todo con calefacción."
+  },
+  "temperature": {
+   "minC": 10,
+   "maxC": 27,
+   "text": "Crece mejor entre 21 y 27 °C. Mantenela arriba de 10 °C."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece, de septiembre a marzo."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene saponinas. Causa vómitos, a veces con sangre, decaimiento, falta de apetito y babeo. En gatos, pupilas dilatadas.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/corn-plant"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. La ASPCA la considera moderadamente tóxica.",
+   "La savia puede irritar la piel."
+  ],
+  "dont": [
+   "No uses siempre agua de la canilla. Es sensible al flúor y a las sales.",
+   "No la pongas al sol directo. Las hojas se queman.",
+   "No la riegues en invierno como en verano. Necesita mucho menos."
+  ],
+  "problems": [
+   {
+    "symptom": "Puntas de las hojas marrones",
+    "cause": "Flúor, sales acumuladas o aire seco.",
+    "fix": "Regá con agua sin flúor y lavá la tierra una vez por mes."
+   },
+   {
+    "symptom": "Hojas nuevas angostas",
+    "cause": "Muy poca luz.",
+    "fix": "Acercala a una ventana luminosa sin sol directo."
+   },
+   {
+    "symptom": "Pelusa blanca en las axilas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retirala con algodón con alcohol."
+   },
+   {
+    "symptom": "Hojas plateadas con puntitos negros",
+    "cause": "Trips.",
+    "fix": "Limpiá las hojas y revisá cada semana."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Corn Plant",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/corn-plant"
+   },
+   {
+    "title": "NC State Extension — Dracaena fragrans",
+    "url": "https://plants.ces.ncsu.edu/plants/dracaena-fragrans/"
+   },
+   {
+    "title": "ASPCA — Is That Houseplant Safe for Your Pets?",
+    "url": "https://www.aspca.org/news/houseplant-safe-your-pets"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "aspidistra-elatior",
+  "latin": "Aspidistra elatior",
+  "common": [
+   "Aspidistra",
+   "Pilistra"
+  ],
+  "family": "Asparagaceae",
+  "wiki": "Aspidistra elatior",
+  "difficulty": "facil",
+  "light": {
+   "level": "baja-tolerada",
+   "text": "Prefiere sombra parcial a total. No tolera el sol directo."
+  },
+  "water": {
+   "warmDays": 8,
+   "coldDays": 15,
+   "estimate": true,
+   "check": "Regá cuando la mitad superior de la tierra esté seca.",
+   "text": "Regá con regularidad de primavera a otoño y poco en invierno. Tolera la sequía. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": null,
+   "everyDays": null,
+   "text": "La fuente no menciona humedad ni pulverización."
+  },
+  "humidity": {
+   "level": null,
+   "text": "La fuente no da datos de humedad."
+  },
+  "temperature": {
+   "minC": null,
+   "maxC": null,
+   "text": "Muy rústica, aguanta frío. Protegela de vientos invernales en el balcón."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Tolera suelos pobres. Si fertilizás, hacelo sólo mientras crece."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA la lista como no tóxica para perros, gatos y caballos.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cast-iron-plant"
+  },
+  "precautions": [
+   "Es segura para mascotas según la ASPCA.",
+   "Ideal para rincones con poca luz o pasillos."
+  ],
+  "dont": [
+   "No la pongas al sol directo. Las hojas se queman.",
+   "No la riegues mucho en invierno. Necesita poca agua con frío.",
+   "No la plantes en tierra que no drene. Necesita buen drenaje."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas con manchas quemadas o descoloridas",
+    "cause": "Sol directo.",
+    "fix": "Pasala a sombra o luz indirecta."
+   },
+   {
+    "symptom": "Hojas amarillas y tierra mojada",
+    "cause": "Exceso de riego, sobre todo en invierno.",
+    "fix": "Espaciá el riego y revisá el drenaje."
+   },
+   {
+    "symptom": "Crecimiento muy lento",
+    "cause": "Es normal en esta especie.",
+    "fix": "No hace falta nada. Es una planta lenta."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Cast Iron Plant",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cast-iron-plant"
+   },
+   {
+    "title": "NC State Extension — Aspidistra elatior",
+    "url": "https://plants.ces.ncsu.edu/plants/aspidistra-elatior/"
+   }
+  ],
+  "unverified": [
+   "mist.recommended",
+   "mist.everyDays",
+   "humidity.level",
+   "temperature.minC",
+   "temperature.maxC",
+   "fertilize.everyDays",
+   "toxicity.people",
+   "problems[1]",
+   "problems[2]"
+  ]
+ },
+ {
+  "id": "clivia-miniata",
+  "latin": "Clivia miniata",
+  "common": [
+   "Clivia"
+  ],
+  "family": "Amaryllidaceae",
+  "wiki": "Clivia miniata",
+  "difficulty": "media",
+  "light": {
+   "level": "media",
+   "text": "Media sombra o sombra. El sol de la mañana es lo mejor."
+  },
+  "water": {
+   "warmDays": 8,
+   "coldDays": 20,
+   "estimate": true,
+   "check": "Regá cuando la tierra esté seca a 3 centímetros de profundidad.",
+   "text": "Tolera la sequía. Regá temprano y a la tierra. En el reposo invernal regá muy poco. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No mojes las hojas. Regar por arriba favorece enfermedades como la roya."
+  },
+  "humidity": {
+   "level": null,
+   "text": "La fuente no da datos de humedad. Necesita buena ventilación."
+  },
+  "temperature": {
+   "minC": null,
+   "maxC": null,
+   "text": "Para florecer necesita uno o dos meses de reposo con noches debajo de 10 °C."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá sólo mientras crece. En el reposo invernal no."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Licorina y otros alcaloides. Causa vómitos, babeo y diarrea. En gran cantidad, temblores, convulsiones y arritmias.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/kaffir-lily"
+  },
+  "precautions": [
+   "Es tóxica para gatos y perros. La raíz bulbosa es la parte más tóxica.",
+   "Ojo al trasplantar o dividir. No dejes restos de raíz al alcance de mascotas.",
+   "Ubicala en un lugar ventilado."
+  ],
+  "dont": [
+   "No la riegues por arriba mojando las hojas. Aparece roya.",
+   "No la riegues de más. Se pudre la base de la planta.",
+   "No la tengas al calor todo el invierno. Sin noches frescas no florece."
+  ],
+  "problems": [
+   {
+    "symptom": "No florece",
+    "cause": "Le faltó el reposo invernal con noches frescas.",
+    "fix": "En invierno dejala uno o dos meses en un lugar fresco, con poco riego."
+   },
+   {
+    "symptom": "Base de la planta blanda",
+    "cause": "Pudrición del cuello por exceso de riego.",
+    "fix": "Dejá secar la tierra y regá menos."
+   },
+   {
+    "symptom": "Manchas anaranjadas en las hojas",
+    "cause": "Roya por mojar las hojas.",
+    "fix": "Regá a la tierra, temprano, y mejorá la ventilación."
+   },
+   {
+    "symptom": "Pelusa blanca entre las hojas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retirala con algodón con alcohol."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Kaffir Lily (Clivia)",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/kaffir-lily"
+   },
+   {
+    "title": "NC State Extension — Clivia miniata",
+    "url": "https://plants.ces.ncsu.edu/plants/clivia-miniata/"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "temperature.minC",
+   "temperature.maxC",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "chamaedorea-elegans",
+  "latin": "Chamaedorea elegans",
+  "common": [
+   "Palmera de salón",
+   "Camedórea"
+  ],
+  "family": "Arecaceae",
+  "wiki": "Chamaedorea elegans",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante indirecta. Tolera poca luz. Ideal cerca de una ventana al sur o al este."
+  },
+  "water": {
+   "warmDays": 6,
+   "coldDays": 10,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 centímetros de tierra estén secos.",
+   "text": "Dejá secar un poco entre riegos y evitá el exceso. Aguanta sequías cortas. Días estimados, no de la fuente."
+  },
+  "mist": {
+   "recommended": true,
+   "everyDays": null,
+   "text": "Pulverizarla y limpiarla con paño húmedo ayuda a prevenir arañuela, según NC State."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Prefiere humedad baja a media. Se adapta bien a departamentos."
+  },
+  "temperature": {
+   "minC": null,
+   "maxC": null,
+   "text": "Protegela de corrientes frías de ventanas, puertas y rejillas. La fuente no da grados."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizá de vez en cuando mientras crece y nada en invierno."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "baja",
+   "text": "La ASPCA la lista como no tóxica para perros y gatos. En personas, la pulpa del fruto puede irritar la piel sensible.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/parlor-palm"
+  },
+  "precautions": [
+   "Es segura para mascotas según la ASPCA.",
+   "El jugo del fruto puede irritar la piel sensible. Usá guantes si los manipulás."
+  ],
+  "dont": [
+   "No la riegues de más. Necesita que la tierra se seque un poco entre riegos.",
+   "No la pongas en una corriente de aire frío. Se dañan las hojas.",
+   "No la fertilices en invierno. Está en reposo."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas con puntitos y telitas finas",
+    "cause": "Arañuela roja.",
+    "fix": "Pulverizá y limpiá las hojas con paño húmedo."
+   },
+   {
+    "symptom": "Pelusa blanca en tallos o raíces",
+    "cause": "Cochinilla algodonosa, también de raíz.",
+    "fix": "Limpiá con algodón con alcohol. Si está en raíces, trasplantá."
+   },
+   {
+    "symptom": "Hojas amarillas y tierra mojada",
+    "cause": "Exceso de riego.",
+    "fix": "Dejá secar un poco la tierra entre riegos."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Parlor Palm",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/parlor-palm"
+   },
+   {
+    "title": "NC State Extension — Chamaedorea elegans",
+    "url": "https://plants.ces.ncsu.edu/plants/chamaedorea-elegans/"
+   }
+  ],
+  "unverified": [
+   "mist.everyDays",
+   "temperature.minC",
+   "temperature.maxC",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "aloe-vera",
+  "latin": "Aloe vera",
+  "common": [
+   "Aloe vera",
+   "Sábila"
+  ],
+  "family": "Asphodelaceae",
+  "wiki": "Aloe vera",
+  "difficulty": "facil",
+  "light": {
+   "level": "sol-directo",
+   "text": "Ponela al sol o con mucha luz. Tolera media sombra, pero con poca luz se estira y se debilita."
+  },
+  "water": {
+   "warmDays": 14,
+   "coldDays": 30,
+   "estimate": true,
+   "check": "Regá solo cuando la tierra esté seca del todo.",
+   "text": "Las fuentes piden dejar secar toda la tierra y regar menos en invierno. Los días son un punto de partida para maceta en Buenos Aires."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. Es una suculenta y el agua en las hojas no le aporta nada."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": 10,
+   "maxC": null,
+   "text": "No aguanta heladas. La RHS le da una mínima de 5 a 10 °C, así que en invierno entrala si refresca."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "text": "Fertilizante líquido general una vez por mes en pleno verano. En invierno no la fertilices."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene saponinas y antraquinonas. En mascotas da vómitos, diarrea y decaimiento. En personas, cólicos, diarrea e irritación por el látex.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/aloe"
+  },
+  "precautions": [
+   "Ponela fuera del alcance de perros y gatos.",
+   "Antes de usar el gel en la piel, probalo en una zona chica.",
+   "Usá maceta con varios agujeros de drenaje. La de barro es la mejor."
+  ],
+  "dont": [
+   "No la riegues si la tierra sigue húmeda.",
+   "No la dejes con agua en el plato.",
+   "No la plantes en tierra común sin drenaje. Usá mezcla para cactus.",
+   "No la dejes afuera en noches de helada."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas blandas y transparentes",
+    "cause": "Exceso de riego. Las raíces se pudren.",
+    "fix": "Dejá de regar, sacala de la maceta, cortá raíces negras y replantá en mezcla para cactus seca."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas entre las hojas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Sacalas con un hisopo con alcohol y revisá cada semana."
+   },
+   {
+    "symptom": "Escamas marrones pegadas a las hojas",
+    "cause": "Cochinilla de escudo.",
+    "fix": "Raspalas con cuidado y limpiá la hoja. Aislá la planta hasta que no aparezcan más."
+   },
+   {
+    "symptom": "Planta estirada y pálida",
+    "cause": "Le falta luz.",
+    "fix": "Pasala a la ventana más soleada de la casa de a poco."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Aloe",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/aloe"
+   },
+   {
+    "title": "NC State Extension — Aloe vera",
+    "url": "https://plants.ces.ncsu.edu/plants/aloe-vera/"
+   },
+   {
+    "title": "RHS — Aloe vera",
+    "url": "https://www.rhs.org.uk/plants/981/Aloe-vera/Details"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "echeveria-elegans",
+  "latin": "Echeveria elegans",
+  "common": [
+   "Echeveria"
+  ],
+  "family": "Crassulaceae",
+  "wiki": "Echeveria elegans",
+  "difficulty": "facil",
+  "light": {
+   "level": "sol-directo",
+   "text": "Necesita sol directo o mucha luz. Vale para la mayoría de las suculentas en roseta."
+  },
+  "water": {
+   "warmDays": 10,
+   "coldDays": 30,
+   "estimate": true,
+   "check": "Regá solo cuando la tierra esté seca del todo.",
+   "text": "La RHS pide riego moderado al crecer y casi nada en reposo. Los días son un punto de partida, no una regla."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. El agua que queda en el centro de la roseta favorece la podredumbre."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": 5,
+   "maxC": null,
+   "text": "Tolera el frío pero no la helada. La RHS le da una mínima de 1 a 5 °C."
+  },
+  "fertilize": {
+   "everyDays": 60,
+   "months": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "text": "Fertilizante líquido equilibrado 2 o 3 veces en toda la temporada de crecimiento. Nada más."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA la lista como no tóxica para perros y gatos. Igual, comer cualquier planta puede dar un malestar de estómago leve.",
+   "source": "https://www.aspca.org/node/4746"
+  },
+  "precautions": [
+   "Usá mezcla con arena o piedritas y maceta con drenaje.",
+   "Otras suculentas parecidas pueden ser tóxicas. Revisá el nombre antes de comprar."
+  ],
+  "dont": [
+   "No la riegues con la tierra todavía húmeda.",
+   "No le eches agua en el centro de la roseta.",
+   "No la pongas en un rincón oscuro.",
+   "No la dejes a la intemperie con helada."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas blandas que se caen al tocarlas",
+    "cause": "Exceso de riego, el problema más común de esta planta.",
+    "fix": "Suspendé el riego, revisá raíces y replantá en mezcla seca si están podridas."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retiralas con un hisopo con alcohol y aislá la planta."
+   },
+   {
+    "symptom": "Bichitos verdes o negros en los brotes",
+    "cause": "Pulgones.",
+    "fix": "Sacalos con un chorro suave de agua o a mano y revisá cada pocos días."
+   },
+   {
+    "symptom": "Roseta estirada con hojas separadas",
+    "cause": "Le falta sol.",
+    "fix": "Pasala a un lugar con varias horas de sol directo, de a poco."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Chickens and Hens (Echeveria elegans)",
+    "url": "https://www.aspca.org/node/4746"
+   },
+   {
+    "title": "NC State Extension — Echeveria elegans",
+    "url": "https://plants.ces.ncsu.edu/plants/echeveria-elegans/common-name/hens-and-chicks/"
+   },
+   {
+    "title": "RHS — Echeveria elegans",
+    "url": "https://www.rhs.org.uk/Plants/6226/Echeveria-elegans/Details"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "crassula-ovata",
+  "latin": "Crassula ovata",
+  "common": [
+   "Árbol de jade",
+   "Planta de jade"
+  ],
+  "family": "Crassulaceae",
+  "wiki": "Crassula ovata",
+  "difficulty": "facil",
+  "light": {
+   "level": "sol-directo",
+   "text": "Dale el lugar más luminoso de la casa. Adentro conviene algo de sombra a la tarde."
+  },
+  "water": {
+   "warmDays": 14,
+   "coldDays": 30,
+   "estimate": true,
+   "check": "Regá cuando la tierra esté seca. En invierno, muy poco.",
+   "text": "Las fuentes piden riego moderado con la tierra seca y muy escaso en invierno. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. Es una suculenta y no lo necesita."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": 5,
+   "maxC": null,
+   "text": "Tolera el frío pero no la helada. La RHS le da una mínima de 1 a 5 °C."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "text": "Fertilizante líquido general una vez por mes en primavera y verano."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA no conoce el principio tóxico. En mascotas da vómitos, decaimiento y falta de coordinación.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/jade-plant"
+  },
+  "precautions": [
+   "Ponela donde perros y gatos no lleguen.",
+   "Usá tierra para cactus y maceta con drenaje.",
+   "No la confundas con la Pachira, que también se vende como árbol del dinero."
+  ],
+  "dont": [
+   "No la riegues por calendario sin tocar la tierra.",
+   "No la dejes con agua en el plato.",
+   "No la pongas en un rincón oscuro.",
+   "No la dejes afuera con helada."
+  ],
+  "problems": [
+   {
+    "symptom": "Se le caen las hojas y el tallo se ablanda",
+    "cause": "Exceso de riego y pudrición de raíz.",
+    "fix": "Dejá secar, revisá raíces y replantá en mezcla para cactus si hay partes podridas."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas en las axilas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retiralas con un hisopo con alcohol y revisá cada semana."
+   },
+   {
+    "symptom": "Hojas punteadas con telitas finas",
+    "cause": "Arañuela roja.",
+    "fix": "Limpiá las hojas y aislá la planta. Revisá el envés seguido."
+   },
+   {
+    "symptom": "Ramas largas y finas",
+    "cause": "Poca luz.",
+    "fix": "Pasala a una ventana con sol."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Jade Plant",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/jade-plant"
+   },
+   {
+    "title": "NC State Extension — Crassula ovata",
+    "url": "https://plants.ces.ncsu.edu/plants/crassula-ovata/"
+   },
+   {
+    "title": "RHS — Crassula ovata",
+    "url": "https://www.rhs.org.uk/plants/4739/wd/details"
+   },
+   {
+    "title": "ASPCA — Are Succulents Safe to Have Around Pets?",
+    "url": "https://www.aspca.org/news/are-succulents-safe-have-around-pets"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC",
+   "toxicity.people"
+  ]
+ },
+ {
+  "id": "cactaceae",
+  "latin": "Cactaceae",
+  "common": [
+   "Cactus"
+  ],
+  "family": "Cactaceae",
+  "wiki": "Cactus",
+  "difficulty": "facil",
+  "light": {
+   "level": "sol-directo",
+   "text": "Ventana al norte o al oeste con sol directo. Si estuvo adentro, acostumbralo al sol de a poco."
+  },
+  "water": {
+   "warmDays": 14,
+   "coldDays": 45,
+   "estimate": true,
+   "check": "Regá a fondo solo cuando la tierra esté seca.",
+   "text": "En crecimiento, riego profundo con la tierra seca. En el reposo de invierno, casi nada salvo que se arrugue."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No lo rocíes. No le sirve y la humedad favorece hongos."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": 5,
+   "maxC": null,
+   "text": "La mayoría no aguanta helada. Un invierno fresco, de 4 a 10 °C de noche, ayuda a que florezca."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante bajo en nitrógeno una vez por mes en verano. Nunca en el reposo de invierno."
+  },
+  "toxicity": {
+   "cats": "sin-datos",
+   "dogs": "sin-datos",
+   "people": "sin-datos",
+   "text": "Depende de la especie. La ASPCA lista la tuna como no tóxica. El riesgo seguro son las espinas, que lastiman boca, patas y piel.",
+   "source": "https://www.aspca.org/news/are-succulents-safe-have-around-pets"
+  },
+  "precautions": [
+   "Las espinas lastiman a mascotas y chicos. Ubicalo fuera de su paso.",
+   "El cactus lápiz es una Euphorbia y es tóxico. Revisá la etiqueta.",
+   "Manipulalo con guantes gruesos o envuelto en papel de diario."
+  ],
+  "dont": [
+   "No lo riegues en invierno salvo que se arrugue.",
+   "No lo dejes nunca parado en agua.",
+   "No lo fertilices en reposo.",
+   "No lo trasplantes seguido. Florece mejor algo apretado en la maceta."
+  ],
+  "problems": [
+   {
+    "symptom": "Base blanda y oscura",
+    "cause": "Exceso de riego o tierra que no drena.",
+    "fix": "Cortá el riego. Si la base está podrida, cortá lo sano y dejalo cicatrizar antes de replantar."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retiralas con un hisopo con alcohol y aislá la planta."
+   },
+   {
+    "symptom": "Crece fino y torcido hacia la ventana",
+    "cause": "Le falta sol.",
+    "fix": "Dale más horas de sol directo, de a poco para que no se queme."
+   },
+   {
+    "symptom": "No florece",
+    "cause": "No tuvo un invierno fresco, seco y luminoso.",
+    "fix": "En invierno dejalo fresco, con luz y casi sin agua."
+   }
+  ],
+  "sources": [
+   {
+    "title": "Nebraska Extension — Cacti care",
+    "url": "https://lancaster.unl.edu/cacti-care"
+   },
+   {
+    "title": "NC State Extension — Mammillaria",
+    "url": "https://plants.ces.ncsu.edu/plants/mammillaria/"
+   },
+   {
+    "title": "ASPCA — Are Succulents Safe to Have Around Pets?",
+    "url": "https://www.aspca.org/news/are-succulents-safe-have-around-pets"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "peperomia-obtusifolia",
+  "latin": "Peperomia obtusifolia",
+  "common": [
+   "Peperomia"
+  ],
+  "family": "Piperaceae",
+  "wiki": "Peperomia obtusifolia",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante sin sol fuerte. Aguanta poca luz unos meses. El sol directo le quema las hojas."
+  },
+  "water": {
+   "warmDays": 10,
+   "coldDays": 18,
+   "estimate": true,
+   "check": "Regá cuando los primeros centímetros de tierra estén secos.",
+   "text": "Prefiere quedarse más seca que húmeda y el exceso de riego es su gran problema. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No hace falta. Prefiere humedad media a baja."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Le va bien con humedad media a baja, como la de un departamento."
+  },
+  "temperature": {
+   "minC": 15,
+   "maxC": null,
+   "text": "No tolera frío ni corrientes de aire. La RHS le da una mínima de 10 a 15 °C."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante para plantas de interior una vez por mes en temporada. En invierno no."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA la lista como no tóxica para perros y gatos. Comer cualquier planta puede dar un malestar leve.",
+   "source": "https://www.aspca.org/node/4602"
+  },
+  "precautions": [
+   "Usá maceta con drenaje y tierra suelta.",
+   "Alejala de corrientes de aire y de estufas."
+  ],
+  "dont": [
+   "No la riegues si la tierra sigue húmeda.",
+   "No la pongas al sol directo fuerte.",
+   "No la dejes junto a una puerta o ventana con chiflete.",
+   "No la dejes secar del todo por semanas."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas amarillas y blandas",
+    "cause": "Exceso de riego, que puede pudrir la raíz.",
+    "fix": "Espaciá el riego y revisá que la maceta drene."
+   },
+   {
+    "symptom": "Manchas secas o quemadas",
+    "cause": "Sol directo fuerte.",
+    "fix": "Movela a luz brillante sin sol de mediodía."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retiralas con un hisopo con alcohol y revisá seguido."
+   },
+   {
+    "symptom": "Hojas punteadas con telitas",
+    "cause": "Arañuela roja.",
+    "fix": "Limpiá las hojas con un paño húmedo y aislá la planta."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Baby Rubber Plant",
+    "url": "https://www.aspca.org/node/4602"
+   },
+   {
+    "title": "NC State Extension — Peperomia obtusifolia",
+    "url": "https://plants.ces.ncsu.edu/plants/peperomia-obtusifolia/"
+   },
+   {
+    "title": "RHS — Peperomia obtusifolia",
+    "url": "https://www.rhs.org.uk/Plants/106212/Peperomia-obtusifolia/Details"
+   },
+   {
+    "title": "Iowa State Extension — Fertilizing houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "temperature.maxC",
+   "toxicity.people"
+  ]
+ },
+ {
+  "id": "pilea-peperomioides",
+  "latin": "Pilea peperomioides",
+  "common": [
+   "Planta del dinero china",
+   "Pilea"
+  ],
+  "family": "Urticaceae",
+  "wiki": "Pilea peperomioides",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante e indirecta. Con poca luz se estira y queda desgarbada."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 14,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 o 3 cm de tierra estén secos.",
+   "text": "Le gusta la tierra apenas húmeda y que drene bien. Si se encharca, se pudre. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. Las hojas mojadas le hacen manchas."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Prefiere humedad media a alta, pero tolera la de una casa común."
+  },
+  "temperature": {
+   "minC": 10,
+   "maxC": null,
+   "text": "Alejala del frío y de la calefacción. La RHS le da una mínima de 5 a 10 °C."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante para plantas de interior una vez por mes en temporada. En invierno no."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "no-toxica",
+   "text": "La ASPCA la incluye entre las suculentas no tóxicas. NC State la considera segura para mascotas y chicos.",
+   "source": "https://www.aspca.org/news/are-succulents-safe-have-around-pets"
+  },
+  "precautions": [
+   "Girala cada tanto para que no crezca torcida hacia la luz.",
+   "Usá tierra que drene bien y maceta con agujeros."
+  ],
+  "dont": [
+   "No la riegues con la tierra todavía húmeda.",
+   "No le mojes las hojas al regar.",
+   "No la pongas junto a estufas ni corrientes frías.",
+   "No la dejes en un rincón oscuro."
+  ],
+  "problems": [
+   {
+    "symptom": "Tallos largos con pocas hojas",
+    "cause": "Le falta luz.",
+    "fix": "Acercala a una ventana luminosa sin sol fuerte."
+   },
+   {
+    "symptom": "Hojas caídas y tierra siempre húmeda",
+    "cause": "Exceso de riego y pudrición de raíz.",
+    "fix": "Dejá secar, revisá raíces y replantá si hay partes negras."
+   },
+   {
+    "symptom": "Manchas en las hojas",
+    "cause": "Hojas mojadas.",
+    "fix": "Regá directo a la tierra y sacá las hojas muy dañadas."
+   },
+   {
+    "symptom": "Mosquitas chiquitas sobre la tierra",
+    "cause": "Mosquita del sustrato por tierra muy húmeda.",
+    "fix": "Dejá secar más la tierra entre riegos."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Are Succulents Safe to Have Around Pets?",
+    "url": "https://www.aspca.org/news/are-succulents-safe-have-around-pets"
+   },
+   {
+    "title": "NC State Extension — Pilea peperomioides",
+    "url": "https://plants.ces.ncsu.edu/plants/pilea-peperomioides/"
+   },
+   {
+    "title": "RHS — Pilea peperomioides",
+    "url": "https://www.rhs.org.uk/Plants/13015/i-Pilea-peperomioides-i/Details"
+   },
+   {
+    "title": "Iowa State Extension — Fertilizing houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "begonia-maculata",
+  "latin": "Begonia maculata",
+  "common": [
+   "Begonia maculata",
+   "Begonia de lunares"
+  ],
+  "family": "Begoniaceae",
+  "wiki": "Begonia maculata",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz filtrada. No tolera el sol directo continuo, que le quema las hojas."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Regá cuando el primer centímetro de tierra esté seco.",
+   "text": "Riego moderado en crecimiento y sin encharcar, porque se pudre fácil. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. Las hojas mojadas favorecen oídio y moho gris."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Le gusta el ambiente húmedo. Buenos Aires ayuda, pero alejala de la calefacción."
+  },
+  "temperature": {
+   "minC": 13,
+   "maxC": null,
+   "text": "No tolera menos de 13 °C. En invierno, adentro y lejos de ventanas frías."
+  },
+  "fertilize": {
+   "everyDays": 14,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante líquido equilibrado un riego sí y uno no mientras crece."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene oxalatos de calcio solubles, más en la raíz. En mascotas da vómitos y salivación. La savia irrita la piel.",
+   "source": "http://www.aspca.org/node/4620"
+  },
+  "precautions": [
+   "Ubicala lejos de perros y gatos.",
+   "Usá guantes si sos de piel sensible al manipularla.",
+   "Si crece alta, ponele un tutor."
+  ],
+  "dont": [
+   "No la encharques ni la dejes con agua en el plato.",
+   "No le mojes las hojas al regar.",
+   "No la pongas al sol directo.",
+   "No la dejes en lugares con menos de 13 °C."
+  ],
+  "problems": [
+   {
+    "symptom": "Polvillo blanco en las hojas",
+    "cause": "Oídio por hojas mojadas o poca ventilación.",
+    "fix": "Sacá hojas afectadas, regá solo la tierra y mejorá la ventilación."
+   },
+   {
+    "symptom": "Tallo negro y blando en la base",
+    "cause": "Pudrición por exceso de riego.",
+    "fix": "Espaciá el riego. Si el tallo está perdido, hacé esquejes de las puntas sanas."
+   },
+   {
+    "symptom": "Hojas con bordes secos o manchas quemadas",
+    "cause": "Sol directo.",
+    "fix": "Movela a luz filtrada."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retiralas con un hisopo con alcohol y aislá la planta."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Begonia",
+    "url": "http://www.aspca.org/node/4620"
+   },
+   {
+    "title": "NC State Extension — Begonia",
+    "url": "https://plants.ces.ncsu.edu/plants/begonia/"
+   },
+   {
+    "title": "RHS — Begonia maculata",
+    "url": "https://www.rhs.org.uk/plants/112222/begonia-maculata-c/details"
+   }
+  ],
+  "unverified": [
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "anthurium-andraeanum",
+  "latin": "Anthurium andraeanum",
+  "common": [
+   "Anturio"
+  ],
+  "family": "Araceae",
+  "wiki": "Anthurium andraeanum",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante e indirecta. El sol directo le quema las hojas. Con poca luz florece menos."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 10,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 o 3 cm de tierra estén secos.",
+   "text": "NC State pide regar cuando la primera pulgada de tierra está seca. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No lo rocíes. Las hojas mojadas le dan manchas. Si el aire está seco, usá humidificador."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Prefiere entre 60 y 80% de humedad."
+  },
+  "temperature": {
+   "minC": 18,
+   "maxC": 27,
+   "text": "Le va mejor entre 18 y 27 °C. No tolera corrientes frías ni cambios bruscos."
+  },
+  "fertilize": {
+   "everyDays": 7,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante líquido una vez por semana en temporada, bien diluido."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene cristales de oxalato de calcio. Da ardor y hinchazón de boca, babeo, vómitos y dificultad para tragar. La savia irrita piel y ojos.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/tail-flower"
+  },
+  "precautions": [
+   "Mantenelo fuera del alcance de chicos y mascotas.",
+   "Usá guantes al podarlo o trasplantarlo.",
+   "Trasplantalo cada 2 o 3 años en primavera."
+  ],
+  "dont": [
+   "No lo pongas al sol directo.",
+   "No lo dejes con la tierra encharcada.",
+   "No lo pongas junto a corrientes de aire frío.",
+   "No le mojes las hojas al regar."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas amarillas",
+    "cause": "Exceso de riego, mal drenaje o falta de nutrientes.",
+    "fix": "Revisá el drenaje, espaciá el riego y fertilizá en temporada."
+   },
+   {
+    "symptom": "Manchas en las hojas",
+    "cause": "Hojas mojadas o poca ventilación.",
+    "fix": "Regá solo la tierra y mejorá la circulación de aire."
+   },
+   {
+    "symptom": "No da flores",
+    "cause": "Poca luz o falta de nutrientes.",
+    "fix": "Dale más luz indirecta y fertilizá en temporada."
+   },
+   {
+    "symptom": "Hojas punteadas con telitas",
+    "cause": "Arañuela roja.",
+    "fix": "Limpiá las hojas y aislá la planta."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Tail Flower (Anthurium)",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/tail-flower"
+   },
+   {
+    "title": "NC State Extension — Anthurium andraeanum",
+    "url": "https://plants.ces.ncsu.edu/plants/anthurium-andraeanum/"
+   }
+  ],
+  "unverified": [
+   "toxicity.cats",
+   "toxicity.dogs"
+  ]
+ },
+ {
+  "id": "phalaenopsis",
+  "latin": "Phalaenopsis",
+  "common": [
+   "Orquídea mariposa",
+   "Phalaenopsis"
+  ],
+  "family": "Orchidaceae",
+  "wiki": "Phalaenopsis",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Mucha luz sin sol directo de verano. Una ventana al este es ideal."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 10,
+   "estimate": true,
+   "check": "Regá cuando la corteza esté casi seca y las raíces se vean plateadas.",
+   "text": "RHS y NC State piden riego semanal en temporada y algo menos en invierno. Que escurra bien y nunca quede en agua."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No hace falta. El agua en la corona la pudre. En días muy calurosos podés rociar solo las raíces aéreas."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Prefiere humedad alta. En calor podés apoyar la maceta sobre un plato con piedras húmedas."
+  },
+  "temperature": {
+   "minC": 16,
+   "maxC": 30,
+   "text": "Mantenela arriba de 16 °C. Le va bien entre 19 y 30 °C de día. Lejos de estufas y chifletes."
+  },
+  "fertilize": {
+   "everyDays": 7,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "text": "Fertilizante de orquídeas a un cuarto de dosis cada semana. Cada cuarto riego, solo agua."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA la lista como no tóxica para perros y gatos. Comer cualquier planta puede dar un malestar leve.",
+   "source": "https://www.aspca.org/node/5240"
+  },
+  "precautions": [
+   "Usá solo sustrato de corteza para orquídeas, nunca tierra común.",
+   "Regá a la mañana con agua tibia, mejor de lluvia.",
+   "Las raíces que salen afuera son normales. No las cortes ni las entierres."
+  ],
+  "dont": [
+   "No le dejes agua en la corona ni entre las hojas.",
+   "No la dejes parada en agua en el cubremaceta.",
+   "No la pongas al sol directo de verano.",
+   "No la trasplantes a una maceta mucho más grande.",
+   "No la pongas cerca de estufas o corrientes."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas arrugadas y blandas",
+    "cause": "Falta de agua o raíces dañadas por exceso de humedad.",
+    "fix": "Revisá raíces. Si están podridas, cortalas y replantá en corteza nueva."
+   },
+   {
+    "symptom": "Raíces marrones y blandas",
+    "cause": "Sustrato demasiado húmedo.",
+    "fix": "Cortá las raíces podridas y replantá en corteza fresca."
+   },
+   {
+    "symptom": "No vuelve a florecer",
+    "cause": "Le faltó un período más fresco.",
+    "fix": "Ponela un mes en un lugar unos 5 °C más fresco."
+   },
+   {
+    "symptom": "Se le caen los pimpollos",
+    "cause": "Cambios de temperatura, humedad, riego o lugar.",
+    "fix": "No la muevas cuando tiene pimpollos y mantené el riego parejo."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Revisá seguido y retiralas apenas aparecen."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Phalaenopsis Orchid",
+    "url": "https://www.aspca.org/node/5240"
+   },
+   {
+    "title": "NC State Extension — Phalaenopsis",
+    "url": "https://plants.ces.ncsu.edu/plants/phalaenopsis/"
+   },
+   {
+    "title": "RHS — How to grow Phalaenopsis",
+    "url": "https://www.rhs.org.uk/advice/profile?PID=388"
+   }
+  ],
+  "unverified": [
+   "toxicity.people"
+  ]
+ },
+ {
+  "id": "kalanchoe-blossfeldiana",
+  "latin": "Kalanchoe blossfeldiana",
+  "common": [
+   "Kalanchoe"
+  ],
+  "family": "Crassulaceae",
+  "wiki": "Kalanchoe blossfeldiana",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante, mejor con sombra a la tarde. Para florecer necesita 6 a 8 horas de buena luz."
+  },
+  "water": {
+   "warmDays": 10,
+   "coldDays": 20,
+   "estimate": true,
+   "check": "Regá a fondo solo cuando la tierra esté seca.",
+   "text": "Aguanta la sequía. Dejá secar entre riegos y regá menos en reposo. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. Es una suculenta y necesita aire circulando para evitar oídio."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": 7,
+   "maxC": null,
+   "text": "No tolera helada. Entrala antes de que baje de 7 °C."
+  },
+  "fertilize": {
+   "everyDays": 60,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "text": "Fertilizante líquido equilibrado 2 o 3 veces en toda la temporada de crecimiento."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "media",
+   "text": "Tiene bufadienólidos. Da vómitos y diarrea, y rara vez alteraciones del ritmo cardíaco.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/kalanchoe"
+  },
+  "precautions": [
+   "Ponela fuera del alcance de chicos, perros y gatos.",
+   "Sacá las flores secas para que siga floreciendo.",
+   "Usá tierra para cactus y suculentas."
+  ],
+  "dont": [
+   "No la riegues con la tierra todavía húmeda.",
+   "No la dejes al sol fuerte toda la tarde.",
+   "No la dejes afuera con frío o helada.",
+   "No la pongas donde un gato pueda mordisquearla."
+  ],
+  "problems": [
+   {
+    "symptom": "Tallo blando y oscuro en la base",
+    "cause": "Exceso de riego. Pudrición de raíz o tallo.",
+    "fix": "Cortá el riego y replantá en mezcla seca. Si no se salva, hacé esquejes."
+   },
+   {
+    "symptom": "No vuelve a florecer",
+    "cause": "No tuvo noches largas y oscuras.",
+    "fix": "En otoño dale 14 horas de oscuridad total por día durante 6 semanas."
+   },
+   {
+    "symptom": "Polvillo blanco en las hojas",
+    "cause": "Oídio por poca ventilación.",
+    "fix": "Sacá las hojas afectadas y ubicala con más circulación de aire."
+   },
+   {
+    "symptom": "Hojas con manchas quemadas",
+    "cause": "Mucho sol directo.",
+    "fix": "Dale sombra a la tarde."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Kalanchoe",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/kalanchoe"
+   },
+   {
+    "title": "NC State Extension — Kalanchoe blossfeldiana",
+    "url": "https://plants.ces.ncsu.edu/plants/kalanchoe-blossfeldiana/"
+   },
+   {
+    "title": "RHS — Kalanchoe blossfeldiana",
+    "url": "https://www.rhs.org.uk/plants/78810/wd/details"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "syngonium-podophyllum",
+  "latin": "Syngonium podophyllum",
+  "common": [
+   "Singonio"
+  ],
+  "family": "Araceae",
+  "wiki": "Syngonium podophyllum",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante e indirecta. El sol directo le quema o decolora las hojas."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 cm de tierra estén secos.",
+   "text": "La RHS pide riego generoso al crecer y menos en invierno. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "Las fuentes no lo piden. Para subir la humedad sirve más un humidificador."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Le gusta un lugar cálido y con humedad alta."
+  },
+  "temperature": {
+   "minC": 15,
+   "maxC": null,
+   "text": "En invierno no la dejes bajo 15 °C. Adentro y lejos de ventanas frías."
+  },
+  "fertilize": {
+   "everyDays": 21,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante líquido equilibrado cada 3 o 4 semanas mientras crece."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "media",
+   "text": "Tiene oxalatos de calcio. Da dolor e hinchazón de boca, babeo, vómitos y dificultad para tragar. La savia irrita la piel.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/arrow-head-vine"
+  },
+  "precautions": [
+   "Ubicala lejos de chicos y mascotas.",
+   "Usá guantes al podarla. La savia irrita piel y ojos.",
+   "Despuntá los tallos largos si la querés compacta."
+  ],
+  "dont": [
+   "No la pongas al sol directo.",
+   "No la dejes en lugares fríos en invierno.",
+   "No la encharques.",
+   "No la dejes donde un gato la mordisquee."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas quemadas o descoloridas",
+    "cause": "Sol directo.",
+    "fix": "Movela a luz indirecta."
+   },
+   {
+    "symptom": "Manchas húmedas o tallos blandos",
+    "cause": "Mancha bacteriana o pudrición blanda.",
+    "fix": "Cortá lo afectado, regá solo la tierra y evitá encharcar."
+   },
+   {
+    "symptom": "Hojas punteadas con telitas",
+    "cause": "Arañuela roja.",
+    "fix": "Limpiá las hojas y aislá la planta."
+   },
+   {
+    "symptom": "Bolitas blancas algodonosas",
+    "cause": "Cochinilla algodonosa.",
+    "fix": "Retiralas con un hisopo con alcohol."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Arrow-Head Vine",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/arrow-head-vine"
+   },
+   {
+    "title": "NC State Extension — Syngonium podophyllum",
+    "url": "https://plants.ces.ncsu.edu/plants/syngonium-podophyllum/"
+   },
+   {
+    "title": "RHS — Syngonium podophyllum",
+    "url": "https://www.rhs.org.uk/plants/17899/syngonium-podophyllum/details"
+   }
+  ],
+  "unverified": [
+   "mist.text",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "tradescantia-zebrina",
+  "latin": "Tradescantia zebrina",
+  "common": [
+   "Amor de hombre",
+   "Tradescantia"
+  ],
+  "family": "Commelinaceae",
+  "wiki": "Tradescantia zebrina",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Luz brillante filtrada. Con más luz tiene más color, pero el sol fuerte lo destiñe."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 14,
+   "estimate": true,
+   "check": "Regá cuando la parte de arriba de la tierra esté seca.",
+   "text": "Regá seguido y dejá secar entre riegos. En invierno, menos. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No lo rocíes. Mojar las hojas favorece manchas y hongos."
+  },
+  "humidity": {
+   "level": "media",
+   "text": "Tolera la humedad de una casa común y también ambientes húmedos."
+  },
+  "temperature": {
+   "minC": 10,
+   "maxC": 24,
+   "text": "Le va mejor entre 18 y 24 °C. No tolera helada. La RHS le da una mínima de 5 a 10 °C."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante líquido equilibrado una vez por mes mientras crece."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "La savia irrita la piel y da dermatitis. Comerla puede irritar boca y estómago.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/wandering-jew"
+  },
+  "precautions": [
+   "Usá guantes al podarla. La savia puede dar alergia en la piel.",
+   "Colgala o ubicala lejos de mascotas que la mordisqueen.",
+   "Podala fuerte en primavera para que quede más tupida."
+  ],
+  "dont": [
+   "No la encharques.",
+   "No le mojes las hojas al regar.",
+   "No la amontones con otras plantas sin aire.",
+   "No la dejes a pleno sol de la tarde."
+  ],
+  "problems": [
+   {
+    "symptom": "Tallos blandos y podridos en la base",
+    "cause": "Tierra encharcada.",
+    "fix": "Espaciá el riego y hacé esquejes de las puntas sanas."
+   },
+   {
+    "symptom": "Hojas descoloridas o lavadas",
+    "cause": "Sol muy fuerte.",
+    "fix": "Pasala a luz filtrada."
+   },
+   {
+    "symptom": "Manchas en las hojas",
+    "cause": "Hongos por hojas mojadas o planta amontonada.",
+    "fix": "Sacá lo afectado, regá la tierra y dale espacio."
+   },
+   {
+    "symptom": "Hojas punteadas con telitas",
+    "cause": "Arañuela roja.",
+    "fix": "Limpiá las hojas y aislá la planta."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Wandering Jew (Tradescantia)",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/wandering-jew"
+   },
+   {
+    "title": "NC State Extension — Tradescantia zebrina",
+    "url": "https://plants.ces.ncsu.edu/plants/tradescantia-zebrina/"
+   },
+   {
+    "title": "RHS — Tradescantia zebrina",
+    "url": "https://www.rhs.org.uk/Plants/79575/Tradescantia-zebrina/Details"
+   }
+  ],
+  "unverified": [
+   "toxicity.cats",
+   "toxicity.dogs"
+  ]
+ },
+ {
+  "id": "hedera-helix",
+  "latin": "Hedera helix",
+  "common": [
+   "Hiedra"
+  ],
+  "family": "Araliaceae",
+  "wiki": "Hedera helix",
+  "difficulty": "media",
+  "light": {
+   "level": "media",
+   "text": "Adentro va bien con luz indirecta brillante o poca luz. Tolera menos luz que muchas plantas de interior."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Regá cuando la parte de arriba de la tierra esté seca.",
+   "text": "Quiere tierra húmeda que drene bien. Las fuentes no dan frecuencia. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "Las fuentes consultadas no lo piden."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": -10,
+   "maxC": null,
+   "text": "Es muy resistente al frío. En Buenos Aires el invierno no es un problema."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante para plantas de interior una vez por mes en temporada. En invierno no."
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "media",
+   "text": "Tiene saponinas como la hederagenina. Da vómitos, dolor abdominal, babeo y diarrea. La savia irrita la piel y puede dar ampollas.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/english-ivy"
+  },
+  "precautions": [
+   "Usá guantes al podarla. La savia irrita y puede dar ampollas.",
+   "Las hojas son más tóxicas que los frutos. Lejos de chicos y mascotas.",
+   "En el balcón, dejala en maceta. Suelta es invasora y daña paredes y canaletas."
+  ],
+  "dont": [
+   "No la plantes en el suelo ni la dejes trepar al edificio.",
+   "No la dejes al alcance de gatos o perros.",
+   "No la encharques.",
+   "No la podes sin guantes."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas punteadas y amarillentas con telitas",
+    "cause": "Arañuela roja.",
+    "fix": "Limpiá las hojas con un paño húmedo y aislá la planta."
+   },
+   {
+    "symptom": "Escamas pegadas a tallos y hojas",
+    "cause": "Cochinilla de escudo.",
+    "fix": "Raspalas con cuidado y revisá seguido."
+   },
+   {
+    "symptom": "Manchas oscuras en las hojas",
+    "cause": "Mancha foliar por hongos o bacterias.",
+    "fix": "Sacá las hojas afectadas y regá solo la tierra."
+   },
+   {
+    "symptom": "Polvillo blanco en las hojas",
+    "cause": "Oídio.",
+    "fix": "Sacá lo afectado y mejorá la ventilación."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — English Ivy",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/english-ivy"
+   },
+   {
+    "title": "NC State Extension — Hedera helix",
+    "url": "https://plants.ces.ncsu.edu/plants/hedera-helix/"
+   },
+   {
+    "title": "RHS — Hedera helix 'Eva'",
+    "url": "https://www.rhs.org.uk/plants/48567/hedera-helix-eva-v/details"
+   },
+   {
+    "title": "Iowa State Extension — Fertilizing houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "mist.text",
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "dypsis-lutescens",
+  "latin": "Dypsis lutescens",
+  "common": [
+   "Palmera areca"
+  ],
+  "family": "Arecaceae",
+  "wiki": "Chrysalidocarpus lutescens",
+  "difficulty": "media",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Adentro, luz brillante e indirecta. Afuera tolera sol, pero prefiere media sombra."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 12,
+   "estimate": true,
+   "check": "Regá cuando la parte de arriba de la tierra empiece a secarse.",
+   "text": "En temporada, tierra húmeda pero nunca empapada. En invierno, poca agua. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "Las fuentes no lo piden. Si el aire está seco, NC State sugiere un humidificador."
+  },
+  "humidity": {
+   "level": "alta",
+   "text": "Prefiere humedad alta. Con calefacción, un humidificador ayuda."
+  },
+  "temperature": {
+   "minC": 15,
+   "maxC": null,
+   "text": "Es de clima cálido. La RHS la quiere siempre arriba de 15 °C, así que en invierno adentro."
+  },
+  "fertilize": {
+   "everyDays": 60,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante líquido equilibrado 2 o 3 veces en la temporada de crecimiento."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "baja",
+   "text": "La ASPCA la lista como no tóxica para mascotas. En personas, el cogollo tiene glucósidos cianogénicos y puede dar náuseas y vómitos.",
+   "source": "http://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/areca-palm"
+  },
+  "precautions": [
+   "Trasplantala cada 2 o 3 años.",
+   "Revisá el envés de las hojas seguido por plagas.",
+   "No comas el cogollo. Tiene compuestos cianogénicos."
+  ],
+  "dont": [
+   "No la dejes con la tierra empapada.",
+   "No la pongas al sol directo de mediodía adentro.",
+   "No la dejes en lugares fríos en invierno.",
+   "No la pongas pegada a la calefacción."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas punteadas con telitas finas",
+    "cause": "Arañuela roja, más común con aire seco.",
+    "fix": "Limpiá las hojas, subí la humedad y aislá la planta."
+   },
+   {
+    "symptom": "Escamas pegadas a hojas y tallos",
+    "cause": "Cochinilla de escudo.",
+    "fix": "Raspalas con cuidado y revisá cada semana."
+   },
+   {
+    "symptom": "Bichitos blancos que vuelan al mover la planta",
+    "cause": "Mosca blanca.",
+    "fix": "Revisá el envés, sacá hojas muy atacadas y aislá la planta."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Areca Palm",
+    "url": "http://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/areca-palm"
+   },
+   {
+    "title": "NC State Extension — Chrysalidocarpus lutescens",
+    "url": "https://plants.ces.ncsu.edu/plants/dypsis-lutescens/"
+   },
+   {
+    "title": "RHS — Dypsis lutescens",
+    "url": "https://www.rhs.org.uk/plants/128311/dypsis-lutescens/details"
+   }
+  ],
+  "unverified": [
+   "mist.text",
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "ocimum-basilicum",
+  "latin": "Ocimum basilicum",
+  "common": [
+   "Albahaca"
+  ],
+  "family": "Lamiaceae",
+  "wiki": "Basil",
+  "difficulty": "media",
+  "light": {
+   "level": "sol-directo",
+   "text": "Sol directo en un lugar cálido y protegido del viento. Al menos 6 horas de sol."
+  },
+  "water": {
+   "warmDays": 2,
+   "coldDays": 7,
+   "estimate": true,
+   "check": "Regá cuando la superficie de la tierra esté seca. Tiene que quedar pareja de húmeda.",
+   "text": "En maceta se seca rápido en verano. Regá a la mañana, sin mojar hojas. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. Odia las raíces mojadas de noche y las hojas húmedas favorecen hongos."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": 10,
+   "maxC": null,
+   "text": "No tolera frío ni heladas. Sacala afuera cuando las noches pasen los 10 °C. Se cultiva como anual."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "En maceta, fertilizante líquido equilibrado. Evitá los ricos en potasio, que adelantan la floración."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "no-toxica",
+   "text": "La ASPCA la lista como no tóxica para perros y gatos. Hojas y flores son comestibles.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/basil"
+  },
+  "precautions": [
+   "Cosechá las puntas seguido para que ramifique.",
+   "Cortá las flores apenas aparecen para que siga dando hojas.",
+   "Con frío de otoño, entrala o dala por terminada."
+  ],
+  "dont": [
+   "No la riegues de noche.",
+   "No le mojes las hojas al regar.",
+   "No la saques al balcón antes de que las noches pasen 10 °C.",
+   "No la dejes florecer si querés hojas sabrosas."
+  ],
+  "problems": [
+   {
+    "symptom": "Plantines que se doblan en la base y mueren",
+    "cause": "Damping off por exceso de riego.",
+    "fix": "Regá menos a los plantines y usá tierra nueva."
+   },
+   {
+    "symptom": "Polvillo blanco en hojas y tallos",
+    "cause": "Oídio.",
+    "fix": "Sacá lo afectado y ubicala con más ventilación."
+   },
+   {
+    "symptom": "Hojas con moho gris y partes podridas",
+    "cause": "Moho gris por humedad.",
+    "fix": "Sacá lo afectado, regá a la mañana y sin mojar hojas."
+   },
+   {
+    "symptom": "Bichitos verdes en los brotes",
+    "cause": "Pulgones.",
+    "fix": "Sacalos con un chorro suave de agua o a mano."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Basil",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/basil"
+   },
+   {
+    "title": "NC State Extension — Ocimum basilicum",
+    "url": "https://plants.ces.ncsu.edu/plants/ocimum-basilicum/"
+   },
+   {
+    "title": "RHS — How to grow basil",
+    "url": "https://rhs.org.uk/herbs/basil/grow-your-own"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC",
+   "fertilize.everyDays"
+  ]
+ },
+ {
+  "id": "salvia-rosmarinus",
+  "latin": "Salvia rosmarinus",
+  "common": [
+   "Romero"
+  ],
+  "family": "Lamiaceae",
+  "wiki": "Rosemary",
+  "difficulty": "media",
+  "light": {
+   "level": "sol-directo",
+   "text": "Pleno sol, 6 horas o más. Es la planta para el lugar más soleado del balcón."
+  },
+  "water": {
+   "warmDays": 7,
+   "coldDays": 14,
+   "estimate": true,
+   "check": "Regá cuando los primeros centímetros de tierra estén secos.",
+   "text": "Tolera la sequía y el exceso de riego es la causa más común de que se muera. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No lo rocíes. Tolera mal la humedad y se le hace oídio."
+  },
+  "humidity": {
+   "level": "baja",
+   "text": "No le gustan los ambientes húmedos. Dale buena ventilación."
+  },
+  "temperature": {
+   "minC": -8,
+   "maxC": null,
+   "text": "Aguanta hasta unos -8 °C, pero en maceta sufre más el frío y el viento."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [
+    11,
+    12
+   ],
+   "text": "Si lleva más de un año en la misma maceta, una vez fertilizante granulado a fines de primavera."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "no-toxica",
+   "text": "La ASPCA lo lista como no tóxico para perros y gatos. Hojas y flores son comestibles.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/rosemary"
+  },
+  "precautions": [
+   "Usá tierra liviana que drene bien. Nada de tierra arcillosa.",
+   "Podalo liviano después de la floración, sin cortar madera vieja.",
+   "Adentro le cuesta pasar el invierno. Mejor en el balcón."
+  ],
+  "dont": [
+   "No lo riegues si la tierra sigue húmeda.",
+   "No lo dejes con agua en el plato, sobre todo en invierno.",
+   "No lo podes hasta la madera vieja.",
+   "No lo pongas a la sombra."
+  ],
+  "problems": [
+   {
+    "symptom": "Se seca de golpe con la tierra húmeda",
+    "cause": "Raíz podrida por exceso de riego.",
+    "fix": "Espaciá el riego y usá maceta y tierra que drenen bien."
+   },
+   {
+    "symptom": "Polvillo blanco en las hojas",
+    "cause": "Oídio por humedad y poca ventilación.",
+    "fix": "Sacá lo afectado y ubicalo con más aire y sol."
+   },
+   {
+    "symptom": "Hojas con puntitos pálidos",
+    "cause": "Chicharritas que chupan savia.",
+    "fix": "Revisá seguido y sacá las ramas más atacadas."
+   },
+   {
+    "symptom": "Escamas pegadas a los tallos",
+    "cause": "Cochinilla de escudo.",
+    "fix": "Raspalas con cuidado y revisá seguido."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Rosemary",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/rosemary"
+   },
+   {
+    "title": "NC State Extension — Salvia rosmarinus",
+    "url": "https://plants.ces.ncsu.edu/plants/salvia-rosmarinus/"
+   },
+   {
+    "title": "RHS — How to grow rosemary",
+    "url": "https://www.rhs.org.uk/herbs/rosemary/grow-your-own"
+   }
+  ],
+  "unverified": [
+   "temperature.maxC"
+  ]
+ },
+ {
+  "id": "mentha-spicata",
+  "latin": "Mentha spicata",
+  "common": [
+   "Menta"
+  ],
+  "family": "Lamiaceae",
+  "wiki": "Spearmint",
+  "difficulty": "facil",
+  "light": {
+   "level": "sol-directo",
+   "text": "Sol directo o media sombra. En verano, algo de sombra reduce el riego."
+  },
+  "water": {
+   "warmDays": 2,
+   "coldDays": 7,
+   "estimate": true,
+   "check": "Regá cuando la superficie se sienta seca. La tierra tiene que quedar pareja de húmeda.",
+   "text": "No tolera la tierra seca. En maceta se seca rápido con calor. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "No la rocíes. Es propensa a la roya y a manchas por hongos."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": -10,
+   "maxC": null,
+   "text": "Resiste bien el frío. En invierno cortá los tallos viejos antes de que broten los nuevos."
+  },
+  "fertilize": {
+   "everyDays": null,
+   "months": [],
+   "text": null
+  },
+  "toxicity": {
+   "cats": "toxica",
+   "dogs": "toxica",
+   "people": "baja",
+   "text": "Tiene aceites esenciales. Puede dar vómitos y diarrea, en general solo si comen mucha. Para personas es comestible.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/mint"
+  },
+  "precautions": [
+   "Cultivala sola en su maceta. Se expande rápido y ahoga a otras plantas.",
+   "Ubicala donde perros y gatos no la coman en cantidad.",
+   "Después de florecer, cortala a unos 5 cm de la base."
+  ],
+  "dont": [
+   "No la plantes en un cantero compartido sin contenerla.",
+   "No dejes que la tierra se seque del todo.",
+   "No le mojes las hojas al regar.",
+   "No la dejes florecer si querés hojas tiernas."
+  ],
+  "problems": [
+   {
+    "symptom": "Puntos naranjas, amarillos o negros en las hojas",
+    "cause": "Roya de la menta, un hongo.",
+    "fix": "Sacá y tirá las partes afectadas. No las pongas en el compost."
+   },
+   {
+    "symptom": "Hojas mustias con tierra seca",
+    "cause": "Falta de agua.",
+    "fix": "Regá a fondo y revisá más seguido en verano."
+   },
+   {
+    "symptom": "Brotes deformados con bichitos verdes",
+    "cause": "Pulgones.",
+    "fix": "Sacalos con un chorro suave de agua o a mano."
+   },
+   {
+    "symptom": "Invade otras macetas",
+    "cause": "Se expande por rizomas.",
+    "fix": "Arrancá los brotes que escapan con raíz y todo, y dividila cada pocos años."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Mint",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/mint"
+   },
+   {
+    "title": "NC State Extension — Mentha spicata",
+    "url": "https://plants.ces.ncsu.edu/plants/mentha-spicata/"
+   },
+   {
+    "title": "RHS — How to grow mint",
+    "url": "https://www.rhs.org.uk/herbs/mint/grow-your-own"
+   }
+  ],
+  "unverified": [
+   "humidity.level",
+   "humidity.text",
+   "temperature.minC",
+   "temperature.maxC",
+   "fertilize.everyDays",
+   "fertilize.months",
+   "fertilize.text"
+  ]
+ },
+ {
+  "id": "plectranthus-verticillatus",
+  "latin": "Plectranthus verticillatus",
+  "common": [
+   "Planta del dinero",
+   "Dólar"
+  ],
+  "family": "Lamiaceae",
+  "wiki": "Plectranthus verticillatus",
+  "difficulty": "facil",
+  "light": {
+   "level": "indirecta-brillante",
+   "text": "Media sombra o luz filtrada. Protegela del sol fuerte, que le quema las hojas."
+  },
+  "water": {
+   "warmDays": 5,
+   "coldDays": 10,
+   "estimate": true,
+   "check": "Regá cuando los primeros 2 cm de tierra estén secos.",
+   "text": "Quiere tierra que drene bien, húmeda pero no empapada. Las fuentes no dan frecuencia. Los días son un punto de partida."
+  },
+  "mist": {
+   "recommended": false,
+   "everyDays": null,
+   "text": "Las fuentes consultadas no lo piden."
+  },
+  "humidity": {
+   "level": null,
+   "text": null
+  },
+  "temperature": {
+   "minC": 5,
+   "maxC": null,
+   "text": "Tolera el frío pero no la helada. La RHS le da una mínima de 1 a 5 °C."
+  },
+  "fertilize": {
+   "everyDays": 30,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "text": "Fertilizante para plantas de interior una vez por mes en temporada. En invierno no."
+  },
+  "toxicity": {
+   "cats": "no-toxica",
+   "dogs": "no-toxica",
+   "people": "sin-datos",
+   "text": "La ASPCA la lista como no tóxica con el nombre Plectranthus australis, que la RHS da como mal aplicado a esta especie.",
+   "source": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/swedish-ivy"
+  },
+  "precautions": [
+   "Despuntala de joven para que crezca más tupida.",
+   "Se reproduce fácil con esquejes de las puntas.",
+   "Revisá la etiqueta. Otras plantas también se venden como planta del dinero."
+  ],
+  "dont": [
+   "No la pongas a pleno sol de la tarde.",
+   "No la dejes afuera con helada.",
+   "No la encharques.",
+   "No la confundas con la Pilea o el árbol de jade, que tienen otros cuidados."
+  ],
+  "problems": [
+   {
+    "symptom": "Hojas quemadas o descoloridas",
+    "cause": "Sol fuerte.",
+    "fix": "Movela a luz filtrada."
+   },
+   {
+    "symptom": "Tallos largos con pocas hojas",
+    "cause": "Poca luz o falta de despunte.",
+    "fix": "Dale más luz indirecta y cortá las puntas para que ramifique."
+   },
+   {
+    "symptom": "Hojas negras o blandas después del invierno",
+    "cause": "Frío o helada.",
+    "fix": "Cortá lo dañado y entrala cuando haga frío."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ASPCA — Swedish Ivy",
+    "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/swedish-ivy"
+   },
+   {
+    "title": "RHS — Plectranthus verticillatus",
+    "url": "https://www.rhs.org.uk/Plants/13263/Plectranthus-verticillatus/Details"
+   },
+   {
+    "title": "Wikipedia — Plectranthus verticillatus",
+    "url": "https://en.wikipedia.org/wiki/Plectranthus_verticillatus"
+   },
+   {
+    "title": "Iowa State Extension — Fertilizing houseplants",
+    "url": "https://yardandgarden.extension.iastate.edu/faq/how-often-should-i-fertilize-houseplants"
+   }
+  ],
+  "unverified": [
+   "mist.text",
+   "humidity.level",
+   "humidity.text",
+   "temperature.maxC",
+   "toxicity.people",
+   "problems"
+  ]
+ }
+]

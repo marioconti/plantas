@@ -1,0 +1,29 @@
+name: Keep the database awake
+
+# Supabase pauses a free project after a week without activity, and a paused project takes
+# Regué (and Súper and El Anotador, which share the database) offline. This calls a
+# read-only function twice a week so that never happens.
+#
+# GitHub turns scheduled workflows off in a repository with no commits for 60 days and sends
+# an email first; re-enable it from the Actions tab if that ever happens.
+
+on:
+  schedule:
+    - cron: '41 12 * * 2,5' # Tuesdays and Fridays, 09:41 in Buenos Aires
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Ping
+        run: |
+          url=$(grep -oP "SUPABASE_URL = '\K[^']+" src/config.ts)
+          key=$(grep -oP "SUPABASE_KEY = '\K[^']+" src/config.ts)
+          curl --fail-with-body -sS -X POST "$url/rest/v1/rpc/plants_ping" \
+            -H "apikey: $key" -H "Authorization: Bearer $key" \
+            -H "Content-Type: application/json" -d '{}'
