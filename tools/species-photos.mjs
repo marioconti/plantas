@@ -2,7 +2,7 @@
 // author and licence to src/data/species-photos.json, so the page shows a real, credited
 // photo without calling Wikipedia at run time.
 //   node tools/species-photos.mjs
-// Two batched requests in all: Wikipedia rate-limits anonymous clients hard.
+// A few batched requests in all (the API takes 50 titles each): Wikipedia rate-limits anonymous clients hard.
 import { readFile, writeFile } from 'node:fs/promises'
 
 const species = JSON.parse(await readFile(new URL('../src/data/species.json', import.meta.url), 'utf8'))
@@ -25,8 +25,19 @@ async function query(params) {
   throw new Error('Wikipedia keeps refusing; try again later')
 }
 
+/** One request per 50 titles, merged as if it were one answer. */
+async function batched(titles, params) {
+  const all = { pages: [], redirects: [], normalized: [] }
+  for (let i = 0; i < titles.length; i += 50) {
+    if (i) await sleep(3000)
+    const r = await query({ ...params, titles: titles.slice(i, i + 50).join('|') })
+    for (const k of Object.keys(all)) all[k].push(...(r.query?.[k] ?? []))
+  }
+  return { query: all }
+}
+
 const withWiki = species.filter((s) => s.wiki)
-const pages = await query({ redirects: '1', titles: withWiki.map((s) => s.wiki).join('|'), prop: 'pageimages', piprop: 'name' })
+const pages = await batched(withWiki.map((s) => s.wiki), { redirects: '1', prop: 'pageimages', piprop: 'name' })
 const { redirects = [], normalized = [] } = pages.query
 const resolve = (t) => {
   for (const n of normalized) if (n.from === t) t = n.to
@@ -37,7 +48,7 @@ const fileOf = new Map(pages.query.pages.filter((p) => p.pageimage).map((p) => [
 
 await sleep(3000)
 const files = [...new Set(fileOf.values())]
-const infos = await query({ titles: files.map((f) => `File:${f}`).join('|'), prop: 'imageinfo', iiprop: 'url|extmetadata|size', iiurlwidth: '900' })
+const infos = await batched(files.map((f) => `File:${f}`), { prop: 'imageinfo', iiprop: 'url|extmetadata|size', iiurlwidth: '900' })
 const infoOf = new Map(infos.query.pages.map((p) => [p.title.replace(/^File:/, '').replace(/ /g, '_'), p.imageinfo?.[0]]))
 
 const out = {}

@@ -45,7 +45,7 @@ export function Header({ back, right, title }: { back?: { to: string; label: str
   )
 }
 
-const PILL_CLASS: Record<Due['kind'], string> = { late: 'pill-late', today: 'pill-today', soon: 'pill-soon', ok: 'pill-ok', never: 'pill-never' }
+const PILL_CLASS: Record<Due['kind'], string> = { late: 'pill-late', check: 'pill-today', today: 'pill-today', soon: 'pill-soon', ok: 'pill-ok', never: 'pill-never' }
 
 export function Pill({ due, children, kind }: { due?: Due | null; children?: ReactNode; kind?: Due['kind'] }) {
   const k = kind ?? due?.kind ?? 'never'

@@ -82,7 +82,7 @@ function TabString({ status, events, start, days, past, href, onPick }: {
   }, [events, plant.id, start, days])
 
   const dueCol = water ? daysBetween(start, water.due) : null
-  const lateFrom = water && water.daysLeft < 0 && dueCol != null ? Math.max(0, dueCol) : null
+  const lateFrom = water && water.kind === 'late' && dueCol != null ? Math.max(0, dueCol) : null
 
   return (
     <div className="tab-row">

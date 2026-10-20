@@ -19,13 +19,11 @@ export function GardenHome() {
     { id: 'today', title: 'Hoy', list: all.filter((s) => s.group === 'today') },
     { id: 'next', title: 'Próximas', list: all.filter((s) => s.group === 'next') },
   ].filter((g) => g.list.length)
-  const due = (t: 'water' | 'mist' | 'feed') => all.filter((s) => s[t] && ['late', 'today'].includes(s[t]!.kind)).length
-  const unlogged = all.filter((s) => s.water?.kind === 'never').length
+  const due = (t: 'water' | 'mist' | 'feed') => all.filter((s) => s[t] && ['late', 'check', 'today'].includes(s[t]!.kind)).length
   const toWater = due('water')
   const extra = [
     due('mist') && `${due('mist')} para rociar`,
     due('feed') && `${due('feed')} para fertilizar`,
-    unlogged && `${unlogged} sin registro de riego`,
   ].filter(Boolean)
   const nextWater = all.map((s) => s.water).filter((d) => d && d.daysLeft > 0).sort((a, b) => a!.daysLeft - b!.daysLeft)[0]
 
@@ -117,6 +115,7 @@ function speciesLabel(name: string, species: string): string {
 function pillText(s: PlantStatus): string {
   const d = s.worst!
   if (d.kind === 'never') return 'sin registro'
+  if (d.kind === 'check') return 'revisar'
   if (d.daysLeft < 0) return `${-d.daysLeft} ${d.daysLeft === -1 ? 'día' : 'días'} tarde`
   if (d.daysLeft === 0) return 'hoy'
   if (d.daysLeft === 1) return 'mañana'

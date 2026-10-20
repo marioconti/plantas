@@ -44,6 +44,9 @@ const plants = [
   plant('calathea', 'Calathea', 'goeppertia-orbifolia', 'Dormitorio', 5, 8, null, null),
   plant('albahaca', 'Albahaca', 'ocimum-basilicum', 'Balcón', 2, 4, null, null),
   plant('ficus', 'Ficus de la abuela', null, 'Balcón', 7, 12, null, null, { species_text: 'Ficus benjamina' }),
+  plant('aloe', 'Aloe', 'aloe-vera', 'Balcón', 10, 20, null, null),
+  plant('menta', 'Menta', 'mentha-spicata', 'Balcón', 3, 6, null, null),
+  plant('jade', 'Jade del abuelo', null, 'Cocina', null, null, null, null),
 ]
 let n = 0
 const ev = (plantId, type, daysAgo, extra = {}) => ({ id: `00000000-0000-4000-8000-${String(++n).padStart(12, '0')}`, garden: KEY, plant: plantId, type, at: at(daysAgo), note: '', photo: null, by_name: n % 3 ? 'Mario' : 'Juan', ...extra })
@@ -57,6 +60,9 @@ const SEED = [
   ...[44, 30, 15].map((d) => ev('sansevieria', 'water', d)),
   ...[30, 25, 19, 14].map((d) => ev('calathea', 'water', d)), ev('calathea', 'treat', 12, { note: 'Arañuela. Jabón potásico.' }),
   ...[6, 4, 2, 0].map((d) => ev('albahaca', 'water', d, { at: at(d, 8) })),
+  ...[22, 12].map((d) => ev('aloe', 'water', d)),
+  ...[15, 10, 5].map((d) => ev('menta', 'water', d)),
+  ...[9, 2].map((d) => ev('jade', 'water', d)),
 ]
 let events = []
 const garden = { key: KEY, name: 'Casa', cold_months: [5, 6, 7, 8, 9], access: 'private', open_until: null, created_at: at(80) }
@@ -89,12 +95,18 @@ const shots = [
   ['plant-full', `#/g/${KEY}/p/helecho-01`, { full: true }],
   ['plant-watered', `#/g/${KEY}/p/helecho-01`, { tap: 'Regué' }],
   ['plant-ok', `#/g/${KEY}/p/monstera`],
+  ['plant-check', `#/g/${KEY}/p/aloe`],
+  ['plant-suggest', `#/g/${KEY}/p/menta`, { tap: 'Regué' }],
+  ['plant-noplan', `#/g/${KEY}/p/jade`],
+  ['plant-origin', `#/g/${KEY}/p/potus`, { tap: 'estimado' }],
   ['plant-new-tag', `#/g/${KEY}/p/jazmin-01`],
   ['diary', `#/g/${KEY}/diario`, { full: true }],
   ['guide', `#/g/${KEY}/guia`],
   ['species', `#/g/${KEY}/guia/nephrolepis-exaltata`, { full: true }],
   ['edit', `#/g/${KEY}/p/helecho-01/editar`, { full: true }],
   ['new', `#/g/${KEY}/nueva`],
+  ['new-2', `#/g/${KEY}/nueva`, { tap: 'Potus' }],
+  ['new-none', `#/g/${KEY}/nueva`, { tap: 'No sé' }],
   ['settings', `#/g/${KEY}/ajustes`, { full: true }],
   ['brand', '#/marca', { full: true }],
 ].filter(([name]) => !only || name.startsWith(only))

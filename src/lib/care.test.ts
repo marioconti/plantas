@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { byUrgency, daysBetween, dueFor, dueShort, intervalFor, regularity, statusOf } from './care.ts'
+import { byUrgency, daysBetween, dueFor, dueShort, intervalFor, regularity, statusOf, suggestInterval } from './care.ts'
 import type { CareEvent, Plant } from './types.ts'
 
 const garden = { cold_months: [5, 6, 7, 8, 9] }
@@ -31,15 +31,17 @@ test('the season picks the interval', () => {
   assert.equal(intervalFor(plant({ water_warm: null }), 'water', today, garden), null)
 })
 
-test('late, today, soon, ok and never', () => {
+test('late, check, today, soon, ok and never', () => {
+  // Every 7 days: red only from 1.5 intervals (day 11), amber "tocá la tierra" before that.
   assert.deepEqual(
-    [10, 7, 6, 2].map((k) => dueFor(plant(), 'water', [ev('water', daysAgo(k))], today, garden)!.kind),
-    ['late', 'today', 'soon', 'ok'],
+    [11, 10, 8, 7, 6, 2].map((k) => dueFor(plant(), 'water', [ev('water', daysAgo(k))], today, garden)!.kind),
+    ['late', 'check', 'check', 'today', 'soon', 'ok'],
   )
-  const late = dueFor(plant(), 'water', [ev('water', daysAgo(10))], today, garden)!
-  assert.equal(late.daysLeft, -3)
+  const late = dueFor(plant(), 'water', [ev('water', daysAgo(11))], today, garden)!
+  assert.equal(late.daysLeft, -4)
   assert.equal(late.level, 0)
-  assert.equal(dueShort(late), '3 días tarde')
+  assert.equal(dueShort(late), '4 días tarde')
+  assert.equal(dueShort(dueFor(plant(), 'water', [ev('water', daysAgo(9))], today, garden)!), 'revisar')
   assert.equal(dueFor(plant(), 'water', [], today, garden)!.kind, 'never')
   assert.equal(dueFor(plant({ mist_days: null }), 'mist', [], today, garden), null)
 })
@@ -54,7 +56,7 @@ test('the list is sorted by the most pressing care', () => {
   const plants = [plant({ id: 'a', name: 'A' }), plant({ id: 'b', name: 'B' }), plant({ id: 'c', name: 'C', mist_days: null })]
   const events = [
     ev('water', daysAgo(2), 'a'), ev('mist', daysAgo(1), 'a'),
-    ev('water', daysAgo(9), 'b'), ev('mist', daysAgo(0), 'b'),
+    ev('water', daysAgo(11), 'b'), ev('mist', daysAgo(0), 'b'),
     ev('water', daysAgo(7), 'c'),
   ]
   const s = byUrgency(plants, events, today, garden)
@@ -82,4 +84,22 @@ test('a mist or feed schedule never logged does not make a plant urgent', () => 
   assert.equal(s.feed!.kind, 'never')
   assert.equal(s.group, 'next')
   assert.equal(s.worst!.type, 'mist')
+})
+
+test('the rhythm is suggested after four waterings that differ from the plan', () => {
+  // Mid-December, so every gap below falls in warm months.
+  const dec = new Date(2026, 11, 15, 10)
+  const at = (ks: number[]) => ks.map((k) => ev('water', new Date(2026, 11, 15 - k, 10)))
+  // Every 9 days against a plan of 7: suggest 9.
+  assert.deepEqual(suggestInterval(plant(), at([27, 18, 9, 0]), dec, garden), { field: 'water_warm', current: 7, median: 9 })
+  // Three waterings are not enough.
+  assert.equal(suggestInterval(plant(), at([18, 9, 0]), dec, garden), null)
+  // Every 8 days is within 25 % and under two days: no suggestion.
+  assert.equal(suggestInterval(plant(), at([24, 16, 8, 0]), dec, garden), null)
+  // A 30-day holiday is not a rhythm and is left out.
+  assert.equal(suggestInterval(plant(), at([44, 14, 7, 0]), dec, garden), null)
+  // No plan yet: the rhythm becomes the proposal.
+  assert.deepEqual(suggestInterval(plant({ water_warm: null }), at([15, 10, 5, 0]), dec, garden), { field: 'water_warm', current: null, median: 5 })
+  // Gaps that started in cold months do not count in a warm month.
+  assert.equal(suggestInterval(plant(), [new Date(2026, 8, 1), new Date(2026, 8, 13), new Date(2026, 8, 25), daysAgo(0)].map((d) => ev('water', d)), today, garden), null)
 })

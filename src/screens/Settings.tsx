@@ -40,16 +40,31 @@ export function Settings() {
   const [saved, setSaved] = useState<string | null>(null)
   const dirty = name !== garden.name || cold.join() !== garden.cold_months.join()
   const gardenUrl = `${SITE_URL}#/g/${key}`
+  type Tab = 'people' | 'tags' | 'garden'
+  const [tab, setTab] = useState<Tab>('people')
+  const tabs: [Tab, string][] = [['people', 'Personas'], ['tags', 'Tags'], ...(can.owner ? [['garden', 'Jardín'] as [Tab, string]] : [])]
 
   return (
     <div className="page no-actions">
       <Header back={{ to: `/g/${key}`, label: 'Plantas' }} right="Ajustes" />
       <main className="wrap settings">
         <h1 className="h1">Ajustes</h1>
+        <div className="seg seg-3 settings-tabs" role="tablist">
+          {tabs.map(([id, label]) => (
+            <button key={id} type="button" role="tab" aria-selected={tab === id} className={tab === id ? 'on' : ''} onClick={() => setTab(id)}>{label}</button>
+          ))}
+        </div>
 
-        {can.owner ? <AccessPanel /> : <MyPass />}
+        {tab === 'people' && <>
+          {can.owner ? <AccessPanel /> : <MyPass />}
+          <section className="section">
+            <div className="section-head"><h2 className="label">Otro teléfono</h2></div>
+            <p className="muted">Este link abre el jardín, pero mientras sea privado hace falta además un pase. Para sumar a alguien, creale un pase arriba.</p>
+            <div className="tag-link"><code className="mono">{gardenUrl}</code><CopyButton text={gardenUrl} /></div>
+          </section>
+        </>}
 
-        {can.owner && <section className="section">
+        {tab === 'garden' && can.owner && <section className="section">
           <div className="section-head"><h2 className="label">El jardín</h2></div>
           <label className="field">
             <span className="label">Nombre</span>
@@ -74,6 +89,7 @@ export function Settings() {
           {saved && <p className="hint mono">{saved}</p>}
         </section>}
 
+        {tab === 'tags' && <>
         <section className="section">
           <div className="section-head"><h2 className="label">Links de los tags</h2><span className="label">{plants.length}</span></div>
           <p className="muted">Cada planta tiene su link. Grabalo en un tag NFC y pegalo en la maceta.</p>
@@ -88,8 +104,8 @@ export function Settings() {
           <Link to={`/g/${key}/nueva`} className="btn btn-line btn-block"><Icon name="plus-bold" /> Agregar una planta</Link>
         </section>
 
-        <section className="section">
-          <div className="section-head"><h2 className="label">Cómo grabar un tag</h2></div>
+        <details className="section howto">
+          <summary className="link-arrow"><span>Cómo grabar un tag</span><Icon name="plus-bold" /></summary>
           <ol className="steps">
             <li>Instalá <b>NFC Tools</b> (de wakdev) en el teléfono. Es gratis en iPhone y en Android.</li>
             <li>Copiá el link de la planta desde esta lista.</li>
@@ -98,17 +114,8 @@ export function Settings() {
             <li>Probalo con la pantalla desbloqueada. Tiene que abrir la ficha de la planta.</li>
           </ol>
           <p className="hint mono">No bloquees el tag («hacer de solo lectura»): no se puede deshacer.</p>
-        </section>
-
-        <section className="section">
-          <div className="section-head"><h2 className="label">Otro teléfono</h2></div>
-          <p className="muted">Este link abre el jardín, pero mientras sea privado hace falta además un pase. Para sumar a alguien, creale un pase arriba.</p>
-          <div className="tag-link"><code className="mono">{gardenUrl}</code><CopyButton text={gardenUrl} /></div>
-        </section>
-
-        <section className="section">
-          <Link to="/marca" className="link-arrow"><span>Manual de marca</span><Icon name="arrow-right-bold" /></Link>
-        </section>
+        </details>
+        </>}
       </main>
     </div>
   )

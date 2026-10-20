@@ -43,7 +43,14 @@ export function intervalFor(plant: Plant, type: ScheduledType, today: Date, gard
   return plant.feed_days
 }
 
-export type DueKind = 'late' | 'today' | 'soon' | 'ok' | 'never'
+/**
+ * `check` is due or a little past it: the interval is our estimate, so the plant asks for the
+ * finger test instead of blaming anyone. Only from 1.5 times the interval is it `late`, in red.
+ */
+export type DueKind = 'late' | 'check' | 'today' | 'soon' | 'ok' | 'never'
+
+/** From this many intervals since the last entry, a due plant turns from amber to red. */
+export const LATE_FACTOR = 1.5
 
 export interface Due {
   type: ScheduledType
@@ -76,8 +83,10 @@ export function dueFor(
   if (interval == null) return null
   const last = lastOf(events, plant.id, type)
   if (!last) return { type, kind: 'never', daysLeft: 0, interval, last: null, due: new Date(dayStart(today)), level: 0 }
-  const daysLeft = interval - daysBetween(last.at, today)
-  const kind: DueKind = daysLeft < 0 ? 'late' : daysLeft === 0 ? 'today' : daysLeft <= SOON_DAYS(interval) ? 'soon' : 'ok'
+  const elapsed = daysBetween(last.at, today)
+  const daysLeft = interval - elapsed
+  const kind: DueKind = elapsed >= interval * LATE_FACTOR ? 'late' : daysLeft < 0 ? 'check' : daysLeft === 0 ? 'today'
+    : daysLeft <= SOON_DAYS(interval) ? 'soon' : 'ok'
   return {
     type, kind, daysLeft, interval, last,
     due: addDays(last.at, interval),
@@ -112,7 +121,7 @@ export function statusOf(plant: Plant, events: CareEvent[], today: Date, garden:
     if (!d || (d.kind === 'never' && d.type !== 'water')) continue
     if (!worst || weight(d) < weight(worst)) worst = d
   }
-  const group = !worst ? 'next' : worst.kind === 'late' ? 'late' : worst.kind === 'today' || worst.kind === 'never' ? 'today' : 'next'
+  const group = !worst ? 'next' : worst.kind === 'late' ? 'late' : ['today', 'check', 'never'].includes(worst.kind) ? 'today' : 'next'
   return { plant, water, mist, feed, worst, group }
 }
 
@@ -167,6 +176,54 @@ export function regularity(
   }
 }
 
+// ---------------------------------------------------------------- learning the rhythm
+
+/** Waterings needed before the app suggests a new interval. */
+export const LEARN_MIN = 4
+
+export interface Suggestion {
+  /** Which interval would change: the warm one, or the cold one during cold months. */
+  field: 'water_warm' | 'water_cold'
+  /** The plan today, or null when the plant has none yet. */
+  current: number | null
+  /** The median of the real gaps in this season. */
+  median: number
+}
+
+function median(xs: number[]): number {
+  const s = xs.slice().sort((a, b) => a - b)
+  const m = Math.floor(s.length / 2)
+  return s.length % 2 ? s[m] : Math.round((s[m - 1] + s[m]) / 2)
+}
+
+/**
+ * "You have been watering it every 9 days; the plan says 7." Only gaps that started in the
+ * current season count (a winter gap says nothing about summer), only from the last 120 days,
+ * and only when the difference is real: 25 % of the plan or two days. A gap longer than three
+ * times the plan is a holiday, not a rhythm, and is left out.
+ */
+export function suggestInterval(plant: Plant, events: CareEvent[], today: Date, garden: Pick<Garden, 'cold_months'>): Suggestion | null {
+  const cold = isColdMonth(today, garden)
+  const field = cold && plant.water_cold != null ? 'water_cold' : 'water_warm'
+  const current = intervalFor(plant, 'water', today, garden)
+  const from = addDays(today, -120).getTime()
+  const all = events.filter((e) => e.plant === plant.id && e.type === 'water').sort((a, b) => (a.at < b.at ? -1 : 1))
+  const gaps: number[] = []
+  for (let i = 1; i < all.length; i++) {
+    const start = new Date(all[i - 1].at)
+    if (start.getTime() < from || isColdMonth(start, garden) !== cold) continue
+    const gap = daysBetween(all[i - 1].at, all[i].at)
+    if (gap < 1 || (current != null && gap > current * 3)) continue
+    gaps.push(gap)
+  }
+  if (gaps.length < LEARN_MIN - 1) return null
+  const m = Math.min(120, median(gaps))
+  if (current == null) return { field, current, median: m }
+  const diff = Math.abs(m - current)
+  if (diff < 1 || (diff < 2 && diff / current < 0.25)) return null
+  return { field, current, median: m }
+}
+
 // ---------------------------------------------------------------- words
 
 const WEEKDAYS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb']
@@ -209,6 +266,7 @@ export function ago(d: Date | string, today: Date): string {
 export function dueWords(d: Due): { number: string; words: string } {
   const verb = d.type === 'water' ? 'regar' : d.type === 'mist' ? 'rociar' : 'fertilizar'
   if (d.kind === 'never') return { number: '—', words: 'sin registro' }
+  if (d.kind === 'check') return { number: String(-d.daysLeft), words: 'tocá la tierra' }
   if (d.daysLeft < 0) return { number: String(-d.daysLeft), words: d.daysLeft === -1 ? 'día tarde' : 'días tarde' }
   if (d.daysLeft === 0) return { number: '0', words: `toca ${verb} hoy` }
   return { number: String(d.daysLeft), words: d.daysLeft === 1 ? `día para ${verb}` : `días para ${verb}` }
@@ -217,6 +275,7 @@ export function dueWords(d: Due): { number: string; words: string } {
 /** One-line state for pills and rows: "3 días tarde", "hoy", "mañana", "en 4 días", "sin registro". */
 export function dueShort(d: Due): string {
   if (d.kind === 'never') return 'sin registro'
+  if (d.kind === 'check') return 'revisar'
   if (d.daysLeft < 0) return d.daysLeft === -1 ? '1 día tarde' : `${-d.daysLeft} días tarde`
   if (d.daysLeft === 0) return 'hoy'
   if (d.daysLeft === 1) return 'mañana'

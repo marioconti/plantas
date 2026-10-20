@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useGarden } from '../lib/store.tsx'
 import { uploadPhoto } from '../lib/api.ts'
-import { LIGHT_WORDS, type Species } from '../lib/species.ts'
+import { LIGHT_WORDS, type DryTo, type Species } from '../lib/species.ts'
 import { monthShort } from '../lib/care.ts'
 import { Cell, Cells, Icon, Scale } from '../components/ui.tsx'
 
@@ -49,6 +49,7 @@ export function usePhotoPicker(plant: string, onDone: (path: string) => void) {
 // ---------------------------------------------------------------- care, from the catalog
 
 const HUMIDITY_LEVEL = { baja: 2, media: 3, alta: 5 } as const
+const DRY_SHORT: Record<DryTo, string> = { humeda: 'Siempre húmeda', superficie: 'Seca arriba', mitad: 'Seca a la mitad', seca: 'Seca del todo', 'muy-seca': 'Muy seca' }
 
 export function CareCells({ s }: { s: Species }) {
   const light = s.light.level ? LIGHT_WORDS[s.light.level] : null
@@ -60,8 +61,8 @@ export function CareCells({ s }: { s: Species }) {
         {light && <Scale level={light.level} label="Luz" />}
       </Cell>
       <Cell label="Agua" icon="drop-bold">
-        {s.water.warmDays ? `Cada ${s.water.warmDays} días` : 'Según la tierra'}
-        <small>{s.water.coldDays ? `En frío, cada ${s.water.coldDays}` : ''}{s.water.estimate ? ' · estimado' : ''}</small>
+        {s.water.dryTo ? DRY_SHORT[s.water.dryTo] : s.water.warmDays ? `Cada ${s.water.warmDays} días` : 'Según la tierra'}
+        {s.water.warmDays && <small>{s.water.estimate ? `unos ${s.water.warmDays} días · estimado` : `cada ${s.water.warmDays} días`}</small>}
       </Cell>
       <Cell label="Humedad" icon="cloud-bold">
         {s.humidity.level ? s.humidity.level[0].toUpperCase() + s.humidity.level.slice(1) : 'Sin dato'}
@@ -166,5 +167,5 @@ export function FeedSeason({ s }: { s: Species }) {
 
 export function SpeciesLink({ s }: { s: Species }) {
   const { key } = useGarden()
-  return <Link to={`/g/${key}/guia/${s.id}`} className="link-arrow"><span>Ficha completa de {s.common[0]}</span><Icon name="arrow-right-bold" /></Link>
+  return <Link to={`/g/${key}/guia/${s.id}`} className="link-arrow"><span>Cómo cuidar {s.common[0].toLowerCase().startsWith('la ') || s.common[0].toLowerCase().startsWith('el ') ? s.common[0].toLowerCase() : `un ${s.common[0].toLowerCase()}`}</span><Icon name="arrow-right-bold" /></Link>
 }
