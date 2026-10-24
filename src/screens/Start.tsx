@@ -23,8 +23,8 @@ export function Start() {
       const r = await api.createGarden(key, name.trim() || 'Mis plantas', owner.trim())
       savePass(key, r.pass)
       nav(`/g/${key}/ajustes`)
-    } catch {
-      setError('No se pudo crear. Hace falta conexión.')
+    } catch (e) {
+      setError(e instanceof Error && e.message === 'too many gardens today' ? 'Hoy ya se crearon muchos jardines. Probá mañana.' : 'No se pudo crear. Hace falta conexión.')
       setBusy(false)
     }
   }
@@ -42,7 +42,7 @@ export function Start() {
           <section className="section">
             <div className="section-head"><h2 className="label">Tus jardines</h2></div>
             {known.map((g) => (
-              <Link key={g.key} to={`/g/${g.key}`} className="link-arrow"><span>{g.name}</span><Icon name="arrow-right-bold" /></Link>
+              <Link key={g.key} to={`/g/${g.key}`} className="link-arrow"><span>{g.name}</span><Icon name="caret-right-bold" /></Link>
             ))}
           </section>
         )}

@@ -26,6 +26,13 @@ type Status = 'loading' | 'ready' | 'missing' | 'private' | 'error'
 const LOAD_DAYS = 400 // a year of journal and a bit: the diary, the progress and the regularity all fit
 const cacheKey = (k: string) => `plants:data:${k}`
 const outboxKey = (k: string) => `plants:outbox:${k}`
+const asideKey = (k: string) => `plants:refused:${k}`
+const UNDO_DAY = 86_400_000 // guests and visitors may take out their own entries for a day; the database checks it too
+
+/** What the server refused, kept on the phone instead of thrown away. The last 50. */
+function setAside(k: string, op: Op) {
+  write(asideKey(k), [{ op, at: new Date().toISOString() }, ...read<unknown[]>(asideKey(k), [])].slice(0, 50))
+}
 
 function read<T>(k: string, fallback: T): T {
   try {
@@ -81,6 +88,8 @@ interface GardenApi {
   /** Who this phone is in this garden, and what it may do. */
   me: Me | null
   can: { edit: boolean; owner: boolean }
+  /** Whether this phone may take this entry out of the journal. */
+  canUndo: (e: CareEvent) => boolean
   setPass: (token: string | null) => void
   status: Status
   error: string | null
@@ -163,9 +172,18 @@ export function GardenProvider({ gardenKey, children }: { gardenKey: string; chi
           else if (op.kind === 'unlog') await api.unlog(authRef.current, op.id)
           else await api.savePlant(authRef.current, op.plant)
         } catch (e) {
-          // The server said no (bad data, plant deleted elsewhere): drop it rather than block the queue.
-          if (e instanceof ApiError && e.status >= 400 && e.status < 500) setError(e.message === 'not allowed' ? 'Tu pase no permite ese cambio.' : e.message === 'private garden' ? 'El jardín es privado: hace falta un pase.' : `No se pudo guardar: ${e.message}`)
-          else break
+          if (!(e instanceof ApiError)) break
+          // No pass, or a pass that expired while there was no signal: keep everything until a
+          // new pass arrives. Same for a busy or missing server.
+          if (e.message === 'private garden') { setError('El jardín es privado: hace falta un pase. Lo anotado queda en el teléfono.'); break }
+          // PostgREST answers both 'private garden' and 'not allowed' with 401 to the publishable
+          // key, so the message decides, not the status.
+          const refused = e.message === 'not allowed'
+          if (!refused && (e.status < 400 || [401, 404, 408, 429].includes(e.status) || e.status >= 500)) break
+          // The server said no to this one (bad data, plant deleted elsewhere, not allowed): set it
+          // aside rather than block the queue.
+          setError(refused ? 'Tu pase no permite ese cambio.' : `No se pudo guardar: ${e.message}`)
+          setAside(gardenKey, op)
         }
         setQueue(opsRef.current.slice(1))
       }
@@ -233,9 +251,11 @@ export function GardenProvider({ gardenKey, children }: { gardenKey: string; chi
   const data = useMemo(() => (server ? apply(server, ops) : null), [server, ops])
 
   const me = server?.me ?? null
+  const edit = me?.role === 'owner' || me?.role === 'member'
   const value: GardenApi = {
     key: gardenKey, auth, me, setPass,
-    can: { edit: me?.role === 'owner' || me?.role === 'member', owner: me?.role === 'owner' },
+    can: { edit, owner: me?.role === 'owner' },
+    canUndo: (e) => edit || !!e.pending || (!!me && e.by_name === me.name && Date.now() - Date.parse(e.created_at ?? e.at) < UNDO_DAY),
     status, error, data, today, pending: ops.length,
     log, unlog, savePlant, deletePlant, updateGarden, reload,
   }

@@ -28,19 +28,19 @@
   --photo: var(--ink);     /* photos */
 
   /* ---- type ---- */
-  --font: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --serif: "Instrument Serif", Georgia, serif;
-  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: var(--font);   /* one family: Mario ruled out serifs (docs/plantas/feedback.md #8-10) */
+  --mono: var(--font);    /* data keeps tabular figures through .mono, not a second family */
   --fs-display: clamp(132px, 43vw, 280px);  /* the big number on a plant page */
   --fs-display-2: clamp(104px, 33vw, 200px); /* the big number on the garden page */
   --fs-h1: clamp(40px, 11vw, 72px);          /* plant name */
   --fs-h2: clamp(24px, 6.2vw, 32px);
   --fs-row: 22px;                            /* plant name in a list */
-  --fs-latin: clamp(20px, 6vw, 32px);
+  --fs-latin: clamp(17px, 4.6vw, 22px);
   --fs-value: 19px;                          /* the value inside a labelled cell */
   --fs-body: 16px;                           /* fields stay 16px so iPhone does not zoom */
   --fs-data: 14px;                           /* mono data */
-  --fs-label: 11px;                          /* mono uppercase labels: 500, +0.08em */
+  --fs-label: 13px;                          /* labels: 700, sentence case */
   --fs-btn: 24px;
 
   /* ---- grid, space, shape ---- */
@@ -48,7 +48,14 @@
   --gutter: 12px;
   --max: 1184px;
   --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
-  --r-pill: 999px;         /* the only rounded thing besides the vase: a herbarium has square corners */
+  /* App shapes (feedback #12, "se ve como una web"): controls and groups are rounded like an
+     installed app. The giant type and the photo-vase carry the identity, not square corners. */
+  --r-s: 10px;             /* thumbnails, small controls */
+  --r-m: 14px;             /* buttons, tiles, single cells */
+  --r-l: 20px;             /* grouped lists, cards, the plant photo */
+  --r-pill: 999px;
+  --fill: rgb(21 32 26 / .07);   /* tinted fill for secondary controls on paper */
+  --bar: rgb(238 240 235 / .86); /* app bar and tab bar, over a blur */
   --hair: 1px;
   --rule: 2px;
   --vase-line: 3px;
@@ -63,9 +70,10 @@
 
   /* ---- chrome ---- */
   --header-h: 56px;
-  --actions-h: 72px;
+  --actions-h: 84px;
+  --tabbar-h: 60px;
 }
 
 @media (min-width: 900px) {
-  :root { --margin: 48px; --gutter: 24px; --fs-row: 26px; --fs-value: 22px; --fs-body: 17px; --fs-data: 15px; --fs-label: 12px; }
+  :root { --margin: 48px; --gutter: 24px; --fs-row: 26px; --fs-value: 22px; --fs-body: 17px; --fs-data: 15px; --fs-label: 14px; }
 }

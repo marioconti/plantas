@@ -45,8 +45,8 @@ export function Settings() {
   const tabs: [Tab, string][] = [['people', 'Personas'], ['tags', 'Tags'], ...(can.owner ? [['garden', 'Jardín'] as [Tab, string]] : [])]
 
   return (
-    <div className="page no-actions">
-      <Header back={{ to: `/g/${key}`, label: 'Plantas' }} right="Ajustes" />
+    <div className="page has-tabs">
+      <Header />
       <main className="wrap settings">
         <h1 className="h1">Ajustes</h1>
         <div className="seg seg-3 settings-tabs" role="tablist">

@@ -83,9 +83,12 @@ create table if not exists public.plants_events (
   note       text        not null default '' check (char_length(note) <= 600),
   photo      text        check (char_length(photo) <= 200),
   by_name    text        not null default '',         -- the pass that wrote it: "Juan", "Visita"
+  by_pass    uuid,                                -- its id; null = a visitor
   created_at timestamptz not null default now(),
   foreign key (garden, plant) references public.plants_plants (garden, id) on delete cascade
 );
+
+alter table public.plants_events add column if not exists by_pass uuid; -- added 2026-10-24
 
 create index if not exists plants_events_by_plant on public.plants_events (garden, plant, type, at desc);
 create index if not exists plants_events_by_day   on public.plants_events (garden, at desc);
@@ -108,7 +111,7 @@ returns text language sql volatile set search_path = public, extensions as $$
   select translate(rtrim(encode(gen_random_bytes(24), 'base64'), '='), '+/', '-_')
 $$;
 
--- Who is asking, and may they do this? Raises unless allowed. Returns {role, name}.
+-- Who is asking, and may they do this? Raises unless allowed. Returns {role, name, pass}.
 --   p_need: 'read' | 'log' | 'edit' | 'owner'
 create or replace function public.plants_auth(p_key text, p_pass text, p_need text)
 returns json
@@ -144,7 +147,7 @@ begin
   if (p_need = 'edit' and r not in ('owner', 'member')) or (p_need = 'owner' and r <> 'owner') then
     raise exception 'not allowed' using errcode = '42501';
   end if;
-  return json_build_object('role', r, 'name', who);
+  return json_build_object('role', r, 'name', who, 'pass', ps.id);
 end $$;
 
 -- Used by the storage policy: a photo may only go under the folder of a real garden.
@@ -172,6 +175,9 @@ declare
 begin
   if p_key is null or p_key !~ '^[A-Za-z0-9_-]{20,64}$' then
     raise exception 'invalid garden key' using errcode = '22023';
+  end if;
+  if (select count(*) from plants_gardens where created_at > now() - interval '1 day') >= 10 then
+    raise exception 'too many gardens today' using errcode = '22023';
   end if;
   insert into plants_gardens (key, name) values (p_key, coalesce(nullif(left(trim(p_name), 40), ''), 'Mis plantas'))
   returning * into g;
@@ -363,9 +369,10 @@ declare
   me json := plants_auth(p_key, p_pass, 'log');
   r plants_events;
 begin
-  insert into plants_events (id, garden, plant, type, at, note, photo, by_name)
-  values (p_id, p_key, p_plant, p_type, least(coalesce(p_at, now()), now() + interval '5 minutes'),
-          left(coalesce(p_note, ''), 600), nullif(left(p_photo, 200), ''), me->>'name')
+  insert into plants_events (id, garden, plant, type, at, note, photo, by_name, by_pass)
+  values (p_id, p_key, p_plant, p_type,
+          greatest(least(coalesce(p_at, now()), now() + interval '5 minutes'), now() - interval '1 year'),
+          left(coalesce(p_note, ''), 600), nullif(left(p_photo, 200), ''), me->>'name', (me->>'pass')::uuid)
   on conflict (id) do nothing;
   select * into r from plants_events where id = p_id and garden = p_key;
   return r;
@@ -375,12 +382,21 @@ end $$;
 create or replace function public.plants_unlog(p_key text, p_pass text, p_id uuid)
 returns void
 language plpgsql security definer set search_path = public as $$
+declare
+  me json := plants_auth(p_key, p_pass, 'log');
 begin
-  perform plants_auth(p_key, p_pass, 'log');
-  delete from plants_events where garden = p_key and id = p_id;
+  if me->>'role' in ('owner', 'member') then
+    delete from plants_events where garden = p_key and id = p_id;
+  else
+    delete from plants_events
+     where garden = p_key and id = p_id and created_at > now() - interval '1 day'
+       and by_pass is not distinct from (me->>'pass')::uuid
+       and (by_pass is not null or by_name = 'Visita');
+  end if;
 end $$;
 
--- Only the functions the page calls are reachable with the publishable key.
+-- Helpers the page must not call. The page functions are granted to anon below. Careful: Postgres
+-- lets anyone execute a new function by default, so every new helper needs its own revoke here.
 revoke execute on function public.plants_auth(text, text, text), public.plants_hash(text), public.plants_new_token() from public, anon, authenticated;
 grant execute on function
   public.plants_ping(), public.plants_create_garden(text, text, text),

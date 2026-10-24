@@ -1,10 +1,36 @@
 import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useGarden } from '../lib/store.tsx'
 import { uploadPhoto } from '../lib/api.ts'
 import { LIGHT_WORDS, type DryTo, type Species } from '../lib/species.ts'
 import { monthShort } from '../lib/care.ts'
 import { Cell, Cells, Icon, Scale } from '../components/ui.tsx'
+import type { IconName } from '../components/icon-data.ts'
+
+/** Path, label and icon stem: the icon is bold, and filled on the tab you are in. */
+const TABS: [string, string, string][] = [['', 'Plantas', 'potted-plant'], ['diario', 'Diario', 'calendar-blank'], ['guia', 'Guía', 'leaf'], ['ajustes', 'Ajustes', 'gear-six']]
+
+/**
+ * The tab bar at the thumb, like any installed app. It shows on the four top screens and on the
+ * guide; a plant, and the forms, have their own buttons down there instead.
+ */
+export function TabBar() {
+  const { key } = useGarden()
+  const { pathname } = useLocation()
+  if (/\/(p|nueva)(\/|$)/.test(pathname)) return null
+  return (
+    <nav className="tabbar" aria-label="Secciones">
+      {TABS.map(([to, label, icon]) => (
+        <NavLink key={label} to={`/g/${key}${to ? `/${to}` : ''}`} end={!to} className="tb-item">
+          {({ isActive }) => <>
+            <Icon name={`${icon}-${isActive ? 'fill' : 'bold'}` as IconName} size={24} />
+            <span>{label}</span>
+          </>}
+        </NavLink>
+      ))}
+    </nav>
+  )
+}
 
 /** Says when something has not reached the database yet, or could not. */
 export function SyncNote() {
@@ -167,5 +193,5 @@ export function FeedSeason({ s }: { s: Species }) {
 
 export function SpeciesLink({ s }: { s: Species }) {
   const { key } = useGarden()
-  return <Link to={`/g/${key}/guia/${s.id}`} className="link-arrow"><span>Cómo cuidar {s.common[0].toLowerCase().startsWith('la ') || s.common[0].toLowerCase().startsWith('el ') ? s.common[0].toLowerCase() : `un ${s.common[0].toLowerCase()}`}</span><Icon name="arrow-right-bold" /></Link>
+  return <Link to={`/g/${key}/guia/${s.id}`} className="link-arrow"><span>Cómo cuidar {s.common[0].toLowerCase().startsWith('la ') || s.common[0].toLowerCase().startsWith('el ') ? s.common[0].toLowerCase() : `un ${s.common[0].toLowerCase()}`}</span><Icon name="caret-right-bold" /></Link>
 }

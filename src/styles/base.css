@@ -2,7 +2,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; overscroll-behavior: none; }
 body {
   background: var(--paper);
   color: var(--ink);
@@ -16,16 +16,19 @@ img { display: block; max-width: 100%; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { border: 0; background: none; cursor: pointer; touch-action: manipulation; padding: 0; text-align: inherit; }
 a { color: inherit; }
+/* controls are not text: a long press must not select their label or pop the link callout */
+button, a, summary, [role="button"], [role="tab"] { touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 :focus-visible { outline: 3px solid var(--today); outline-offset: 2px; }
 ::selection { background: var(--today); color: var(--ink); }
 
 /* ---- type roles ---- */
-.label { font: 500 var(--fs-label) / 1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.label { font: 700 var(--fs-label) / 1.2 var(--font); color: var(--ink-2); }
+.label::first-letter { text-transform: uppercase; }
 .mono { font-family: var(--mono); font-size: var(--fs-data); font-weight: 500; font-variant-numeric: tabular-nums; }
-.latin { font: italic 400 var(--fs-latin) / 1.1 var(--serif); }
+.latin { font: 500 var(--fs-latin) / 1.15 var(--font); color: var(--ink-2); }
 .h1 { font-size: var(--fs-h1); font-weight: 800; line-height: .95; letter-spacing: -.03em; font-variation-settings: 'opsz' 96; text-wrap: balance; }
 .h2 { font-size: var(--fs-h2); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; font-variation-settings: 'opsz' 48; }
-.display { font-weight: 800; font-stretch: 75%; font-variation-settings: 'opsz' 96, 'wdth' 75; letter-spacing: -.04em; line-height: .8; font-variant-numeric: tabular-nums; }
+.display { font-weight: 800; letter-spacing: -.05em; line-height: .8; font-variant-numeric: tabular-nums; }
 .muted { color: var(--ink-2); }
 
 /* ---- layout ---- */
@@ -33,9 +36,11 @@ a { color: inherit; }
 .bleed { margin-left: calc(-1 * var(--margin)); margin-right: calc(-1 * var(--margin)); padding-left: var(--margin); padding-right: var(--margin); }
 .stack > * + * { margin-top: var(--s4); }
 .section { padding-top: var(--s6); }
-.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s3); padding-bottom: var(--s2); border-bottom: var(--rule) solid var(--ink); margin-bottom: var(--s3); }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s3); padding: 0 var(--s1) var(--s2); }
+.section-head .label { font-size: 15px; }
 .page { min-height: 100svh; padding-bottom: calc(var(--actions-h) + 48px + env(safe-area-inset-bottom)); }
 .page.no-actions { padding-bottom: var(--s8); }
+.page.has-tabs { padding-bottom: calc(var(--tabbar-h) + var(--s7) + env(safe-area-inset-bottom)); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 @media (min-width: 900px) {

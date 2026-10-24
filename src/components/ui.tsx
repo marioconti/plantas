@@ -29,20 +29,31 @@ export function Logo({ size = 24, mark = false }: { size?: number; mark?: boolea
   )
 }
 
-/** Green header: the wordmark (or a way back) on the left, a real fact on the right. */
-export function Header({ back, right, title }: { back?: { to: string; label: string }; right?: ReactNode; title?: ReactNode }) {
+/**
+ * An app bar, not a website banner: a round back button (or the wordmark) on the left, the
+ * screen's title in the middle, one round action on the right.
+ */
+export function Header({ back, title, action }: { back?: { to: string; label: string }; title?: ReactNode; action?: ReactNode }) {
   return (
     <header className="header">
       <div className="wrap header-in">
-        {back ? (
-          <Link to={back.to} className="header-back"><Icon name="arrow-left-bold" size={18} /> {back.label}</Link>
-        ) : (
-          <Link to="/" className="header-logo" aria-label="Inicio">{title ?? <Logo size={26} />}</Link>
-        )}
-        {right && <div className="header-right">{right}</div>}
+        <div className="header-side">
+          {back ? (
+            <Link to={back.to} className="round-btn" aria-label={`Volver a ${back.label}`}><Icon name="caret-left-bold" size={20} /></Link>
+          ) : (
+            <Link to="/" className="header-logo" aria-label="Inicio"><Logo size={28} /></Link>
+          )}
+        </div>
+        {back && title ? <p className="header-title">{title}</p> : <span />}
+        <div className="header-side is-end">{action}</div>
       </div>
     </header>
   )
+}
+
+/** A round icon button for the app bar. */
+export function RoundLink({ to, icon, label }: { to: string; icon: IconName; label: string }) {
+  return <Link to={to} className="round-btn" aria-label={label}><Icon name={icon} size={20} /></Link>
 }
 
 const PILL_CLASS: Record<Due['kind'], string> = { late: 'pill-late', check: 'pill-today', today: 'pill-today', soon: 'pill-soon', ok: 'pill-ok', never: 'pill-never' }

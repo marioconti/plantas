@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { Component, useEffect, type ReactNode } from 'react'
 import { HashRouter, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import { GardenProvider, useGarden } from './lib/store.tsx'
 import { Header, Empty } from './components/ui.tsx'
@@ -11,6 +11,7 @@ import { SpeciesPage, SpeciesList } from './screens/Species.tsx'
 import { Settings } from './screens/Settings.tsx'
 import { Brand } from './screens/Brand.tsx'
 import { PassAccept, PrivateGarden } from './screens/Access.tsx'
+import { TabBar } from './screens/parts.tsx'
 
 /**
  * Hash routes, because GitHub Pages serves files and nothing else. The garden key lives after
@@ -31,6 +32,7 @@ export function App() {
   return (
     <HashRouter>
       <ScrollTop />
+      <Crash>
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/marca" element={<Brand />} />
@@ -47,13 +49,15 @@ export function App() {
         </Route>
         <Route path="*" element={<Start />} />
       </Routes>
+      </Crash>
     </HashRouter>
   )
 }
 
 function ScrollTop() {
   const { pathname } = useLocation()
-  useEffect(() => window.scrollTo(0, 0), [pathname])
+  // Braces matter: Chrome's scrollTo now returns a Promise, and React would call it as a cleanup.
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
   return null
 }
 
@@ -66,11 +70,34 @@ function GardenShell() {
   )
 }
 
+/**
+ * Without this, any error in a screen unmounts the whole app and leaves a blank page with no way
+ * out. The queue lives in localStorage, so reloading loses nothing that was not sent.
+ */
+class Crash extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false }
+  static getDerivedStateFromError() { return { failed: true } }
+  componentDidCatch(error: unknown) { console.error(error) }
+  render() {
+    if (!this.state.failed) return this.props.children
+    return (
+      <div className="page no-actions">
+        <main className="wrap">
+          <Empty title="Algo falló">
+            <p className="muted">Lo que anotaste quedó guardado en el teléfono.</p>
+            <p><button type="button" className="btn btn-primary" onClick={() => location.reload()}>Recargar</button></p>
+          </Empty>
+        </main>
+      </div>
+    )
+  }
+}
+
 /** Holds the screens until there is something to draw: the phone's copy, or the server's. */
 function GardenGate() {
   const { status, data } = useGarden()
   if (status === 'private') return <PrivateGarden />
-  if (data) return <Outlet />
+  if (data) return <><Outlet /><TabBar /></>
   return (
     <div className="page no-actions">
       <Header />

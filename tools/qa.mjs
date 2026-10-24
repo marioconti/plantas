@@ -91,6 +91,9 @@ const shots = [
   ['start', '#/'],
   ['private', `#/g/${KEY}`, { noPass: true }],
   ['garden', `#/g/${KEY}`],
+  ['garden-full', `#/g/${KEY}`, { full: true }],
+  ['garden-grid', `#/g/${KEY}`, { full: true, grid: true }],
+  ['garden-watered', `#/g/${KEY}`, { tap: 'Regué Menta' }],
   ['plant', `#/g/${KEY}/p/helecho-01`],
   ['plant-full', `#/g/${KEY}/p/helecho-01`, { full: true }],
   ['plant-watered', `#/g/${KEY}/p/helecho-01`, { tap: 'Regué' }],
@@ -116,7 +119,7 @@ for (const W of [320, 390, 1280]) {
     const desk = W >= 900
     events = SEED.map((e) => ({ ...e }))
     const ctx = await browser.newContext({ viewport: { width: W, height: desk ? 860 : 844 }, deviceScaleFactor: desk ? 1 : 2, isMobile: !desk, hasTouch: !desk, locale: 'es-AR', reducedMotion: 'reduce' })
-    await ctx.addInitScript(([k, p, noPass]) => { if (!noPass) localStorage.setItem(`plants:pass:${k}`, p) }, [KEY, PASS, Boolean(opt.noPass)])
+    await ctx.addInitScript(([k, p, noPass, grid]) => { if (!noPass) localStorage.setItem(`plants:pass:${k}`, p); if (grid) localStorage.setItem('regue.home.view', 'grid') }, [KEY, PASS, Boolean(opt.noPass), Boolean(opt.grid)])
     await ctx.route(/supabase\.co\/rest\/v1\/rpc\//, async (route) => {
       const fn = route.request().url().split('/rpc/')[1]
       const [status, body] = await rpc(fn, JSON.parse(route.request().postData() || '{}'))

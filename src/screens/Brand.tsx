@@ -34,7 +34,7 @@ const EXAMPLE = (kind: Due['kind'], daysLeft: number, interval = 7): Due => ({
 export function Brand() {
   return (
     <div className="page no-actions brand">
-      <Header right="Manual de marca" />
+      <Header title="Manual de marca" />
       <main className="wrap">
         <section className="brand-hero">
           <p className="label">Manual de marca · v1 · 19 de octubre de 2026</p>

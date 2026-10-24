@@ -6,8 +6,8 @@ import { DRY_WORDS, LEARNED_NOTE, feedingSeason, originWords, sourceName, specie
 import { useGarden } from '../lib/store.tsx'
 import { api, photoUrl } from '../lib/api.ts'
 import type { CareEvent, EventType, Plant } from '../lib/types.ts'
-import { Empty, Header, Icon } from '../components/ui.tsx'
-import { CountUp, Vase } from '../components/Vase.tsx'
+import { Empty, Header, Icon, RoundLink } from '../components/ui.tsx'
+import { CountUp } from '../components/Vase.tsx'
 import { Tablature } from '../components/Tablature.tsx'
 import { ActionBar, Sheet, Stamp, useToast } from '../components/actions.tsx'
 import { SpeciesLink, SyncNote, ToxLine, usePhotoPicker } from './parts.tsx'
@@ -53,29 +53,26 @@ export function PlantPage() {
 
   return (
     <div className="page">
-      <Header back={{ to: `/g/${key}`, label: 'Plantas' }} right={`Nº ${String(number).padStart(2, '0')} · ${plant.id}`} />
+      <Header
+        back={{ to: `/g/${key}`, label: 'Plantas' }}
+        title={`Nº ${String(number).padStart(2, '0')} · ${plant.id}`}
+        action={can.edit ? <RoundLink to="editar" icon="pencil-simple-bold" label="Editar planta" /> : undefined}
+      />
       <main>
-        <div className="wrap plant-title">
-          <div>
+        <div className="wrap ph-top">
+          <PlantHero due={st.water} cover={cover} own={coverIsOwn} name={plant.name} stamp={stamp} />
+          <div className="ph-info">
             <h1 className="h1">{plant.name}</h1>
             {(sp || plant.species_text) && <p className="latin">{sp?.latin ?? plant.species_text}</p>}
-            {plant.location && <p className="mono muted plant-where"><Icon name="potted-plant-bold" size={15} /> {plant.location}</p>}
+            {plant.location && <p className="muted plant-where"><Icon name="potted-plant-bold" size={16} /> {plant.location}</p>}
+            <WhenCard due={st.water} origin={origin} onOrigin={() => setSheet('origin')}>
+              <SecondaryLines st={st} plant={plant} />
+            </WhenCard>
+            {stamp?.type === 'water' && can.edit && <Suggest plant={plant} />}
           </div>
-          {cover && (
-            <figure className={`plant-cover${coverIsOwn ? '' : ' is-species'}`}>
-              <img src={cover} alt={plant.name} loading="lazy" />
-              {!coverIsOwn && <figcaption className="mono">foto de la especie</figcaption>}
-            </figure>
-          )}
         </div>
 
-        {st.water
-          ? <StateBlock due={st.water} st={st} stamp={stamp} origin={origin} onOrigin={() => setSheet('origin')} />
-          : <NoPlanBlock stamp={stamp} onOrigin={() => setSheet('origin')} />}
-
         <div className="wrap">
-          {stamp?.type === 'water' && can.edit && <Suggest plant={plant} />}
-          <SecondaryLines st={st} plant={plant} />
           <div className="quick">
             <button type="button" className="quick-btn" onClick={() => onLog('feed')}><Icon name="flask-fill" size={22} style={{ color: 'var(--feed)' }} />Fertilicé</button>
             <button type="button" className="quick-btn" onClick={photo.pick} disabled={photo.busy}><Icon name="camera-fill" size={22} />{photo.busy ? 'Subiendo…' : 'Foto'}</button>
@@ -147,39 +144,56 @@ export function PlantPage() {
   )
 }
 
-/** The block that answers "¿la riego hoy?" in two seconds: the number, its words, the vase. */
-function StateBlock({ due, st, stamp, origin, onOrigin }: {
-  due: Due; st: ReturnType<typeof statusOf>; stamp: CareEvent | null; origin: Origin; onOrigin: () => void
-}) {
-  const { today } = useGarden()
-  const cls = due.kind === 'late' ? 'st-late' : ['today', 'check', 'never'].includes(due.kind) ? 'st-today' : 'st-ok'
-  const words = due.kind === 'never' ? 'sin registro todavía'
-    : due.kind === 'check' ? (due.daysLeft === -1 ? 'día de más. Tocá la tierra' : 'días de más. Tocá la tierra')
-      : due.daysLeft < 0 ? (due.daysLeft === -1 ? 'día tarde' : 'días tarde')
-        : due.daysLeft === 0 ? 'toca hoy. Tocá la tierra' : due.daysLeft === 1 ? 'día para el próximo' : 'días para el próximo'
-  const regada = due.last ? `Regada ${ago(due.last.at, today)}` : ''
-  const when = due.kind === 'never' ? 'Registrá el primero y empieza la cuenta'
-    : due.daysLeft < 0 ? `${regada} · tocaba el ${shortDay(due.due)}`
-      : due.daysLeft === 0 ? regada : `El ${shortDay(due.due)} · ${regada.toLowerCase()}`
+/**
+ * The photo is the vase, as on the home screen: blue up to the water left, the surface a white
+ * line. The plate in the corner answers "¿la riego hoy?" in two seconds. A thirsty plant's photo
+ * dries out, and under it a row of seven slots fills red, one per day late.
+ */
+function PlantHero({ due, cover, own, name, stamp }: { due: Due | null; cover: string | null; own: boolean; name: string; stamp: CareEvent | null }) {
+  const dry = due?.kind === 'late' || due?.kind === 'check'
+  const level = due && due.kind !== 'never' ? due.level : 0
+  const late = due?.kind === 'late' ? Math.min(7, -due.daysLeft) : 0
+  const plate = !due ? { cls: 'none', num: null, words: 'sin plan de riego' }
+    : due.kind === 'never' ? { cls: 'none', num: null, words: 'sin riegos anotados' }
+      : due.kind === 'late' ? { cls: 'late', num: -due.daysLeft, words: due.daysLeft === -1 ? 'día tarde' : 'días tarde' }
+        : due.kind === 'check' ? { cls: 'today', num: -due.daysLeft, words: `${due.daysLeft === -1 ? 'día' : 'días'} de más. Tocá la tierra` }
+          : due.daysLeft === 0 ? { cls: 'today', num: 'hoy' as const, words: 'tocá la tierra' }
+            : { cls: '', num: due.daysLeft, words: due.daysLeft === 1 ? 'día para el próximo' : 'días para el próximo' }
   return (
-    <section className={`state ${cls}`} aria-live="polite">
-      <div className="wrap state-in">
-        <div className="state-read">
-          <p className="label state-label">riego</p>
-          <p className="display state-num">{due.kind === 'never' ? '—' : <CountUp value={due.daysLeft} />}</p>
-          <p className="state-words">{words}</p>
-          <div className="state-date">
-            <p className="mono">{when}</p>
-            <OriginButton days={due.interval} origin={origin} onClick={onOrigin} />
-          </div>
-        </div>
-        <div className="state-vases">
-          <div><Vase due={due} /><span className="label">{due.kind === 'late' ? `−${Math.min(7, -due.daysLeft)} d` : 'Riego'}</span></div>
-          {st.mist && <div><Vase due={st.mist} kind="mist" /><span className="label">Rocío</span></div>}
-        </div>
+    <figure className="ph" aria-live="polite">
+      <div className={`ph-photo${dry ? ' is-dry' : ''}`}>
+        {cover ? <img src={cover} alt={name} /> : <span className="ph-ini" aria-hidden>{name.trim()[0]?.toUpperCase()}</span>}
+        {level > 0 && <span className="ph-water" style={{ height: `${Math.round(level * 100)}%` }} />}
+        <p className={`ph-plate ${plate.cls}`}>
+          <b>{plate.num == null ? '—' : typeof plate.num === 'number' ? <CountUp value={plate.num} /> : plate.num}</b>
+          <span>{plate.words}</span>
+        </p>
+        {cover && !own && <figcaption className="ph-cap">foto de la especie</figcaption>}
         <Stamp event={stamp} />
       </div>
-    </section>
+      {late > 0 && (
+        <div className="ph-debt" role="img" aria-label={`${late} de 7 días de atraso`}>
+          {Array.from({ length: 7 }, (_, i) => <i key={i} className={i < late ? 'on' : ''} />)}
+        </div>
+      )}
+    </figure>
+  )
+}
+
+/** When it was watered and when it is due, with where the interval comes from one tap away. */
+function WhenCard({ due, origin, onOrigin, children }: { due: Due | null; origin: Origin; onOrigin: () => void; children: ReactNode }) {
+  const { today } = useGarden()
+  const regada = due?.last ? `Regada ${ago(due.last.at, today)}` : ''
+  const when = !due ? 'Anotá cada riego. Con cuatro, te proponemos un ritmo.'
+    : due.kind === 'never' ? 'Registrá el primero y empieza la cuenta'
+      : due.daysLeft < 0 ? `${regada} · tocaba el ${shortDay(due.due)}`
+        : due.daysLeft === 0 ? regada : `El ${shortDay(due.due)} · ${regada.toLowerCase()}`
+  return (
+    <div className={`ph-when${due?.kind === 'late' ? ' is-late' : ''}`}>
+      <p>{when}</p>
+      <OriginButton days={due?.interval ?? null} origin={due ? origin : { kind: 'none' }} onClick={onOrigin} />
+      {children}
+    </div>
   )
 }
 
@@ -191,26 +205,6 @@ function OriginButton({ days, origin, onClick }: { days: number | null; origin: 
       <span className={`origin-tag is-${origin.kind}`}>{originWords(origin)}</span>
       <Icon name="info-bold" size={15} />
     </button>
-  )
-}
-
-/** A plant with no watering plan: nothing is invented, the plan is learned from the log. */
-function NoPlanBlock({ stamp, onOrigin }: { stamp: CareEvent | null; onOrigin: () => void }) {
-  return (
-    <section className="state st-none" aria-live="polite">
-      <div className="wrap state-in">
-        <div className="state-read">
-          <p className="label state-label">riego</p>
-          <p className="display state-num">—</p>
-          <p className="state-words">sin plan de riego</p>
-          <div className="state-date">
-            <p className="mono">Anotá cada riego. Con cuatro, te proponemos un ritmo.</p>
-            <OriginButton days={null} origin={{ kind: 'none' }} onClick={onOrigin} />
-          </div>
-        </div>
-        <Stamp event={stamp} />
-      </div>
-    </section>
   )
 }
 
@@ -342,7 +336,7 @@ function Progress({ plant, events }: { plant: Plant; events: CareEvent[] }) {
 
 /** The journal: every entry, newest first, with a way to take one out. Older pages load on demand. */
 function Journal({ plant, events }: { plant: Plant; events: CareEvent[] }) {
-  const { auth, unlog } = useGarden()
+  const { auth, unlog, canUndo } = useGarden()
   const [more, setMore] = useState<CareEvent[]>([])
   const [done, setDone] = useState(false)
   const [armed, setArmed] = useState<string | null>(null)
@@ -364,19 +358,19 @@ function Journal({ plant, events }: { plant: Plant; events: CareEvent[] }) {
       <ul className="journal">
         {list.map((e) => (
           <li key={e.id} className={e.pending ? 'is-pending' : ''}>
-            <span className="mono j-date">{shortDate(e.at).toUpperCase()}</span>
+            <span className="mono j-date">{shortDate(e.at)}</span>
             <i className="j-sq" style={{ background: EVENTS[e.type].color, color: EVENTS[e.type].on }}><Icon name={EVENTS[e.type].icon} size={12} /></i>
             <span className="j-text">
               {EVENTS[e.type].past}{e.by_name ? ` · ${e.by_name}` : ''}{e.pending ? ' · sin enviar' : ''}
               {e.note && <em>{e.note}</em>}
             </span>
-            <button
+            {canUndo(e) && <button
               type="button" className={`j-x${armed === e.id ? ' is-armed' : ''}`}
               aria-label={armed === e.id ? 'Tocá de nuevo para borrar' : 'Borrar'}
               onClick={() => { if (armed === e.id) { unlog(e.id); setArmed(null) } else { setArmed(e.id); setTimeout(() => setArmed((a) => (a === e.id ? null : a)), 3000) } }}
             >
               {armed === e.id ? 'Borrar' : <Icon name="x-bold" size={14} />}
-            </button>
+            </button>}
           </li>
         ))}
       </ul>
@@ -390,7 +384,7 @@ function UnknownTag({ id }: { id: string }) {
   const { key, can } = useGarden()
   return (
     <div className="page no-actions">
-      <Header back={{ to: `/g/${key}`, label: 'Plantas' }} right={id} />
+      <Header back={{ to: `/g/${key}`, label: 'Plantas' }} title={id} />
       <main className="wrap">
         <Empty title="Este tag todavía no tiene planta">
           <p className="muted">El link apunta a <b className="mono">{id}</b>, que no está en el jardín. Dala de alta y desde ahora este tag abre su ficha.</p>

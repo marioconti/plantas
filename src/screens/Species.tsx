@@ -33,15 +33,14 @@ function unverifiedWords(keys: string[]): string {
 }
 
 export function SpeciesList() {
-  const { key } = useGarden()
   const [q, setQ] = useState('')
   const [cat, setCat] = useState<string | null>(null)
   const found = searchSpecies(q)
   const cats = (Object.keys(CATEGORY_WORDS) as Category[]).filter((c) => SPECIES.some((s) => s.category === c))
   const list = found.filter((s) => !cat || (cat === 'nativa' ? s.native : s.category === cat))
   return (
-    <div className="page no-actions">
-      <Header back={{ to: `/g/${key}`, label: 'Plantas' }} right={`${list.length} especies`} />
+    <div className="page has-tabs">
+      <Header />
       <main className="wrap">
         <h1 className="h1">Guía de cuidados</h1>
         <p className="muted guide-lede">Las plantas más comunes en Argentina. Cada dato dice de dónde sale.</p>
@@ -95,8 +94,8 @@ export function SpeciesPage() {
   const mine = data!.plants.filter((p) => p.species === s.id && !p.archived)
 
   return (
-    <div className="page no-actions">
-      <Header back={{ to: `/g/${key}/guia`, label: 'Guía' }} right={s.family ?? ''} />
+    <div className="page has-tabs">
+      <Header back={{ to: `/g/${key}/guia`, label: 'Guía' }} title={s.family ?? ''} />
       <main>
         {ph && (
           <figure className="sp-photo">

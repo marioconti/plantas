@@ -193,7 +193,7 @@ export function AccessPanel() {
                 ))}
               </div>
               <span className="hint mono">
-                {role === 'owner' ? 'Todo, incluso pases y acceso. Para la gente de la casa.' : role === 'member' ? 'Anota, agrega y edita plantas.' : 'Ve y anota. No edita ni borra.'}
+                {role === 'owner' ? 'Todo, incluso pases y acceso. Para la gente de la casa.' : role === 'member' ? 'Anota, agrega y edita plantas.' : 'Ve y anota. Solo deshace lo suyo del día.'}
               </span>
             </div>
             {role !== 'owner' && (

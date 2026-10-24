@@ -11,7 +11,7 @@ import './screens.css'
 
 /** The whole garden as tablature, and the latest entries. */
 export function Diary() {
-  const { data, today, key, unlog } = useGarden()
+  const { data, today, key, unlog, canUndo } = useGarden()
   const { garden, plants, events } = data!
   const all = byUrgency(plants, events, today, garden)
   const [pick, setPick] = useState<{ plant: string; day: number; list: CareEvent[] } | null>(null)
@@ -19,8 +19,8 @@ export function Diary() {
   const nameOf = (id: string) => plants.find((p) => p.id === id)?.name ?? id
 
   return (
-    <div className="page no-actions">
-      <Header back={{ to: `/g/${key}`, label: 'Plantas' }} right="Diario" />
+    <div className="page has-tabs">
+      <Header />
       <main>
         <div className="wrap">
           <h1 className="h1">Diario</h1>
@@ -58,10 +58,10 @@ export function Diary() {
               <span className="mono j-date">{new Date(e.at).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</span>
               <i className="j-sq" style={{ background: EVENTS[e.type].color, color: EVENTS[e.type].on }}><Icon name={EVENTS[e.type].icon} size={12} /></i>
               <span className="j-text">{EVENTS[e.type].past}{e.by_name ? ` · ${e.by_name}` : ''}{e.note && <em>{e.note}</em>}</span>
-              <button type="button" className="j-x" aria-label="Borrar" onClick={() => {
+              {canUndo(e) && <button type="button" className="j-x" aria-label="Borrar" onClick={() => {
                 unlog(e.id)
                 setPick((p) => (p ? { ...p, list: p.list.filter((x) => x.id !== e.id) } : p))
-              }}><Icon name="trash-bold" size={14} /></button>
+              }}><Icon name="trash-bold" size={14} /></button>}
             </li>
           ))}
         </ul>

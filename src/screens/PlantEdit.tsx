@@ -75,7 +75,7 @@ export function PlantEdit() {
     const list = searchSpecies(query)
     return (
       <div className="page no-actions">
-        <Header back={back} right="Paso 1 de 2" />
+        <Header back={back} title="Paso 1 de 2" />
         <main className="wrap edit">
           <h1 className="h1">¿Qué planta es?</h1>
           <input type="search" className="guide-search" value={query} placeholder="Buscar: potus, helecho, monstera…" onChange={(e) => setQuery(e.target.value)} autoFocus />
@@ -98,7 +98,7 @@ export function PlantEdit() {
   const origin = waterOrigin(p, events, today, garden)
   return (
     <div className="page no-actions">
-      <Header back={back} right={isNew ? 'Paso 2 de 2' : undefined} />
+      <Header back={back} title={isNew ? 'Paso 2 de 2' : undefined} />
       <main className="wrap edit">
         <h1 className="h1">{isNew ? '¿Cómo le decís y dónde está?' : 'Editar'}</h1>
         <form onSubmit={save} className="form">
