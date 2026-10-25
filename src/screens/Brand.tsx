@@ -47,14 +47,13 @@ export function Brand() {
         </Block>
 
         <Block n="02" title="Logo">
-          <p className="brand-p">Bricolage Grotesque 800, tracking −0,045 em. La tilde de la é se reemplaza por una barra, la raya del nivel del vaso. Está «lleno hasta la marca». Es la letra editada, no un dibujo al lado.</p>
+          <p className="brand-p">Una regadera amarilla que riega un brote, y la palabra en una sans redonda y gruesa. Salió de diez opciones generadas con IA en Figma, el 24 de octubre de 2026. Va sobre fondos claros.</p>
           <div className="brand-logos">
-            <div className="bl bl-green"><Logo size={56} /></div>
-            <div className="bl bl-paper"><span style={{ color: 'var(--green)' }}><Logo size={56} /></span></div>
-            <div className="bl bl-icon"><Logo size={72} mark /></div>
+            <div className="bl bl-paper"><Logo size={48} /></div>
+            <div className="bl bl-white"><Logo size={48} /></div>
+            <div className="bl bl-icon"><Logo size={96} mark /></div>
             <div className="bl bl-small"><Logo size={24} /><span className="label">24 px, encabezado</span></div>
           </div>
-          <p className="hint mono">Pendiente: un ícono ilustrado (maceta, hoja) con mano de ilustrador o generación de imagen. Nunca dibujado en código.</p>
         </Block>
 
         <Block n="03" title="Color">

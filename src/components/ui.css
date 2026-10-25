@@ -1,11 +1,7 @@
 .icon { flex: none; display: inline-block; vertical-align: -0.15em; }
 
 /* ---- wordmark ---- */
-.logo { display: inline-flex; align-items: baseline; font-family: var(--font); font-weight: 800; font-variation-settings: 'opsz' 96, 'wdth' 100; letter-spacing: -.045em; line-height: 1; color: currentColor; white-space: nowrap; }
-.logo-e { position: relative; display: inline-block; }
-/* The level bar sits where the accent goes: as wide as the eye of the e, as thick as a stem. */
-.logo-e i { position: absolute; left: .07em; right: .07em; top: .02em; height: .1em; background: var(--mist); }
-.logo-mark .logo-e i { height: .13em; }
+.logo { display: block; width: auto; max-width: 100%; }
 
 /* ---- header ---- */
 /* ---- app bar: paper over a blur, round buttons, a title in the middle ---- */

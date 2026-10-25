@@ -17,16 +17,12 @@ export function Icon({ name, size = 20, label, style }: { name: IconName; size?:
 }
 
 /**
- * The wordmark: "regué" with the accent of the é replaced by a level bar — the line of water
- * in the vase, "filled up to the mark". It is the letter edited, not a drawing next to it.
+ * The logo: a watering can pouring on a sprout, and the word. Chosen by Mario from ten generated
+ * options (docs/plantas/logo/, 2026-10-24); tools/logo-cut.mjs cuts it into public/brand/.
+ * `size` is the height of the letters; `mark` is the can and the sprout alone.
  */
 export function Logo({ size = 24, mark = false }: { size?: number; mark?: boolean }) {
-  return (
-    <span className={mark ? 'logo logo-mark' : 'logo'} style={{ fontSize: size }} aria-label="Regué" role="img">
-      {!mark && <span aria-hidden>regu</span>}
-      <span className="logo-e" aria-hidden>e<i /></span>
-    </span>
-  )
+  return <img className="logo" src={`${import.meta.env.BASE_URL}brand/${mark ? 'mark' : 'logo'}.png`} alt="Regué" style={{ height: Math.round(size * (mark ? 1 : 1.45)) }} />
 }
 
 /**

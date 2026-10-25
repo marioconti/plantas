@@ -255,7 +255,7 @@
 .settings .section > * + * { margin-top: var(--s3); }
 
 /* ================================================================ start */
-.start-hero { background: var(--green); color: #fff; padding: var(--s8) 0 var(--s6); }
+.start-hero { background: var(--surface); color: var(--ink); padding: var(--s8) 0 var(--s6); border-radius: 0 0 28px 28px; } /* the logo is drawn for light grounds */
 .start-claim { font-size: clamp(22px, 6vw, 34px); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; margin-top: var(--s4); max-width: 22ch; }
 .start-body { padding-bottom: var(--s8); }
 .how { list-style: none; padding: 0 var(--s4); display: grid; gap: 0; background: var(--surface); border-radius: var(--r-l); }

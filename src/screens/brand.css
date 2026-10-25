@@ -12,11 +12,11 @@
 
 .brand-logos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .bl { min-height: 140px; display: grid; place-items: center; }
-.bl-green { background: var(--green); color: #fff; }
-.bl-paper { background: var(--surface); border: var(--hair) solid var(--line); }
-.bl-icon { background: var(--green); color: #fff; aspect-ratio: 1; min-height: 0; width: 140px; justify-self: center; }
-.bl-small { background: var(--green); color: #fff; display: flex; flex-direction: column; gap: 10px; }
-.bl-small .label { color: rgb(255 255 255 / .8); }
+.bl { border-radius: var(--r-l); padding: var(--s3); }
+.bl-paper { background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); }
+.bl-white { background: var(--surface); }
+.bl-icon { background: var(--paper); aspect-ratio: 1; min-height: 0; width: 140px; justify-self: center; border-radius: 32px; box-shadow: inset 0 0 0 1px var(--line); }
+.bl-small { background: var(--surface); display: flex; flex-direction: column; gap: 10px; }
 
 .swatches { display: grid; grid-template-columns: 1fr; border-top: var(--rule) solid var(--ink); }
 .swatch { display: grid; grid-template-columns: 72px 1fr; gap: var(--s3); padding: 10px 0; border-bottom: var(--hair) solid var(--line); }
