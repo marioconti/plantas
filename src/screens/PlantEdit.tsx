@@ -66,7 +66,8 @@ export function PlantEdit() {
     e.preventDefault()
     if (!canSave) return
     savePlant({ ...p, name: p.name.trim(), location: p.location.trim() })
-    nav(`/g/${key}/p/${p.id}`, { replace: true })
+    // A new plant goes straight on to its tag: that is the next thing to do with it.
+    nav(isNew ? `/g/${key}/p/${p.id}/tag` : `/g/${key}/p/${p.id}`, { replace: true })
   }
 
   const back = existing ? { to: `/g/${key}/p/${existing.id}`, label: existing.name } : { to: `/g/${key}`, label: 'Plantas' }

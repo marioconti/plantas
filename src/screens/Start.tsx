@@ -22,7 +22,7 @@ export function Start() {
       const key = newGardenKey()
       const r = await api.createGarden(key, name.trim() || 'Mis plantas', owner.trim())
       savePass(key, r.pass)
-      nav(`/g/${key}/ajustes`)
+      nav(`/g/${key}/empezar`)
     } catch (e) {
       setError(e instanceof Error && e.message === 'too many gardens today' ? 'Hoy ya se crearon muchos jardines. Probá mañana.' : 'No se pudo crear. Hace falta conexión.')
       setBusy(false)

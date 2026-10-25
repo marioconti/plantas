@@ -298,3 +298,45 @@
 .chips button.on { background: var(--ink); color: var(--paper); }
 .sp-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--s3); }
 .care-text .src { margin-left: auto; font-size: 11px; text-transform: none; letter-spacing: 0; }
+
+/* ---- first steps and the tag wizard (feedback #16: one action per screen, an icon for each) ---- */
+.setup { padding-top: var(--s4); padding-bottom: var(--s7); display: grid; gap: var(--s4); }
+.setup-lead { font-size: 17px; color: var(--ink-2); }
+.setup-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.setup-step { display: grid; grid-template-columns: 52px 1fr; gap: var(--s3); padding: var(--s4); background: var(--surface); border-radius: var(--r-l); }
+.setup-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--fill); color: var(--green); }
+.setup-step.is-done .setup-ico { background: var(--ok); }
+.setup-body { display: grid; gap: 8px; min-width: 0; }
+.setup-n { font-size: 13px; font-weight: 700; color: var(--ink-2); }
+.setup-title { font-size: 21px; font-weight: 800; line-height: 1.15; }
+.setup-list { list-style: none; padding: 0; margin: 0; display: grid; }
+.setup-list a { display: flex; justify-content: space-between; align-items: center; min-height: 44px; text-decoration: none; font-weight: 600; box-shadow: inset 0 -.5px 0 var(--line); }
+.nudge { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; margin-top: var(--s4); padding: 14px var(--s4); border-radius: var(--r-l); background: var(--today); color: var(--ink); text-decoration: none; }
+.nudge span { display: grid; font-size: 15px; }
+.nudge b { font-size: 17px; }
+.nudge:active { transform: scale(.98); }
+
+.wz { padding-top: var(--s4); padding-bottom: var(--s7); display: grid; gap: var(--s3); justify-items: start; }
+.wz-dots { display: flex; gap: 6px; width: 100%; }
+.wz-dots i { flex: 1; height: 6px; border-radius: 3px; background: var(--fill); }
+.wz-dots i.is-done { background: var(--green); opacity: .45; }
+.wz-dots i.is-on { background: var(--green); }
+.wz-ico { width: 84px; height: 84px; border-radius: 26px; display: grid; place-items: center; background: var(--surface); color: var(--green); margin-top: var(--s3); }
+.wz-title { font-size: clamp(28px, 8vw, 38px); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; }
+.wz-body { display: grid; gap: var(--s3); width: 100%; font-size: 18px; line-height: 1.4; }
+.wz-sub { list-style: none; padding: 0; margin: 0; display: grid; background: var(--surface); border-radius: var(--r-l); overflow: hidden; }
+.wz-sub li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; padding: 14px var(--s4); box-shadow: inset 0 -.5px 0 var(--line); }
+.wz-sub li:last-child { box-shadow: none; }
+.wz-sub .icon { color: var(--green); margin-top: 2px; }
+.wz-stores { display: grid; gap: 8px; }
+.wz-warn { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 14px var(--s4); border-radius: var(--r-l); background: rgb(178 58 30 / .1); font-size: 16px; }
+.wz-warn .icon { color: var(--late); margin-top: 2px; }
+.wz-ok { display: flex; align-items: center; gap: 8px; font-weight: 800; color: var(--green); }
+.wz-help { padding: var(--s4); border-radius: var(--r-l); background: var(--surface); font-size: 16px; }
+.wz-help ul { padding-left: 1.2em; display: grid; gap: 6px; margin-top: 6px; }
+.wz-help .link { color: var(--water); font-weight: 700; text-decoration: underline; }
+.wz-nav { display: grid; grid-template-columns: auto 1fr; gap: 8px; width: 100%; margin-top: var(--s3); }
+.wz-nav .btn:only-child { grid-column: 1 / -1; }
+.wz-back { margin-top: var(--s2); }
+.is-bad { color: var(--late); }
+.setup .btn, .wz .btn { height: auto; min-height: 52px; padding-top: 10px; padding-bottom: 10px; text-align: left; }

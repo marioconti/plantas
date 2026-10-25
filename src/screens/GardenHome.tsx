@@ -7,6 +7,7 @@ import { speciesById, speciesPhoto } from '../lib/species.ts'
 import type { CareEvent } from '../lib/types.ts'
 import { Empty, Header, Icon, RoundLink } from '../components/ui.tsx'
 import { SyncNote } from './parts.tsx'
+import { taggedPlants } from './Setup.tsx'
 import './screens.css'
 import './home.css'
 
@@ -41,7 +42,7 @@ function readView(): View {
 }
 
 export function GardenHome() {
-  const { data, today, can, me } = useGarden()
+  const { data, today, can, me, key } = useGarden()
   const { garden, plants, events } = data!
   const all = byUrgency(plants, events, today, garden)
   const byRoom = rooms(all)
@@ -59,6 +60,7 @@ export function GardenHome() {
       <main className="home">
         <section className="wrap home-top">
           <p className="home-date">{garden.name} · {WEEKDAY_LONG[today.getDay()]} {longDate(today)}</p>
+          {can.edit && plants.length > 0 && <SetupNudge left={plants.filter((p) => !taggedPlants(key).includes(p.id)).length} />}
           {plants.length > 0 && (
             <>
               <div className="home-count">
@@ -255,9 +257,20 @@ function WaterButton({ s, small = false }: { s: PlantStatus; small?: boolean }) 
 function FirstPlant() {
   return (
     <Empty title="Todavía no hay plantas">
-      <p className="muted">Agregá la primera y después grabá su link en un tag NFC. Al acercar el teléfono a la maceta se abre su ficha.</p>
-      <p><Link to="nueva" className="btn btn-primary"><Icon name="plus-bold" /> Agregar una planta</Link></p>
-      <p><Link to="ajustes" className="btn btn-line">Cómo grabar los tags</Link></p>
+      <p className="muted">Te guío paso a paso: cargás cada planta y grabás su tag.</p>
+      <p><Link to="empezar" className="btn btn-primary"><Icon name="list-plus-bold" /> Empezar paso a paso</Link></p>
     </Empty>
+  )
+}
+
+/** While some plant has no tag on this phone's record, a way back into the guide. */
+function SetupNudge({ left }: { left: number }) {
+  if (!left) return null
+  return (
+    <Link to="empezar" className="nudge">
+      <Icon name="sticker-bold" size={24} />
+      <span><b>{left === 1 ? 'Falta 1 tag' : `Faltan ${left} tags`}</b> Te guío para grabarlos</span>
+      <Icon name="caret-right-bold" />
+    </Link>
   )
 }

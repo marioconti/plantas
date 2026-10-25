@@ -12,6 +12,7 @@ import { Settings } from './screens/Settings.tsx'
 import { Brand } from './screens/Brand.tsx'
 import { PassAccept, PrivateGarden } from './screens/Access.tsx'
 import { TabBar } from './screens/parts.tsx'
+import { Setup, TagWizard } from './screens/Setup.tsx'
 
 /**
  * Hash routes, because GitHub Pages serves files and nothing else. The garden key lives after
@@ -21,6 +22,8 @@ import { TabBar } from './screens/parts.tsx'
  *   #/g/<key>                  the garden, by urgency
  *   #/g/<key>/p/<plant>        a plant — the address written on its tag
  *   #/g/<key>/p/<plant>/editar
+ *   #/g/<key>/p/<plant>/tag    writing that plant's tag, step by step
+ *   #/g/<key>/empezar          the first-time checklist: plants, tags, people
  *   #/g/<key>/nueva?id=<plant> new plant (the tag can be written first)
  *   #/g/<key>/diario           the diary of the whole garden
  *   #/g/<key>/guia[/<species>] the care guide
@@ -41,6 +44,8 @@ export function App() {
           <Route index element={<GardenHome />} />
           <Route path="p/:plantId" element={<PlantPage />} />
           <Route path="p/:plantId/editar" element={<PlantEdit />} />
+          <Route path="p/:plantId/tag" element={<TagWizard />} />
+          <Route path="empezar" element={<Setup />} />
           <Route path="nueva" element={<PlantEdit />} />
           <Route path="diario" element={<Diary />} />
           <Route path="guia" element={<SpeciesList />} />

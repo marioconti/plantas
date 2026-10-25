@@ -112,6 +112,9 @@ const shots = [
   ['new-none', `#/g/${KEY}/nueva`, { tap: 'No sé' }],
   ['settings', `#/g/${KEY}/ajustes`, { full: true }],
   ['brand', '#/marca', { full: true }],
+  ['setup', `#/g/${KEY}/empezar`, { full: true }],
+  ['wizard', `#/g/${KEY}/p/helecho-01/tag`],
+  ['wizard-2', `#/g/${KEY}/p/helecho-01/tag`, { tap: 'Siguiente' }],
 ].filter(([name]) => !only || name.startsWith(only))
 
 for (const W of [320, 390, 1280]) {

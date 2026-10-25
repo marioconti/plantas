@@ -97,24 +97,16 @@ export function Settings() {
             {plants.map((p) => (
               <li key={p.id}>
                 <span><b>{p.name}</b><code className="mono">{p.id}</code></span>
-                <CopyButton text={tagUrl(key, p.id)} />
+                <Link to={`/g/${key}/p/${p.id}/tag`} className="copy"><Icon name="sticker-bold" size={16} /> Grabar</Link>
               </li>
             ))}
           </ul>
           <Link to={`/g/${key}/nueva`} className="btn btn-line btn-block"><Icon name="plus-bold" /> Agregar una planta</Link>
         </section>
 
-        <details className="section howto">
-          <summary className="link-arrow"><span>Cómo grabar un tag</span><Icon name="plus-bold" /></summary>
-          <ol className="steps">
-            <li>Instalá <b>NFC Tools</b> (de wakdev) en el teléfono. Es gratis en iPhone y en Android.</li>
-            <li>Copiá el link de la planta desde esta lista.</li>
-            <li>En NFC Tools, andá a la pestaña de escribir, agregá un registro de tipo <b>URL</b> y pegá el link.</li>
-            <li>Escribilo y acercá el tag a la parte de arriba del iPhone, o al centro de la espalda en Android.</li>
-            <li>Probalo con la pantalla desbloqueada. Tiene que abrir la ficha de la planta.</li>
-          </ol>
-          <p className="hint mono">No bloquees el tag («hacer de solo lectura»): no se puede deshacer.</p>
-        </details>
+        <section className="section">
+          <Link to={`/g/${key}/empezar`} className="link-arrow"><span><Icon name="list-plus-bold" /> Guía paso a paso</span><Icon name="caret-right-bold" /></Link>
+        </section>
         </>}
       </main>
     </div>
