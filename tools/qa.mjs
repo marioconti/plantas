@@ -89,6 +89,7 @@ async function rpc(fn, a) {
 const browser = await chromium.launch()
 const shots = [
   ['start', '#/'],
+  ['start-create', '#/', { tap: 'Crear mi jardín' }],
   ['private', `#/g/${KEY}`, { noPass: true }],
   ['garden', `#/g/${KEY}`],
   ['garden-full', `#/g/${KEY}`, { full: true }],

@@ -18,7 +18,8 @@ import { Setup, TagWizard } from './screens/Setup.tsx'
  * Hash routes, because GitHub Pages serves files and nothing else. The garden key lives after
  * the "#", so it never reaches any server but the database's.
  *
- *   #/                         start: what this is, create a garden
+ *   #/                         start: the last garden this phone opened, or the welcome
+ *   #/inicio                   the welcome, always: what this is, create a garden
  *   #/g/<key>                  the garden, by urgency
  *   #/g/<key>/p/<plant>        a plant — the address written on its tag
  *   #/g/<key>/p/<plant>/editar
@@ -38,6 +39,7 @@ export function App() {
       <Crash>
       <Routes>
         <Route path="/" element={<Start />} />
+        <Route path="/inicio" element={<Start />} />
         <Route path="/marca" element={<Brand />} />
         <Route path="/g/:key/pase/:token" element={<PassAccept />} />
         <Route path="/g/:key" element={<GardenShell />}>

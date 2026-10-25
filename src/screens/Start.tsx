@@ -1,18 +1,33 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { api, newGardenKey, savePass } from '../lib/api.ts'
 import { knownGardens } from '../lib/store.tsx'
 import { Icon, Logo } from '../components/ui.tsx'
+import type { IconName } from '../components/icon-data.ts'
 import './screens.css'
 
-/** What this is, the gardens this phone already opened, and how to start one. */
+const HOW: [IconName, string][] = [
+  ['potted-plant-bold', 'Cargás cada planta'],
+  ['sticker-bold', 'Le pegás un tag a la maceta'],
+  ['drop-bold', 'Lo tocás con el teléfono y sabés si le toca agua'],
+]
+
+/**
+ * The welcome, shaped like an app's first screen (feedback #17): the logo, one line, one button
+ * at the bottom. A phone that already opened a garden goes straight into it, as an app opens on
+ * your things; #/inicio still shows this screen.
+ */
 export function Start() {
   const nav = useNavigate()
+  const { pathname } = useLocation()
   const known = knownGardens()
+  const [step, setStep] = useState<'hello' | 'create'>('hello')
   const [name, setName] = useState('')
   const [owner, setOwner] = useState('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  if (pathname === '/' && known.length) return <Navigate to={`/g/${known[0].key}`} replace />
 
   async function create(e: React.FormEvent) {
     e.preventDefault()
@@ -29,55 +44,48 @@ export function Start() {
     }
   }
 
+  if (step === 'create') {
+    return (
+      <div className="welcome">
+        <header className="welcome-bar">
+          <button type="button" className="round-btn" aria-label="Volver" onClick={() => setStep('hello')}><Icon name="caret-left-bold" size={20} /></button>
+        </header>
+        <form onSubmit={create} className="welcome-body welcome-form">
+          <h1 className="welcome-title">Tu jardín</h1>
+          <label className="field">
+            <span className="label">¿Cómo se llama?</span>
+            <input value={name} maxLength={40} onChange={(e) => setName(e.target.value)} placeholder="Las plantas de casa" enterKeyHint="next" />
+          </label>
+          <label className="field">
+            <span className="label">¿Y vos cómo te llamás?</span>
+            <input value={owner} maxLength={40} required onChange={(e) => setOwner(e.target.value)} placeholder="Mario" autoComplete="given-name" enterKeyHint="done" />
+          </label>
+          <p className="muted">Sin cuenta ni mail. Este teléfono queda como dueño y después le das acceso a quien quieras.</p>
+          {error && <p className="hint is-bad">{error}</p>}
+          <div className="welcome-cta">
+            <button type="submit" className="btn btn-primary btn-block" disabled={busy}>{busy ? 'Creando…' : 'Crear y seguir'}</button>
+          </div>
+        </form>
+      </div>
+    )
+  }
+
   return (
-    <div className="start">
-      <header className="start-hero">
-        <div className="wrap">
-          <Logo size={96} />
-          <p className="start-claim">Acercá el teléfono a la maceta. Te dice si le toca agua, y con un toque queda anotado.</p>
-        </div>
-      </header>
-      <main className="wrap start-body">
-        {known.length > 0 && (
-          <section className="section">
-            <div className="section-head"><h2 className="label">Tus jardines</h2></div>
-            {known.map((g) => (
-              <Link key={g.key} to={`/g/${g.key}`} className="link-arrow"><span>{g.name}</span><Icon name="caret-right-bold" /></Link>
-            ))}
-          </section>
-        )}
-
-        <section className="section">
-          <div className="section-head"><h2 className="label">Cómo funciona</h2></div>
-          <ol className="how">
-            <li><span className="display">1</span><p><b>Cargás cada planta.</b> Elegís la especie y la guía propone cada cuánto regarla.</p></li>
-            <li><span className="display">2</span><p><b>Grabás un tag NFC por maceta.</b> Es una calcomanía. El teléfono la lee sin instalar nada.</p></li>
-            <li><span className="display">3</span><p><b>Regás y tocás «Regué».</b> El vaso se llena y cuenta los días hasta la próxima.</p></li>
-          </ol>
-        </section>
-
-        <section className="section">
-          <div className="section-head"><h2 className="label">Empezar un jardín</h2></div>
-          <form onSubmit={create} className="form">
-            <label className="field">
-              <span className="label">Nombre</span>
-              <input value={name} maxLength={40} onChange={(e) => setName(e.target.value)} placeholder="Las plantas de casa" />
-            </label>
-            <label className="field">
-              <span className="label">Tu nombre</span>
-              <input value={owner} maxLength={40} required onChange={(e) => setOwner(e.target.value)} placeholder="Mario" />
-            </label>
-            <button type="submit" className="btn btn-primary btn-block" disabled={busy}>{busy ? 'Creando…' : 'Crear jardín'}</button>
-            {error && <p className="hint mono is-bad">{error}</p>}
-            <p className="hint mono">No pide cuenta ni mail. Este teléfono queda con un pase de dueño, y desde Ajustes le das pase a quien quieras.</p>
-          </form>
-        </section>
-
-        <footer className="start-foot mono">
-          <Link to="/marca">Manual de marca</Link>
-          <span>Datos de cuidado: ASPCA, NC State Extension, RHS. Fotos: Wikimedia Commons.</span>
-        </footer>
+    <div className="welcome">
+      <main className="welcome-body welcome-hello">
+        <Logo size={64} />
+        <p className="welcome-claim">Saber cuándo regar cada planta, con un toque.</p>
+        <ul className="welcome-how">
+          {HOW.map(([icon, text]) => <li key={icon}><span aria-hidden><Icon name={icon} size={24} /></span>{text}</li>)}
+        </ul>
       </main>
+      <div className="welcome-cta">
+        <button type="button" className="btn btn-primary btn-block" onClick={() => setStep('create')}>Crear mi jardín</button>
+        {known.map((g) => (
+          <Link key={g.key} to={`/g/${g.key}`} className="btn btn-line btn-block">Abrir {g.name}</Link>
+        ))}
+        <p className="welcome-foot">¿Te pasaron un link de acceso? Abrilo y entrás directo. · <Link to="/marca">Marca</Link></p>
+      </div>
     </div>
   )
 }

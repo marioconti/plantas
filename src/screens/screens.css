@@ -255,13 +255,21 @@
 .settings .section > * + * { margin-top: var(--s3); }
 
 /* ================================================================ start */
-.start-hero { background: var(--surface); color: var(--ink); padding: var(--s8) 0 var(--s6); border-radius: 0 0 28px 28px; } /* the logo is drawn for light grounds */
-.start-claim { font-size: clamp(22px, 6vw, 34px); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; margin-top: var(--s4); max-width: 22ch; }
-.start-body { padding-bottom: var(--s8); }
-.how { list-style: none; padding: 0 var(--s4); display: grid; gap: 0; background: var(--surface); border-radius: var(--r-l); }
-.how li { display: grid; grid-template-columns: 56px 1fr; gap: var(--s3); align-items: start; padding: var(--s4) 0; border-bottom: var(--hair) solid var(--line); }
-.how .display { font-size: 64px; color: var(--water); line-height: .8; }
-.start-foot { display: grid; gap: 8px; margin-top: var(--s7); font-size: 12px; color: var(--ink-2); }
+/* ---- welcome: an app's first screen, the button within the thumb's reach (feedback #17) ---- */
+.welcome { min-height: 100svh; display: flex; flex-direction: column; background: var(--paper); padding: env(safe-area-inset-top) 0 0; }
+.welcome-bar { padding: 10px var(--margin); }
+.welcome-body { flex: 1; width: 100%; max-width: 520px; margin: 0 auto; padding: 0 var(--margin); }
+.welcome-hello { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: var(--s5); padding-top: var(--s6); }
+.welcome-claim { font-size: clamp(26px, 7.4vw, 36px); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; max-width: 16ch; }
+.welcome-how { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; width: 100%; }
+.welcome-how li { display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 14px; font-size: 17px; font-weight: 600; }
+.welcome-how li span { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--surface); color: var(--green); }
+.welcome-form { display: grid; align-content: start; gap: var(--s5); padding-top: var(--s3); }
+.welcome-title { font-size: clamp(32px, 9vw, 44px); font-weight: 800; letter-spacing: -.02em; }
+.welcome-cta { display: grid; gap: 8px; width: 100%; max-width: 520px; margin: 0 auto; padding: var(--s4) var(--margin) calc(var(--s4) + env(safe-area-inset-bottom, 0px)); }
+.welcome-form .welcome-cta { padding-left: 0; padding-right: 0; }
+.welcome-cta .btn { min-height: 56px; font-size: 18px; }
+.welcome-foot { margin-top: 6px; font-size: 13px; color: var(--ink-2); text-align: center; }
 @media (min-width: 900px) { .how { grid-template-columns: repeat(3, 1fr); column-gap: var(--s5); } }
 
 /* ================================================================ access */
