@@ -37,7 +37,7 @@ export function Header({ back, title, action }: { back?: { to: string; label: st
           {back ? (
             <Link to={back.to} className="round-btn" aria-label={`Volver a ${back.label}`}><Icon name="caret-left-bold" size={20} /></Link>
           ) : (
-            <Link to="/" className="header-logo" aria-label="Inicio"><Logo size={28} /></Link>
+            <Link to="/" className="header-logo" aria-label="Inicio"><Logo size={22} /></Link>
           )}
         </div>
         {back && title ? <p className="header-title">{title}</p> : <span />}

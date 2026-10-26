@@ -61,14 +61,22 @@ const files = await page.evaluate(async (src) => {
   // The lockup as generated floats the word mid-height, so the sprout's soil hangs a cap height
   // below the letters (Mario, 2026-10-26: "el logo está desalineado"). Rebuilt so the soil and
   // the baseline are one ground line: the can pours from above, everything stands on the same floor.
+  // As generated, the drawing is 1.6 times the word's height and the word looked small in the app
+  // bar ("dejalo bien", 2026-10-26). The drawing is scaled to the word's full height, accent to
+  // descender, and still stands on the baseline.
   const lockup = (pad) => {
-    const dy = icon.b - baseline
-    const top = Math.min(icon.t, word.t + dy), bottom = Math.max(icon.b, word.b + dy)
-    const w = word.x1 - icon.x0 + 1 + pad * 2, h = bottom - top + 1 + pad * 2
-    const o = new OffscreenCanvas(w, h)
+    const iw = icon.x1 - icon.x0 + 1, ih = icon.b - icon.t + 1
+    const k = (word.b - word.t + 1) / ih
+    const sw = iw * k, sh = ih * k
+    const gap = 30
+    const iconTop = baseline - sh // soil on the baseline
+    const top = Math.min(iconTop, word.t), bottom = Math.max(baseline, word.b)
+    const ww = word.x1 - word.x0 + 1, wh = word.b - word.t + 1
+    const o = new OffscreenCanvas(Math.ceil(sw + gap + ww + pad * 2), Math.ceil(bottom - top + 1 + pad * 2))
     const ox = o.getContext('2d')
-    ox.drawImage(c, icon.x0, icon.t, icon.x1 - icon.x0 + 1, icon.b - icon.t + 1, pad, icon.t - top + pad, icon.x1 - icon.x0 + 1, icon.b - icon.t + 1)
-    ox.drawImage(c, word.x0, word.t, word.x1 - word.x0 + 1, word.b - word.t + 1, word.x0 - icon.x0 + pad, word.t + dy - top + pad, word.x1 - word.x0 + 1, word.b - word.t + 1)
+    ox.imageSmoothingQuality = 'high'
+    ox.drawImage(c, icon.x0, icon.t, iw, ih, pad, iconTop - top + pad, sw, sh)
+    ox.drawImage(c, word.x0, word.t, ww, wh, pad + sw + gap, word.t - top + pad, ww, wh)
     return o
   }
   const crop = (b, pad) => {
