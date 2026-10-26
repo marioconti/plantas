@@ -55,6 +55,22 @@ const files = await page.evaluate(async (src) => {
   const all = box(runs[0][0], runs[runs.length - 1][1])
   const icon = box(runs[0][0], runs[split - 1][1])
 
+  const word = box(runs[split][0], runs[runs.length - 1][1])
+  // The R has no descender and no accent: its bottom row is the word's baseline.
+  const baseline = box(runs[split][0], runs[split][1]).b
+  // The lockup as generated floats the word mid-height, so the sprout's soil hangs a cap height
+  // below the letters (Mario, 2026-10-26: "el logo está desalineado"). Rebuilt so the soil and
+  // the baseline are one ground line: the can pours from above, everything stands on the same floor.
+  const lockup = (pad) => {
+    const dy = icon.b - baseline
+    const top = Math.min(icon.t, word.t + dy), bottom = Math.max(icon.b, word.b + dy)
+    const w = word.x1 - icon.x0 + 1 + pad * 2, h = bottom - top + 1 + pad * 2
+    const o = new OffscreenCanvas(w, h)
+    const ox = o.getContext('2d')
+    ox.drawImage(c, icon.x0, icon.t, icon.x1 - icon.x0 + 1, icon.b - icon.t + 1, pad, icon.t - top + pad, icon.x1 - icon.x0 + 1, icon.b - icon.t + 1)
+    ox.drawImage(c, word.x0, word.t, word.x1 - word.x0 + 1, word.b - word.t + 1, word.x0 - icon.x0 + pad, word.t + dy - top + pad, word.x1 - word.x0 + 1, word.b - word.t + 1)
+    return o
+  }
   const crop = (b, pad) => {
     const w = b.x1 - b.x0 + 1 + pad * 2, h = b.b - b.t + 1 + pad * 2
     const o = new OffscreenCanvas(w, h)
@@ -90,12 +106,12 @@ const files = await page.evaluate(async (src) => {
     return btoa(s)
   }
   return {
-    'brand/logo.png': await png(fit(crop(all, 4), 240)),
+    'brand/logo.png': await png(fit(lockup(4), 240)),
     'brand/mark.png': await png(fit(crop(icon, 4), 240)),
     'icons/icon-512.png': await png(tile(512, 0.72, '#EEF0EB')),
     'icons/apple-touch-icon.png': await png(tile(180, 0.72, '#EEF0EB')),
     'icons/icon-32.png': await png(tile(32, 0.9, '#EEF0EB')),
-    size: { all, icon, W, H },
+    size: { all, icon, word, baseline, W, H },
   }
 }, src)
 await browser.close()
